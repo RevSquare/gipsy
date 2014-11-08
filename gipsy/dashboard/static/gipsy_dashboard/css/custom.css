@@ -1,3 +1,10 @@
+.container {
+    padding: 0;
+    width: 100%;
+}
+.container > div > .row {
+    margin-top: 20px;
+}
 .navbar-default {
     background: #2e3641;
     color: #fff;
@@ -9,11 +16,19 @@
 .panel-body {
     color: #fff;
 }
+
+.row {
+    margin-left: 0;
+}
 .dashboard-sidebar .nav {
     background: #2e3641;
 }
 .dashboard-sidebar .nav a {
     color: #fff;
+    font-size: 14px;
+    font-family: "Helvetica Neue", ​Helvetica, ​Arial,​ sans-serif;
+    font-weight: 100;
+    line-height: 20px;
 }
 .dashboard-sidebar .nav .active > a {
     color: #6098d1;
@@ -42,4 +57,40 @@
     margin-top: -10px;
     float: left;
     font-size: 80px;
+}
+
+.container #grp-content {
+    top: auto;
+    padding-left: 0;
+}
+
+#grp-content-title {
+    display: none;
+}
+
+.container .body-footer {
+    position: relative;
+}
+.col1 {
+    display: block;
+    width: 50%;
+    float: left;
+    height: 100%;
+    vertical-align: top;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0 5px 0 0;
+    margin: 0;
+}
+.ui-tabs .ui-tabs-panel:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.ui-tabs .ui-tabs-panel .col1 .vXMLLargeTextField,
+.ui-tabs .ui-tabs-panel .col1 .vLargeTextField {
+    width: 100%;
+}
+.container a {
+    color: #5995cf;
 }

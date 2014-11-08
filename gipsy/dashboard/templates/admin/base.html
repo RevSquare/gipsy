@@ -1,4 +1,4 @@
-{% load admin_static %}{% load firstof from future %}{% load i18n grp_tags gipsy_toolbar %}
+{% load admin_static %}{% load firstof from future %}{% load i18n grp_tags gipsy_toolbar gipsy_dashboard %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
@@ -7,6 +7,11 @@
     {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
     <!-- STYLESHEETS -->
     {% block stylesheets %}
+        <!-- Bootstrap core CSS -->
+        <link href="{{ STATIC_URL }}gipsy_dashboard/css/bootstrap.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}gipsy_dashboard/css/custom.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}gipsy_dashboard/css/main.css" rel="stylesheet">
+        
         <link href="{% static "grappelli/jquery/ui/css/custom-theme/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet" type="text/css" media="screen" />
         <link href="{% static "grappelli/stylesheets/screen.css" %}" rel="stylesheet" type="text/css" media="screen" />
         {% if LANGUAGE_BIDI %}
@@ -16,11 +21,6 @@
             <link href="{% static "grappelli/stylesheets/mueller/grid/output.css" %}" rel="stylesheet" type="text/css" media="screen" />
         {% endif %}
         <link rel="stylesheet" href="{{ STATIC_URL }}gipsy_toolbar/css/gipsy_toolbar.css">
-        
-        <!-- Bootstrap core CSS -->
-        <link href="{{ STATIC_URL }}gipsy_dashboard/css/bootstrap.css" rel="stylesheet">
-        <link href="{{ STATIC_URL }}gipsy_dashboard/css/custom.css" rel="stylesheet">
-        <link href="{{ STATIC_URL }}gipsy_dashboard/css/main.css" rel="stylesheet">
 
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -78,70 +78,58 @@
     {% block extrahead %}{% endblock %}
 </head>
 <body class="{% if is_popup %}grp-popup {% endif %}{% block bodyclass %}{% endblock %}{% if LANGUAGE_BIDI %} rtl{% endif %}">
-    {% gipsy_toolbar %}
-    <div id="grp-container">
+    <div class="container">
+        {% gipsy_toolbar %}
+    
+        <div id="grp-container" class="">
+            <div class="row">
+                {% gipsy_dashboard_menu %}
+                <div class="col-md-10">
+                    <div class="row">
 
-        <!-- HEADER -->
-        <header id="grp-header" class="{% block header-class %}{% endblock %}">
-            {% if not is_popup %}
-
-                
-                <!-- CONTEXT NAVIGATION -->
-                <div id="grp-context-navigation">
-                    <nav id="grp-breadcrumbs" class="{% block breadcrumbs-class %}{% endblock %}">
-                        <header style="display:none"><h1>Breadcrumbs</h1></header>
-                        {% block breadcrumbs %}
-                            <ul>
-                                <li><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
-                                {% if title %}
-                                    <li> &rsaquo; {{ title }}</li>
+                        <!-- CONTENT -->
+                        <article id="grp-content" class="{% block content-class %}{% endblock %}">
+                            
+                            <!-- MESSAGES -->
+                            {% block messages %}
+                                {% if messages %}
+                                    <ul class="grp-messagelist">
+                                        <!-- NOTE: no message|capfirst by purpose, because it does not work in some languages -->
+                                        {% for message in messages %} 
+                                            <li{% if message.tags %} class="grp-{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
                                 {% endif %}
-                            </ul>
-                        {% endblock %}
-                    </nav>
-                    <nav id="grp-page-tools">
-                        <header style="display:none"><h1>Page Tools</h1></header>
-                        {% block page-tools %}{% endblock %}
-                    </nav>
+                            {% endblock %}
+
+                            <!-- CONTENT TITLE -->
+                            <header id="grp-content-title">
+                                {% block pretitle %}{% endblock %}
+                                {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+                                {% block object-tools %}{% endblock %}
+                            </header>
+
+                            <!-- CONTENT-CONTAINER -->
+                            <div id="grp-content-container">
+                                {% block content %}
+                                    {{ content }}
+                                    {% block filters %}{% endblock %}
+                                {% endblock %}
+                            </div>
+
+                        </article>
+                    </div>
                 </div>
-            {% endif %}
-        </header>
-
-        <!-- CONTENT -->
-        <article id="grp-content" class="{% block content-class %}{% endblock %}">
-            
-            <!-- MESSAGES -->
-            {% block messages %}
-                {% if messages %}
-                    <ul class="grp-messagelist">
-                        <!-- NOTE: no message|capfirst by purpose, because it does not work in some languages -->
-                        {% for message in messages %} 
-                            <li{% if message.tags %} class="grp-{{ message.tags }}"{% endif %}>{{ message }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-            {% endblock %}
-
-            <!-- CONTENT TITLE -->
-            <header id="grp-content-title">
-                {% block pretitle %}{% endblock %}
-                {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
-                {% block object-tools %}{% endblock %}
-            </header>
-
-            <!-- CONTENT-CONTAINER -->
-            <div id="grp-content-container">
-                {% block content %}
-                    {{ content }}
-                    {% block filters %}{% endblock %}
-                {% endblock %}
             </div>
-
-        </article>
-        
-        <!-- FOOTER -->
-        {% block footer %}{% endblock %}
-
+        </div>
+        <footer class="body-footer">
+            {% block footer %}{% endblock %}
+            
+            <span class="revsquare-logo">Revsquare</span>
+            <p>
+                Copyright &copy; 2014 Revsquare. All Rights Reserved.
+            </p>
+        </footer>
     </div>
     <script src="{{ STATIC_URL }}gipsy_dashboard/javascripts/bootstrap.js"></script>
     <script src="{{ STATIC_URL }}gipsy_dashboard/javascripts/plugins.js"></script>
