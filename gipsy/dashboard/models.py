@@ -4,7 +4,7 @@ from django.utils.translation import ugettext_lazy as _
 from ..models import GipsyMenu
 
 
-class GipsyAdminMenu(GipsyMenu):
+class GipsyDashboardMenu(GipsyMenu):
     icon = models.CharField(_('icon'), max_length=20,
                             help_text=_("Font awesome class \
                                         http://fortawesome.github.io/Font-Awesome/icons/\

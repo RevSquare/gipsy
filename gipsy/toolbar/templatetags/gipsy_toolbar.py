@@ -2,7 +2,7 @@ from django import template
 from django.conf import settings
 from django.core.urlresolvers import resolve
 
-from .models import GipsyToolbarMenu
+from gipsy.toolbar.models import GipsyToolbarMenu
 
 
 register = template.Library()
