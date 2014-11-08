@@ -3,94 +3,34 @@
 <aside class="col-md-2 dashboard-sidebar">
     <ul class="nav nav-pills nav-stacked">
         <li class="active">
-            <a href="#">
+            <a href="{% url 'admin:index' %}">
                 <i class="fa fa-tachometer"></i>
-                Dashboard
+                [% trans 'Dashboard' %}
             </a>
         </li>
+        
+
+        {% for item in items %}
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-file-image-o"></i>
-                Posts
+                {% if item.icon %}<i class="fa {{ item.icon }}"></i>{% endif %}
+                {{ item.name }}
                 <i class="fa fa-chevron-down pull-right"></i>
             </a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">All posts</a></li>
-                <li><a href="#">Add New</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Re-Order</a></li>
-            </ul>
+            
+            {% if item.children %}
+                <i class="fa fa-chevron-down"></i>=
+                <ul class="dropdown-menu" role="menu">
+                {% for child in item.children %}
+                    <li>
+                        {% if child.url %}<a href="{% if not child.url_has_domain %}//{{ request.get_host }}/{% endif %}{{ child.url }}">{% endif %}
+                            {{ child.name }}
+                        {% if child.url %}</a>{% endif %}
+                    </li>
+                {% endfor %}
+                </ul>
+            {% endif %}
         </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-database"></i>
-                Media
-                <i class="fa fa-chevron-down pull-right"></i>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">All posts</a></li>
-                <li><a href="#">Add New</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Re-Order</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-comment-o"></i>
-                Comments
-                <i class="fa fa-chevron-down pull-right"></i>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">All posts</a></li>
-                <li><a href="#">Add New</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Re-Order</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-pie-chart"></i>
-                Infographics
-                <i class="fa fa-chevron-down pull-right"></i>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">All posts</a></li>
-                <li><a href="#">Add New</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Re-Order</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-slideshare"></i>
-                Slideshows
-                <i class="fa fa-chevron-down pull-right"></i>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">All posts</a></li>
-                <li><a href="#">Add New</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Re-Order</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="fa fa-video-camera"></i>
-                Videos
-                <i class="fa fa-chevron-down pull-right"></i>
-            </a>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">All posts</a></li>
-                <li><a href="#">Add New</a></li>
-                <li><a href="#">Categories</a></li>
-                <li><a href="#">Re-Order</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fa fa-file-text-o"></i>
-                Articles from the Economist
-            </a>
-        </li>
+        {% endfor %}
     </ul>
 </aside>

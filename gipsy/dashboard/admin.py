@@ -11,5 +11,6 @@ class ChildrenDashboardInline(ChildrenInline):
 
 class GipsyDashboardMenuAdmin(GipsyMenu):
     inlines = [ChildrenDashboardInline]
+    exclude = ('url',)
 
 admin.site.register(GipsyDashboardMenu, GipsyDashboardMenuAdmin)
