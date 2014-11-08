@@ -8,31 +8,31 @@ from django.db import models
 class Migration(SchemaMigration):
 
     def forwards(self, orm):
-        # Adding model 'GipsyAdminMenu'
-        db.create_table(u'dashboard_gipsyadminmenu', (
+        # Adding model 'GipsyDashboardMenu'
+        db.create_table(u'dashboard_gipsydashboardmenu', (
             (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('parent', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['dashboard.GipsyAdminMenu'], null=True, blank=True)),
+            ('parent', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['dashboard.GipsyDashboardMenu'], null=True, blank=True)),
             ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
             ('url', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
             ('order', self.gf('django.db.models.fields.PositiveSmallIntegerField')()),
             ('icon', self.gf('django.db.models.fields.CharField')(max_length=20)),
         ))
-        db.send_create_signal(u'dashboard', ['GipsyAdminMenu'])
+        db.send_create_signal(u'dashboard', ['GipsyDashboardMenu'])
 
 
     def backwards(self, orm):
-        # Deleting model 'GipsyAdminMenu'
-        db.delete_table(u'dashboard_gipsyadminmenu')
+        # Deleting model 'GipsyDashboardMenu'
+        db.delete_table(u'dashboard_gipsydashboardmenu')
 
 
     models = {
-        u'dashboard.gipsyadminmenu': {
-            'Meta': {'ordering': "['order']", 'object_name': 'GipsyAdminMenu'},
+        u'dashboard.gipsydashboardmenu': {
+            'Meta': {'ordering': "['order']", 'object_name': 'GipsyDashboardMenu'},
             'icon': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'order': ('django.db.models.fields.PositiveSmallIntegerField', [], {}),
-            'parent': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['dashboard.GipsyAdminMenu']", 'null': 'True', 'blank': 'True'}),
+            'parent': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['dashboard.GipsyDashboardMenu']", 'null': 'True', 'blank': 'True'}),
             'url': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'})
         }
     }
