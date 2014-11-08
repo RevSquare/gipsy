@@ -5,17 +5,16 @@ reload(sys).setdefaultencoding('Utf-8')
 
 
 setup(
-    name='gipsy_tools',
+    name='gipsy',
     version='0.0.1',
     author='Guillaume Pousseo',
     author_email='guillaumepousseo@revsquare.com',
-    description='Manages common libraries to use accross the gipsy\
-                 applications.',
+    description='A set of fancy tools for django.',
     long_description=open('README.rst').read(),
     url='http://www.revsquare.com',
     license='BSD License',
     platforms=['OS Independent'],
-    packages=['gipsy_tools'],
+    packages=['gipsy'],
     include_package_data=True,
     classifiers=[
         'Development Status :: 0.0.1 - Production/Stable',
