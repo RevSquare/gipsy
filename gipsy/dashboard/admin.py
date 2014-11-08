@@ -6,6 +6,7 @@ from .models import GipsyDashboardMenu
 
 class ChildrenDashboardInline(ChildrenInline):
     model = GipsyDashboardMenu
+    exclude = ('icon',)
 
 
 class GipsyDashboardMenuAdmin(GipsyMenu):

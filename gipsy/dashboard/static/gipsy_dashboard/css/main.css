@@ -1,0 +1,394 @@
+/* line 1, ../../assets/stylesheets/main.scss */
+html {
+  height: 100%;
+}
+
+/* line 5, ../../assets/stylesheets/main.scss */
+body {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 90px;
+  background-image: url(../img/bg_body-01.jpg);
+}
+
+/* line 12, ../../assets/stylesheets/main.scss */
+.body-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 25px 0 25px 90px;
+  font-size: 13px;
+  background: #2e3641;
+}
+/* line 20, ../../assets/stylesheets/main.scss */
+.body-footer .revsquare-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 78px;
+  height: 69px;
+  background: url(../img/ico_revsquarelogo-01.png);
+  text-indent: -998em;
+}
+/* line 30, ../../assets/stylesheets/main.scss */
+.body-footer p {
+  display: inline;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: rgba(204, 204, 204, 0.5);
+}
+
+/* line 39, ../../assets/stylesheets/main.scss */
+.navbar-top {
+  border: 0;
+}
+/* line 41, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-brand {
+  height: 50px;
+  padding: 8px 0 0;
+  background: #fff;
+}
+/* line 45, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-brand img {
+  width: 100%;
+}
+/* line 48, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-brand:hover, .navbar-top .navbar-brand:focus {
+  background-color: #fff;
+}
+/* line 54, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-nav li {
+  position: relative;
+}
+/* line 56, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-nav li a {
+  font-weight: 300;
+}
+/* line 58, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-nav li a:hover {
+  background-color: #3b4653;
+}
+/* line 63, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-nav li.active:after {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  margin-left: -6px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 9px 6px 0 6px;
+  border-color: #6098d1 transparent transparent transparent;
+}
+/* line 76, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-nav li.dropdown.open {
+  background-color: #3b4653;
+}
+/* line 79, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-nav li .dropdown-menu {
+  border: 0;
+}
+/* line 82, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-nav li .dropdown-menu li a {
+  padding: 6px 20px;
+}
+/* line 84, ../../assets/stylesheets/main.scss */
+.navbar-top .navbar-nav li .dropdown-menu li a:hover {
+  background: #fff;
+}
+/* line 92, ../../assets/stylesheets/main.scss */
+.navbar-top .fa {
+  color: #5995cf;
+  font-size: 16px;
+}
+/* line 97, ../../assets/stylesheets/main.scss */
+.navbar-top .profile-dropdown .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+/* line 100, ../../assets/stylesheets/main.scss */
+.navbar-top .profile-dropdown .dropdown-menu i {
+  color: #bdbfbe;
+}
+
+/* line 108, ../../assets/stylesheets/main.scss */
+.nav-stacked .dropdown-menu {
+  position: relative;
+  min-width: 100%;
+  margin: 0;
+  padding: 10px 0;
+  background-color: #3b4653;
+  box-shadow: none;
+  border: 0;
+}
+/* line 117, ../../assets/stylesheets/main.scss */
+.nav-stacked li + li {
+  margin: 0;
+}
+
+/* line 122, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar {
+  font-weight: 100;
+}
+/* line 125, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li {
+  clear: both;
+}
+/* line 127, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li > a {
+  position: relative;
+  border-bottom: 0;
+}
+/* line 130, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li > a:focus {
+  background: #2e3641;
+}
+/* line 133, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li > a:hover {
+  background: #3b4653;
+}
+/* line 136, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li > a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 7%;
+  width: 86%;
+  height: 1px;
+  background: rgba(242, 242, 242, 0.3);
+}
+/* line 147, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li.open > a {
+  background: #2e3641;
+}
+/* line 149, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li.open > a:after {
+  display: none;
+}
+/* line 152, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li.open > a:hover {
+  background: #3b4653;
+}
+/* line 157, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li.active {
+  position: relative;
+}
+/* line 159, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li.active:after, .dashboard-sidebar .nav > li.active:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 100;
+  border-radius: 50%;
+}
+/* line 168, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li.active:before {
+  margin-top: -9px;
+  margin-right: -9px;
+  width: 18px;
+  height: 18px;
+  background: url(../img/bg_body-01.jpg);
+}
+/* line 175, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .nav > li.active:after {
+  z-index: 110;
+  margin-top: -5px;
+  margin-right: -5px;
+  width: 10px;
+  height: 10px;
+  background: #6098d1;
+}
+/* line 186, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .fa {
+  font-size: 17px;
+}
+/* line 189, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar .fa.pull-right {
+  color: #5995cf;
+  font-size: 16px;
+}
+/* line 193, ../../assets/stylesheets/main.scss */
+.dashboard-sidebar:after {
+  content: '';
+  background: #2e3641;
+}
+
+/* line 199, ../../assets/stylesheets/main.scss */
+.traffic-overview {
+  width: 100%;
+  height: 360px;
+  background: #6098d1;
+}
+/* line 203, ../../assets/stylesheets/main.scss */
+.traffic-overview .panel-heading {
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+/* line 207, ../../assets/stylesheets/main.scss */
+.traffic-overview .panel-body {
+  height: 319px;
+}
+
+/* line 212, ../../assets/stylesheets/main.scss */
+.glance-panel {
+  height: 360px;
+}
+
+/* line 218, ../../assets/stylesheets/main.scss */
+.list-glance {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 223, ../../assets/stylesheets/main.scss */
+.list-glance li a {
+  display: block;
+  padding-bottom: 20px;
+}
+/* line 227, ../../assets/stylesheets/main.scss */
+.list-glance li i {
+  font-size: 26px;
+  margin-right: 20px;
+  color: #fff;
+}
+/* line 232, ../../assets/stylesheets/main.scss */
+.list-glance li span {
+  font-size: 25px;
+  font-weight: 100;
+  color: #6098d1;
+}
+/* line 236, ../../assets/stylesheets/main.scss */
+.list-glance li span strong {
+  font-weight: 900;
+}
+/* line 242, ../../assets/stylesheets/main.scss */
+.list-glance li + li a {
+  padding-top: 20px;
+  border-top: 1px dashed rgba(242, 242, 242, 0.3);
+}
+
+/* line 249, ../../assets/stylesheets/main.scss */
+.list-lastupdate,
+.list-mostviewed {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 254, ../../assets/stylesheets/main.scss */
+.list-lastupdate .list-item,
+.list-mostviewed .list-item {
+  padding-bottom: 18px;
+}
+/* line 257, ../../assets/stylesheets/main.scss */
+.list-lastupdate .item-author,
+.list-mostviewed .item-author {
+  margin-bottom: 2px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #9eb2c0;
+}
+/* line 263, ../../assets/stylesheets/main.scss */
+.list-lastupdate .item-title,
+.list-mostviewed .item-title {
+  margin-bottom: 4px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #5a95d0;
+}
+/* line 269, ../../assets/stylesheets/main.scss */
+.list-lastupdate .item-content,
+.list-mostviewed .item-content {
+  margin: 0;
+  font-size: 15px;
+  color: #4d4b4d;
+}
+/* line 274, ../../assets/stylesheets/main.scss */
+.list-lastupdate .list-item + .list-item,
+.list-mostviewed .list-item + .list-item {
+  padding-top: 18px;
+  border-top: 1px dashed #9eb2c0;
+}
+
+/* line 281, ../../assets/stylesheets/main.scss */
+.panel-default i {
+  font-size: 20px;
+}
+
+/* line 286, ../../assets/stylesheets/main.scss */
+.panel-info {
+  background: #fff;
+}
+/* line 288, ../../assets/stylesheets/main.scss */
+.panel-info .panel-heading {
+  position: relative;
+  padding: 15px;
+  font-size: 15px;
+}
+/* line 292, ../../assets/stylesheets/main.scss */
+.panel-info .panel-heading a {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  display: block;
+  width: 52px;
+  height: 51px;
+  background: #fff;
+  overflow: hidden;
+}
+/* line 301, ../../assets/stylesheets/main.scss */
+.panel-info .panel-heading a i {
+  position: relative;
+  top: 16px;
+  right: 20px;
+  font-size: 20px;
+  color: #6098d1;
+}
+/* line 310, ../../assets/stylesheets/main.scss */
+.panel-info .panel-body {
+  padding-top: 25px;
+  color: #4d4b4d;
+}
+
+@media (max-width: 1200px) {
+  /* line 317, ../../assets/stylesheets/main.scss */
+  .dashboard-sidebar {
+    font-size: 90%;
+  }
+
+  /* line 320, ../../assets/stylesheets/main.scss */
+  .navbar-top .navbar-brand {
+    padding: 12px 0 0;
+  }
+}
+@media (max-width: 992px) {
+  /* line 326, ../../assets/stylesheets/main.scss */
+  .navbar-nav {
+    font-size: 78%;
+  }
+}
+@media (min-width: 769px) {
+  /* line 333, ../../assets/stylesheets/main.scss */
+  .profile-dropdown .navbar-nav {
+    float: right;
+  }
+}
+@media (max-width: 768px) {
+  /* line 340, ../../assets/stylesheets/main.scss */
+  .navbar-nav {
+    margin: 0;
+  }
+
+  /* line 343, ../../assets/stylesheets/main.scss */
+  .navbar-top .row .col-xs-12:first-child {
+    background: #fff;
+  }
+
+  /* line 346, ../../assets/stylesheets/main.scss */
+  .navbar-top .navbar-brand {
+    padding: 8px 0 0;
+  }
+}
