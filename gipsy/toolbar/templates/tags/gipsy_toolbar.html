@@ -1,0 +1,81 @@
+{% load i18n %}
+
+{% if user.is_active and user.is_staff %}
+<div class="gipsy_toolbar-container" style="display: none;">
+    <div class="gipsy_toolbar">
+        <div class="gipsy_toolbar__inner">
+            <div class="gipsy_toolbar__logo">
+                <img src="{{ logo }}" alt="">
+            </div>
+            <div class="gipsy_toolbar__links">
+                <ul class="gipsy_toolbar__nav">
+                    <li class="nav__item{% if not is_admin %} nav__item__active{% endif %}"><a href="/">{% trans 'Visit site' %}</a></li>
+                    <li class="nav__item{% if is_admin %} nav__item__active{% endif %}"><a href="{% url 'admin:index' %}">{% trans 'Dashboard' %}</a></li>
+                </ul>
+                
+                <ul class="gipsy_toolbar__menu">
+                    {% for item in items %}
+                    <li>
+                        {% if item.url %}<a href="{% if not item.url_has_domain %}//{{ request.get_host }}/{% endif %}{{ item.url }}">{% endif %}
+                            {{ item.name }}
+                        {% if item.url %}</a>{% endif %}
+                        
+                        {% if item.children %}
+                            <i class="fa fa-chevron-down"></i>
+                            <ul>
+                            {% for child in item.children %}
+                                <li>
+                                    {% if child.url %}<a href="{% if not child.url_has_domain %}//{{ request.get_host }}/{% endif %}{{ child.url }}">{% endif %}
+                                        {{ child.name }}
+                                    {% if child.url %}</a>{% endif %}
+                                </li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </li>
+                    {% endfor %}
+                </ul>
+                
+                <ul class="gipsy_toolbar__user">
+                    <li class="user__item">
+                        <a href="#">{% firstof user.get_short_name user.get_username %} <i class="fa fa-chevron-down"></i></a>
+                        
+                        <ul class="gipsy-user-sub">
+                            <li class="user__sub-item">
+                            {% if user.has_usable_password %}
+                                <a href="{% url 'admin:password_change' %}">{% trans 'Change password' %}</a>
+                            {% endif %}
+                            </li>
+                            <li class="user__sub-item"><a href="{% url 'admin:logout' %}">{% trans 'Log out' %}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+var GipsyToolbar = {
+    initiated: false,
+    
+    init: function() {
+        if (this.initiated === true) {
+            return false;
+        }
+        this.createLink("{{ STATIC_URL }}gipsy_toolbar/css/gipsy_toolbar.css");
+        this.createLink("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
+        this.initiated = true;
+    },
+    
+    createLink: function(url){
+        var stylesheet = document.createElement("link");
+        stylesheet.setAttribute("rel", "stylesheet");
+        stylesheet.setAttribute("type", "text/css");
+        stylesheet.setAttribute("href", url);
+        document.getElementsByTagName("head")[0].appendChild(stylesheet);
+    }
+}
+GipsyToolbar.init();
+</script>
+{% endif %}

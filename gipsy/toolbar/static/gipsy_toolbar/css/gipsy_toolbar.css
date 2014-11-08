@@ -1,0 +1,166 @@
+.gipsy_toolbar-container {
+    display: block !important;
+    line-height: 16px;
+    padding-top: 40px;
+}
+.gipsy_toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 888641;
+    height: 40px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans;
+    font-size: 14px;
+    
+    -webkit-box-shadow: 0px 2px 2px 0px rgba(50, 50, 50, 0.25);
+    -moz-box-shadow:    0px 2px 2px 0px rgba(50, 50, 50, 0.25);
+    box-shadow:         0px 2px 2px 0px rgba(50, 50, 50, 0.25);
+}
+.gipsy_toolbar__logo {
+    float: left;
+    height: 40px;
+    padding: 0 30px;
+    line-height: 56px;
+    background: #fff;
+}
+.gipsy_toolbar__logo img {
+    display: inline;
+    max-height: 28px;
+    max-width: 184px;
+}
+.gipsy_toolbar__links {
+    height: 40px;
+    background: #2e3641;
+}
+.gipsy_toolbar__nav,
+.gipsy_toolbar__menu,
+.gipsy_toolbar__user,
+.gipsy-user-sub {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.gipsy_toolbar__nav .nav__item {
+    position: relative;
+    float: left;
+    height: 40px;
+}
+.gipsy_toolbar__nav .nav__item a,
+.gipsy_toolbar__user .user__item > a {
+    position: relative;
+    display: block;
+    height: 100%;
+    padding: 0 20px;
+    line-height: 40px;
+    text-decoration: none;
+    color: #6098d1;
+}
+.gipsy_toolbar__nav .nav__item a:hover {
+    text-decoration: underline;
+}
+.gipsy_toolbar__nav .nav__item__active a,
+.gipsy_toolbar__user .user__item:hover > a {
+    background: #6098d1;
+    color: #fff;
+}
+
+.gipsy_toolbar__nav .nav__item__active a:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    margin-left: -6px;
+    bottom: -6px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 6px 0 6px;
+    border-color: #6098d1 transparent transparent transparent;
+    
+}
+.gipsy_toolbar__menu {
+    float: left;
+    margin: 0 10%; 
+}
+.gipsy_toolbar__menu > li {
+    color: #fff;
+    float: left;
+    display: block;
+    padding: 12px;
+    position: relative;
+}
+.gipsy_toolbar__menu > li > a {
+    color: #fff;
+}
+.gipsy_toolbar__menu > li:hover {
+    background-color: #6098d1;
+}
+.gipsy_toolbar__menu > li > ul {
+    background-clip: padding-box;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.176);
+    display: none;
+    float: left;
+    font-size: 14px;
+    left: 0;
+    list-style: none outside none;
+    margin: 0;
+    min-width: 160px;
+    padding: 5px 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    z-index: 1000;
+}
+
+.gipsy_toolbar__menu > li:hover > ul {
+    display: block;
+}
+.gipsy_toolbar__menu > li > ul > li {
+    clear: both;
+    color: #999999;
+    display: block;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.42857;
+    padding: 3px 20px;
+    white-space: nowrap;
+}
+.gipsy_toolbar__menu > li > ul > li > a {
+    color: #333333;
+    display: block;
+    font-size: 14px;
+}
+.gipsy_toolbar__menu > li > ul > li > a:hover {
+    background-color: whitesmoke;
+    text-decoration: none;
+    color: #262626;
+}
+.gipsy_toolbar__user {
+    float: right;
+}
+.gipsy-user-sub {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    display: none;
+    background: #6098d1;
+    color: #fff;
+}
+.gipsy_toolbar__user .user__item:hover .gipsy-user-sub {
+    display: block;
+}
+.gipsy_toolbar__user .user__item > a {
+    color: #fff;
+}
+.gipsy-user-sub .user__sub-item > a {
+    display: block;
+    padding: 5px 10px;
+    color: #fff;
+}
+.gipsy-user-sub .user__sub-item > a:hover {
+    background: #2e3641;
+}
+        
