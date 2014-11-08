@@ -1,4 +1,4 @@
-from gipsy_tools.models import GipsyMenu
+from ..models import GipsyMenu
 
 
 class GipsyToolbarMenu(GipsyMenu):
