@@ -1,0 +1,111 @@
+body {
+  background: url(../img/); }
+
+.navbar-top {
+  border: 0; }
+  .navbar-top .navbar-nav li {
+    position: relative; }
+    .navbar-top .navbar-nav li a:hover {
+      background-color: #3b4653; }
+    .navbar-top .navbar-nav li.active:after {
+      content: '';
+      position: absolute;
+      bottom: -9px;
+      left: 50%;
+      margin-left: -6px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 9px 6px 0 6px;
+      border-color: #6098d1 transparent transparent transparent; }
+    .navbar-top .navbar-nav li.dropdown.open {
+      background-color: #3b4653; }
+    .navbar-top .navbar-nav li .dropdown-menu {
+      border: 0; }
+  .navbar-top .fa {
+    color: #5995cf; }
+
+.nav-stacked .dropdown-menu {
+  position: relative;
+  top: -4px;
+  min-width: 165px;
+  margin: 2px 0 15px;
+  padding: 10px 0;
+  background-color: #3b4653;
+  box-shadow: none;
+  border: 0; }
+.nav-stacked li + li {
+  margin: 0; }
+
+.dashboard-sidebar .nav > li > a {
+  position: relative;
+  border-bottom: 0; }
+  .dashboard-sidebar .nav > li > a:focus {
+    background: #2e3641; }
+  .dashboard-sidebar .nav > li > a:hover {
+    background: #3b4653; }
+  .dashboard-sidebar .nav > li > a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 7%;
+    width: 86%;
+    height: 1px;
+    background: rgba(242, 242, 242, 0.3); }
+.dashboard-sidebar .nav > li.open > a {
+  background: #2e3641; }
+  .dashboard-sidebar .nav > li.open > a:hover {
+    background: #3b4653; }
+.dashboard-sidebar .fa.pull-right {
+  color: #5995cf; }
+
+.traffic-overview {
+  width: 100%;
+  height: 360px;
+  background: #6098d1; }
+
+.glance-panel {
+  height: 360px; }
+
+.list-glance {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+  .list-glance li {
+    padding-bottom: 20px; }
+    .list-glance li i {
+      font-size: 26px;
+      margin-right: 20px; }
+    .list-glance li span {
+      font-size: 25px;
+      font-weight: 100;
+      color: #6098d1; }
+      .list-glance li span strong {
+        font-weight: 900; }
+  .list-glance li + li {
+    padding-top: 20px;
+    border-top: 1px dashed rgba(242, 242, 242, 0.3); }
+
+.panel-info {
+  background: #fff; }
+  .panel-info .panel-heading {
+    position: relative; }
+    .panel-info .panel-heading a {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      display: block;
+      width: 45px;
+      height: 39px;
+      background: #fff;
+      overflow: hidden; }
+      .panel-info .panel-heading a i {
+        position: relative;
+        top: 10px;
+        right: 14px;
+        font-size: 20px;
+        color: #6098d1; }
+  .panel-info .panel-body {
+    color: #4d4b4d; }
+
+/*# sourceMappingURL=main.css.map */

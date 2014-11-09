@@ -80,57 +80,47 @@
 <body class="{% if is_popup %}grp-popup {% endif %}{% block bodyclass %}{% endblock %}{% if LANGUAGE_BIDI %} rtl{% endif %}">
     <div class="container">
         {% gipsy_toolbar %}
-    
         <div id="grp-container" class="">
             <div class="row">
                 {% gipsy_dashboard_menu %}
                 <div class="col-md-10">
-                    <div class="row">
+                    <!-- CONTENT -->
+                    <article id="grp-content" class="{% block content-class %}{% endblock %}">
+                        
+                        <!-- MESSAGES -->
+                        {% block messages %}
+                            {% if messages %}
+                                <ul class="grp-messagelist">
+                                    <!-- NOTE: no message|capfirst by purpose, because it does not work in some languages -->
+                                    {% for message in messages %} 
+                                        <li{% if message.tags %} class="grp-{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        {% endblock %}
 
-                        <!-- CONTENT -->
-                        <article id="grp-content" class="{% block content-class %}{% endblock %}">
-                            
-                            <!-- MESSAGES -->
-                            {% block messages %}
-                                {% if messages %}
-                                    <ul class="grp-messagelist">
-                                        <!-- NOTE: no message|capfirst by purpose, because it does not work in some languages -->
-                                        {% for message in messages %} 
-                                            <li{% if message.tags %} class="grp-{{ message.tags }}"{% endif %}>{{ message }}</li>
-                                        {% endfor %}
-                                    </ul>
-                                {% endif %}
+                        <!-- CONTENT TITLE -->
+                        <header id="grp-content-title">
+                            {% block pretitle %}{% endblock %}
+                            {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
+                            {% block object-tools %}{% endblock %}
+                        </header>
+
+                        <!-- CONTENT-CONTAINER -->
+                        <div id="grp-content-container">
+                            {% block content %}
+                                {{ content }}
+                                {% block filters %}{% endblock %}
                             {% endblock %}
+                        </div>
 
-                            <!-- CONTENT TITLE -->
-                            <header id="grp-content-title">
-                                {% block pretitle %}{% endblock %}
-                                {% block content_title %}{% if title %}<h1>{{ title }}</h1>{% endif %}{% endblock %}
-                                {% block object-tools %}{% endblock %}
-                            </header>
-
-                            <!-- CONTENT-CONTAINER -->
-                            <div id="grp-content-container">
-                                {% block content %}
-                                    {{ content }}
-                                    {% block filters %}{% endblock %}
-                                {% endblock %}
-                            </div>
-
-                        </article>
-                    </div>
+                    </article>
                 </div>
             </div>
         </div>
-        <footer class="body-footer">
-            {% block footer %}{% endblock %}
-            
-            <span class="revsquare-logo">Revsquare</span>
-            <p>
-                Copyright &copy; 2014 Revsquare. All Rights Reserved.
-            </p>
-        </footer>
+        {% block footer %}{% endblock %}
     </div>
+    <script src="{{ STATIC_URL }}gipsy_dashboard/js/vendor/jquery.js"></script>
     <script src="{{ STATIC_URL }}gipsy_dashboard/javascripts/bootstrap.js"></script>
     <script src="{{ STATIC_URL }}gipsy_dashboard/javascripts/plugins.js"></script>
     <script src="{{ STATIC_URL }}gipsy_dashboard/javascripts/main.js"></script>

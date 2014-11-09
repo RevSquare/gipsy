@@ -9,3 +9,7 @@ class GipsyDashboardMenu(GipsyMenu):
                             help_text=_("Font awesome class \
                                         http://fortawesome.github.io/Font-Awesome/icons/\
                                          ie: fa-circle"))
+
+    @property
+    def children(self):
+        return GipsyDashboardMenu.objects.filter(parent=self.pk)

@@ -6,7 +6,6 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  * ======================================================================== */
 
-
 +function ($) {
   'use strict';
 
@@ -139,7 +138,7 @@
     })
   })
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: alert.js v3.2.0
@@ -232,7 +231,7 @@
 
   $(document).on('click.bs.alert.data-api', dismiss, Alert.prototype.close)
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: button.js v3.2.0
@@ -343,7 +342,7 @@
     e.preventDefault()
   })
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: carousel.js v3.2.0
@@ -567,7 +566,7 @@
     })
   })
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: collapse.js v3.2.0
@@ -738,7 +737,7 @@
     Plugin.call($target, option)
   })
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: dropdown.js v3.2.0
@@ -890,7 +889,7 @@
     .on('click.bs.dropdown.data-api', toggle, Dropdown.prototype.toggle)
     .on('keydown.bs.dropdown.data-api', toggle + ', [role="menu"], [role="listbox"]', Dropdown.prototype.keydown)
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: tab.js v3.2.0
@@ -1019,7 +1018,7 @@
     Plugin.call($(this), 'show')
   })
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: transition.js v3.2.0
@@ -1079,7 +1078,7 @@
     }
   })
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: scrollspy.js v3.2.0
@@ -1250,7 +1249,7 @@
     })
   })
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: modal.js v3.2.0
@@ -1531,7 +1530,7 @@
     Plugin.call($target, option, this)
   })
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: tooltip.js v3.2.0
@@ -1989,7 +1988,7 @@
     return this
   }
 
-}(jQuery);
+}(grp.jQuery);
 
 /* ========================================================================
  * Bootstrap: popover.js v3.2.0
@@ -2103,5 +2102,5 @@
     return this
   }
 
-}(jQuery);
+}(grp.jQuery);
 

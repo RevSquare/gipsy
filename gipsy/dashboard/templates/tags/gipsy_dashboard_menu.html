@@ -2,27 +2,25 @@
 
 <aside class="col-md-2 dashboard-sidebar">
     <ul class="nav nav-pills nav-stacked">
-        <li class="active">
+        <li{% if request.path == '/admin/' %} class="active"{% endif %}>
             <a href="{% url 'admin:index' %}">
                 <i class="fa fa-tachometer"></i>
                 {% trans 'Dashboard' %}
             </a>
         </li>
-        
 
         {% for item in items %}
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 {% if item.icon %}<i class="fa {{ item.icon }}"></i>{% endif %}
                 {{ item.name }}
-                <i class="fa fa-chevron-down pull-right"></i>
+                {% if item.children %}<i class="fa fa-chevron-down pull-right"></i>{% endif %}
             </a>
             
             {% if item.children %}
-                <i class="fa fa-chevron-down"></i>=
                 <ul class="dropdown-menu" role="menu">
                 {% for child in item.children %}
-                    <li>
+                    <li{% if request.path == child.path %} class="active"{% endif %}>
                         {% if child.url %}<a href="{% if not child.url_has_domain %}//{{ request.get_host }}/{% endif %}{{ child.url }}">{% endif %}
                             {{ child.name }}
                         {% if child.url %}</a>{% endif %}
@@ -32,5 +30,12 @@
             {% endif %}
         </li>
         {% endfor %}
+
+        <li{% if request.path == '/admin/all-apps' %} class="active"{% endif %}>
+            <a href="{% url 'admin:all_apps' %}">
+                <i class="fa fa-list"></i>
+                {% trans 'All applications list' %}
+            </a>
+        </li>
     </ul>
 </aside>

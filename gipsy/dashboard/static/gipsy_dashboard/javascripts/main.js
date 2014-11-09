@@ -54,9 +54,14 @@
                 }
 
             });
-            $(window).on('click', function () {
-                $('.dropdown a i.fa-chevron-up').removeClass('fa-chevron-up').addClass('fa-chevron-down');
-            });
+            
+            $('.dashboard-sidebar .dropdown-menu li').each(function(){
+                if ($(this).hasClass('active')) {
+                    var dropdown = $(this).closest('.dropdown');
+                    dropdown.find('.dropdown-toggle').trigger('click');
+                    dropdown.addClass('open active');
+                }
+            })
         },
         moduleToggle: function () {
             $('.panel-toggle').on('click', function (e) {

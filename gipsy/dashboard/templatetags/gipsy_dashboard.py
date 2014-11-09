@@ -14,3 +14,14 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
     context['items'] = GipsyDashboardMenu.objects.filter(parent__isnull=True)\
         .order_by('order')
     return context
+
+
+@register.inclusion_tag('tags/widgets/active_users.html')
+def dashboard_active_users(count=0, title="CURRENTLY ACTIVE USERS",
+                           label="CURRENT USERS"):
+    return {'count': count, 'title': title, 'label': label}
+
+
+@register.inclusion_tag('tags/widgets/item_list.html')
+def dashboard_item_list(items, title="MOST RECENT ITEMS"):
+    return {'items': items, 'title': title}

@@ -1,0 +1,24 @@
+{% load i18n %}
+
+{% if items %}
+<div class="panel panel-info">
+    <div class="panel-heading">{% trans title %}<a href="#" class="panel-toggle"><i class="fa fa-caret-up pull-right"></i></a></div>
+    <div class="panel-body">
+        <ul class="list list-lastupdate">
+            {% for item in items %}
+            <li class="list-item">
+                {% if item.date or item.author %}
+                <p class="item-author">
+                    {% if item.date %}{{ item.date|date:"Y-m-d" }}{% endif %}
+                    {% if item.date and item.author %} | {% endif %}
+                    {% if item.author %}{% trans 'by' %} {{ item.author }}{% endif %}
+                </p>
+                {% endif %}
+                {% if item.title %}<p class="item-title"><a href="{{ item.absolute_url }}">{{ item.title }}</a></p>{% endif %}
+                {% if item.description %}<p class="item-content">{{ item.description|safe|truncatewords:25 }}</p>{% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endif %}
