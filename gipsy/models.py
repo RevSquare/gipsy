@@ -20,9 +20,9 @@ class GipsyMenu(models.Model):
         return self.name
 
     @property
-    def children(self):
-        return GipsyMenu.objects.filter(parent=self.pk)
-
-    @property
     def url_has_domain(self):
         return self.url.startswith('http')
+
+    @property
+    def path(self):
+        return '/' + self.url
