@@ -1,5 +1,6 @@
 {% load i18n %}
 
+{% if user.is_active and user.is_staff %}
 <aside class="col-md-2 dashboard-sidebar">
     <ul class="nav nav-pills nav-stacked">
         <li{% if request.path == '/admin/' %} class="active"{% endif %}>
@@ -39,3 +40,4 @@
         </li>
     </ul>
 </aside>
+{% endif %}
