@@ -1,9 +1,11 @@
 from functools import update_wrapper
+
 from django.contrib import admin
 from django.contrib.admin.sites import AdminSite
+from django.contrib.auth.decorators import login_required
+from django.conf import settings
 from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
-from django.contrib.auth.decorators import login_required
 
 from ..admin import GipsyMenu, ChildrenInline
 from .models import GipsyDashboardMenu
@@ -40,5 +42,7 @@ class GipsyAdminSite(AdminSite):
         )
         return urlpatterns + default_urlpatterns
 
-admin.site = GipsyAdminSite(name='gipsy_admin')
+if not hasattr(settings, 'GIPSY_ENABLE_ADMINSITE') or \
+   settings.GIPSY_ENABLE_ADMINSITE is not False:
+    admin.site = GipsyAdminSite(name='gipsy_admin')
 admin.site.register(GipsyDashboardMenu, GipsyDashboardMenuAdmin)

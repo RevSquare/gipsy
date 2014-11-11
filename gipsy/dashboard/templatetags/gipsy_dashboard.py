@@ -1,6 +1,7 @@
 from django import template
 
 from gipsy.dashboard.models import GipsyDashboardMenu
+from gipsy.dashboard import settings
 
 
 register = template.Library()
@@ -13,6 +14,8 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
     """
     context['items'] = GipsyDashboardMenu.objects.filter(parent__isnull=True)\
         .order_by('order')
+    context['dashboard_url'] = settings.GIPSY_DASHBOARD_URL
+    context['vanilla_index_url'] = settings.GIPSY_VANILLA_INDEX_URL
     return context
 
 

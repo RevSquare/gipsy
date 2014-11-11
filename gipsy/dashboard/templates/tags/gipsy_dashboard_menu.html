@@ -4,7 +4,7 @@
 <aside class="col-md-2 dashboard-sidebar">
     <ul class="nav nav-pills nav-stacked">
         <li{% if request.path == '/admin/' %} class="active"{% endif %}>
-            <a href="{% url 'admin:index' %}">
+            <a href="{% url dashboard_url %}">
                 <i class="fa fa-tachometer"></i>
                 {% trans 'Dashboard' %}
             </a>
@@ -33,7 +33,7 @@
         {% endfor %}
 
         <li{% if request.path == '/admin/all-apps' %} class="active"{% endif %}>
-            <a href="{% url 'admin:all_apps' %}">
+            <a href="{% url vanilla_index_url %}">
                 <i class="fa fa-list"></i>
                 {% trans 'All applications list' %}
             </a>
