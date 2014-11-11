@@ -3,6 +3,7 @@ from django.contrib import admin
 from django.contrib.admin.sites import AdminSite
 from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
+from django.contrib.auth.decorators import login_required
 
 from ..admin import GipsyMenu, ChildrenInline
 from .models import GipsyDashboardMenu
@@ -30,7 +31,8 @@ class GipsyAdminSite(AdminSite):
         urlpatterns = patterns(
             '',
             url(r'^$',
-                TemplateView.as_view(template_name="admin/dashboard.html"),
+                login_required(TemplateView.
+                               as_view(template_name="admin/dashboard.html")),
                 name='index'),
             url(r'^all-apps$',
                 wrap(self.index),
