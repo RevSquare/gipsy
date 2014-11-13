@@ -14,7 +14,7 @@
                     {% if item.author %}{% trans 'by' %} {{ item.author }}{% endif %}
                 </p>
                 {% endif %}
-                {% if item.title %}<p class="item-title"><a href="{{ item.absolute_url }}">{{ item.title }}</a></p>{% endif %}
+                {% if item.title %}<p class="item-title"><a href="{{ item.get_absolute_url }}">{{ item.title }}</a></p>{% endif %}
                 {% if item.description %}<p class="item-content">{{ item.description|safe|truncatewords:25 }}</p>{% endif %}
             </li>
             {% endfor %}

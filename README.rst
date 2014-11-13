@@ -10,17 +10,17 @@ Install
 
 It is strongly recommanded to install this theme from GIT with PIP onto you project virtualenv.
 
-Add this line to your requirements.txt file:
+From PyPi
 
 .. code-block::  shell-session
 
-    -e git+https://github.com/RevSquare/gipsy#egg=gipsy
+    pip install django-gipsy
 
-And run:
+From Github
 
 .. code-block::  shell-session
 
-    pip install -r requirements.txt
+    https://github.com/RevSquare/gipsy#egg=gipsy
 
 
 *************
@@ -148,4 +148,17 @@ Then feel free to add you own widgets by copying the html of each templatetags. 
 
 
 
-Please feel free to contribute.
+Please feel free to contribute. Any help and advices are much appreciated.
+
+
+
+
+*****
+LINKS
+*****
+
+Development:
+    https://github.com/RevSquare/gipsy
+
+Package:
+    https://pypi.python.org/pypi/django-gipsy

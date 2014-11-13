@@ -1,11 +1,12 @@
 #! /usr/bin/env python
 from distutils.core import setup
+from setuptools import find_packages
 import sys
 reload(sys).setdefaultencoding('Utf-8')
 
 
 setup(
-    name='gipsy',
+    name='django-gipsy',
     version='0.0.1',
     author='Guillaume Pousseo',
     author_email='guillaumepousseo@revsquare.com',
@@ -14,18 +15,19 @@ setup(
     url='http://www.revsquare.com',
     license='BSD License',
     platforms=['OS Independent'],
-    packages=['gipsy'],
+    packages=find_packages(),
     include_package_data=True,
     classifiers=[
-        'Development Status :: 0.0.1 - Production/Stable',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Topic :: Software Development :: Libraries :: Python Modules',
-        'Topic :: Documentation',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
+        'Programming Language :: Python :: 2.7',
     ],
     install_requires=[
         'Django>=1.4',
