@@ -22,7 +22,6 @@ gipsy/dashboard/static/gipsy_dashboard/css/.gitkeep
 gipsy/dashboard/static/gipsy_dashboard/css/bootstrap.css
 gipsy/dashboard/static/gipsy_dashboard/css/custom.css
 gipsy/dashboard/static/gipsy_dashboard/css/gipsy.css
-gipsy/dashboard/static/gipsy_dashboard/css/gispy.css
 gipsy/dashboard/static/gipsy_dashboard/css/main.css
 gipsy/dashboard/static/gipsy_dashboard/css/bootstrap/bootstrap.css
 gipsy/dashboard/static/gipsy_dashboard/css/fontawesome/font-awesome.css
