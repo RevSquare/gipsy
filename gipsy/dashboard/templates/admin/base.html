@@ -82,7 +82,7 @@
         {% gipsy_toolbar %}
         <div id="grp-container" class="">
             <div class="row">
-                {% gipsy_dashboard_menu %}
+                {% if not is_popup %}{% gipsy_dashboard_menu %}{% endif %}
                 <div class="col-md-10">
                     <!-- CONTENT -->
                     <article id="grp-content" class="{% block content-class %}{% endblock %}">
