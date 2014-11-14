@@ -79,7 +79,7 @@
 </head>
 <body class="{% if is_popup %}grp-popup {% endif %}{% block bodyclass %}{% endblock %}{% if LANGUAGE_BIDI %} rtl{% endif %}">
     <div class="container">
-        {% gipsy_toolbar %}
+        {% if not is_popup %}{% gipsy_toolbar %}{% endif %}
         <div id="grp-container" class="">
             <div class="row">
                 {% if not is_popup %}{% gipsy_dashboard_menu %}{% endif %}
