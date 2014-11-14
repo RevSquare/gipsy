@@ -6,11 +6,6 @@
     <meta charset="utf-8" />
     {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE" />{% endblock %}
     <!-- STYLESHEETS -->
-    {% block stylesheets %}
-        <!-- Bootstrap core CSS -->
-        <link href="{{ STATIC_URL }}gipsy_dashboard/css/bootstrap.css" rel="stylesheet">
-        <link href="{{ STATIC_URL }}gipsy_dashboard/css/custom.css" rel="stylesheet">
-        <link href="{{ STATIC_URL }}gipsy_dashboard/css/main.css" rel="stylesheet">
         
         <link href="{% static "grappelli/jquery/ui/css/custom-theme/jquery-ui-1.10.3.custom.min.css" %}" rel="stylesheet" type="text/css" media="screen" />
         <link href="{% static "grappelli/stylesheets/screen.css" %}" rel="stylesheet" type="text/css" media="screen" />
@@ -21,6 +16,11 @@
             <link href="{% static "grappelli/stylesheets/mueller/grid/output.css" %}" rel="stylesheet" type="text/css" media="screen" />
         {% endif %}
         <link rel="stylesheet" href="{{ STATIC_URL }}gipsy_toolbar/css/gipsy_toolbar.css">
+        <!-- Bootstrap core CSS -->
+        <link href="{{ STATIC_URL }}gipsy_dashboard/css/bootstrap.css" rel="stylesheet">
+        <link href="{{ STATIC_URL }}gipsy_dashboard/css/custom.css" rel="stylesheet">
+        <link href="{% gipsy_theme %}" rel="stylesheet">
+    {% block stylesheets %}
 
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
         <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->

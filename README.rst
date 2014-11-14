@@ -134,7 +134,7 @@ You will then need to use your own url redirections and settings.
 
 Additionnaly you can define in the settings the url pattern you want to use for each of those pages:
 
-.. code-block::  shell
+.. code-block::  python
 
     GIPSY_DASHBOARD_URL = 'admin:index'
     GIPSY_VANILLA_INDEX_URL = 'admin:all_apps'
@@ -145,6 +145,18 @@ Widgets
 The philosophy behind the widget is flexibility. Gipsy Dashboard integrate a set of pre-written template tags. You can include those template tags by overwriting the gipsy.dashboard.templates.dashboard.html file. 
 
 Then feel free to add you own widgets by copying the html of each templatetags. Or you can use existing templatetags and fill them with appropriate objects.
+
+
+Themes
+======
+
+You can add your own stylesheet theme file to the admin by using the GIPSY_THEME constant in your settings.py.
+
+By default the theme is from grappelli. However it doesnt match the toolbar and left menu well. A more accurate theme is available but still under developpment so it might have some unstabilities. You can still use it by adding this command line in your settings.py:
+
+.. code-block::  python
+
+    GIPSY_THEME = STATIC_URL + 'gipsy_dashboard/css/gipsy.css'
 
 
 
