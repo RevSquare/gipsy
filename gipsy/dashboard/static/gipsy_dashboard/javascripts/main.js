@@ -17,7 +17,7 @@
                     backgroundColor: "#6098d1"
                 },
                 xAxis: {
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                    categories: TRAFFIC_CATEGORIES,
                     labels: {
                         style: {
                             color: "#abc4e6"
@@ -40,7 +40,7 @@
                 series: [{
                     name: 'Traffic',
                     color: '#fff',
-                    data: [70, 69, 95, 145, 182, 215, 252, 235]
+                    data: TRAFFIC_DATAS
                 }]
             });
         },

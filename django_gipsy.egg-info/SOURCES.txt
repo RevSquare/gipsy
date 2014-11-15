@@ -64,7 +64,9 @@ gipsy/dashboard/templates/admin/index.html
 gipsy/dashboard/templates/tags/gipsy_dashboard_menu.html
 gipsy/dashboard/templates/tags/widgets/active_users.html
 gipsy/dashboard/templates/tags/widgets/at_a_glance.html
+gipsy/dashboard/templates/tags/widgets/daily_visitors.html
 gipsy/dashboard/templates/tags/widgets/item_list.html
+gipsy/dashboard/templates/tags/widgets/traffic_overview.html
 gipsy/dashboard/templatetags/__init__.py
 gipsy/dashboard/templatetags/gipsy_dashboard.py
 gipsy/toolbar/__init__.py
