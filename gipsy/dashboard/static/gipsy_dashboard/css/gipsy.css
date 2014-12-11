@@ -580,27 +580,28 @@ body.grp-change-list table tr.grp-selected th, body.grp-change-list table tr.grp
 }
 /* line 532, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .grp-module h2 {
-  display: none;
+  background-color: white;
+  color: #5995cf;
 }
-/* line 536, ../../../assets/stylesheets/gipsy.scss */
+/* line 537, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .selector .selector-available h2, .ui-tabs .selector .selector-chosen h2 {
   display: block;
 }
 
-/* line 541, ../../../assets/stylesheets/gipsy.scss */
+/* line 542, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 546, ../../../assets/stylesheets/gipsy.scss */
+/* line 547, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel .col1 .vXMLLargeTextField,
 .ui-tabs .ui-tabs-panel .col1 .vLargeTextField {
   width: 100%;
 }
 
-/* line 551, ../../../assets/stylesheets/gipsy.scss */
+/* line 552, ../../../assets/stylesheets/gipsy.scss */
 table tbody tr.grp-row-even td,
 table tbody tr.grp-row-even th,
 table tbody tr.grp-alt td,
@@ -609,7 +610,7 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
   background-color: #fff;
 }
 
-/* line 559, ../../../assets/stylesheets/gipsy.scss */
+/* line 560, ../../../assets/stylesheets/gipsy.scss */
 .grp-object-tools li a, .grp-pagination ul li span {
   background-color: #6098d1;
   background-image: none;
@@ -617,57 +618,57 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
   opacity: 1;
 }
 
-/* line 566, ../../../assets/stylesheets/gipsy.scss */
+/* line 567, ../../../assets/stylesheets/gipsy.scss */
 fieldset.grp-module .grp-row label {
   color: #2e3641;
 }
 
-/* line 570, ../../../assets/stylesheets/gipsy.scss */
+/* line 571, ../../../assets/stylesheets/gipsy.scss */
 .g-d-doublepull12, .l-2cr-fluid.l-d-12 .c-1 {
   margin-left: 350px !important;
   position: absolute;
 }
 
-/* line 575, ../../../assets/stylesheets/gipsy.scss */
+/* line 576, ../../../assets/stylesheets/gipsy.scss */
 .button-state-grey, button:hover, a.fb_show:hover, a.related-lookup:hover, body.tinyMCE input[name="src"] + div a:hover, body.tinyMCE input[name="href"] + div a:hover, input[type="button"]:hover, a.related-lookup.m2m:hover, .grp-autocomplete-wrapper-m2m a.related-lookup:hover, .grp-autocomplete-wrapper-fk a.related-lookup:hover, button.ui-datepicker-trigger:hover, button.ui-timepicker-trigger:hover, button.ui-datetime-now:hover, .grp-pulldown-container .grp-pulldown-handler, .grp-pulldown-container .grp-pulldown-content, .grp-pulldown-container .grp-pulldown-content:hover, .button-state-blue, button, a.fb_show, a.related-lookup, body.tinyMCE input[name="src"] + div a, body.tinyMCE input[name="href"] + div a, input[type="button"], a.related-lookup.m2m, .grp-autocomplete-wrapper-m2m a.related-lookup, .grp-autocomplete-wrapper-fk a.related-lookup, button.ui-datepicker-trigger, button.ui-timepicker-trigger, button.ui-datetime-now, .grp-pulldown-container .grp-pulldown-handler:hover, .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler, .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler:hover {
   background-color: #fff;
 }
 
 @media (max-width: 1200px) {
-  /* line 580, ../../../assets/stylesheets/gipsy.scss */
+  /* line 581, ../../../assets/stylesheets/gipsy.scss */
   .dashboard-sidebar {
     font-size: 90%;
   }
 
-  /* line 583, ../../../assets/stylesheets/gipsy.scss */
+  /* line 584, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .navbar-brand {
     padding: 12px 0 0;
   }
 }
 @media (max-width: 992px) {
-  /* line 589, ../../../assets/stylesheets/gipsy.scss */
+  /* line 590, ../../../assets/stylesheets/gipsy.scss */
   .navbar-nav {
     font-size: 78%;
   }
 }
 @media (min-width: 769px) {
-  /* line 596, ../../../assets/stylesheets/gipsy.scss */
+  /* line 597, ../../../assets/stylesheets/gipsy.scss */
   .profile-dropdown .navbar-nav {
     float: right;
   }
 }
 @media (max-width: 768px) {
-  /* line 603, ../../../assets/stylesheets/gipsy.scss */
+  /* line 604, ../../../assets/stylesheets/gipsy.scss */
   .navbar-nav {
     margin: 0;
   }
 
-  /* line 606, ../../../assets/stylesheets/gipsy.scss */
+  /* line 607, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .row .col-xs-12:first-child {
     background: #fff;
   }
 
-  /* line 609, ../../../assets/stylesheets/gipsy.scss */
+  /* line 610, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .navbar-brand {
     padding: 8px 0 0;
   }
