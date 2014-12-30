@@ -32,12 +32,15 @@ class GipsyAdminSite(AdminSite):
 
         urlpatterns = patterns(
             '',
-            url(r'^$', wrap(TemplateView.as_view(
-                template_name="admin/dashboard.html")), name='index'),
-            url(r'^all-apps$', wrap(self.index), name='all_apps')
+            url(r'^$',
+                login_required(TemplateView.
+                               as_view(template_name="admin/dashboard.html")),
+                name='index'),
+            url(r'^all-apps$',
+                wrap(self.index),
+                name='all_apps')
         )
         return urlpatterns + default_urlpatterns
-    pass
 
 if not hasattr(settings, 'GIPSY_ENABLE_ADMINSITE') or \
    settings.GIPSY_ENABLE_ADMINSITE is not False:

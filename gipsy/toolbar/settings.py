@@ -17,4 +17,9 @@ LINK_CONTEXT_NAME = getattr(
 # GIPSY_TOOLBAR_LINK_INCLUDED_MODELS = ('auth.User',)
 
 LINK_INCLUDED_MODELS = getattr(settings, 'GIPSY_TOOLBAR_LINK_INCLUDED_MODELS',
-    None)
+                               None)
+
+VERSION_INDICATOR = getattr(settings, 'GIPSY_VERSION_INDICATOR', None)
+# options are nav, user
+VERSION_INDICATOR_LOCATION = getattr(settings,
+                                     'GIPSY_VERSION_INDICATOR_LOCATION', 'nav')

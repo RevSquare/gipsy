@@ -17,6 +17,7 @@
                     {% elif has_absolute_url %}
                         <li class="nav__item"><a href="{% url 'admin:view_on_site' content_type_id original.pk %}">{% trans "View on site" %}</a></li>
                     {% endif %}
+                    {% gipsy_version_indicator 'nav' css_classes="nav__item" %}
                 </ul>
                 
                 <ul class="gipsy_toolbar__menu">
@@ -43,6 +44,7 @@
                 </ul>
                 
                 <ul class="gipsy_toolbar__user">
+                    {% gipsy_version_indicator 'user' css_classes="user__item" %}
                     <li class="user__item">
                         <a href="#">{% firstof user.get_short_name user.get_username %} <i class="fa fa-chevron-down"></i></a>
                         

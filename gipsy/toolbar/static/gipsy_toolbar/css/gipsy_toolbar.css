@@ -41,7 +41,9 @@
     padding: 0;
     list-style: none;
 }
-.gipsy_toolbar__nav .nav__item {
+.gipsy_toolbar__nav .nav__item,
+.gipsy_toolbar__user .user__item,
+.gipsy_toolbar__version-indicator {
     position: relative;
     float: left;
     height: 40px;
@@ -55,6 +57,17 @@
     line-height: 40px;
     text-decoration: none;
     color: #6098d1;
+}
+.gipsy_toolbar__version-indicator > span {
+    position: relative;
+    display: block;
+    height: 100%;
+    line-height: 20px;
+    padding: 11px 0 0 0;
+    text-decoration: none;
+    font-size: 12px;
+    cursor: default;
+    color: #999999;
 }
 .gipsy_toolbar__nav .nav__item a:hover {
     text-decoration: underline;

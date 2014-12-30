@@ -1,0 +1,12 @@
+{% load i18n %}
+
+<script>
+    var TRAFFIC_CATEGORIES = [{% for month in monthes %}'{{ month }}'{% if not forloop.last %},{% endif %}{% endfor %}]
+    var TRAFFIC_DATAS = [{% for result in results %}{{ result }}{% if not forloop.last %},{% endif %}{% endfor %}]
+</script>
+
+<div class="panel traffic-overview">
+    <div class="panel-heading">OUR TRAFFIC OVERVIEW</div>
+    <div class="panel-body">
+    </div>
+</div>
