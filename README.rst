@@ -185,7 +185,17 @@ or:
 
 .. code-block::  python
 
-    GIPSY_VERSION_INDICATOR = (git_current_branch(), git_current_sha1())
+    def get_git_version():
+        import subprocess
+
+        def call(cmd):
+            return subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0]
+
+        describe = call(['git', 'describe'])
+        branch = call(['git', 'rev-parse', '--abbrev-ref', 'HEAD'])
+        return describe, branch
+
+    GIPSY_VERSION_INDICATOR = get_git_version()
 
 You can choose indicator position by specifying `GIPSY_VERSION_INDICATOR_LOCATION`. Choices are `'nav'`, `'menu'`. By default its `'nav'`.
 
