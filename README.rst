@@ -189,10 +189,12 @@ or:
         import subprocess
 
         def call(cmd):
-            return subprocess.Popen(cmd, stdout=subprocess.PIPE).communicate()[0]
+            return subprocess.Popen(cmd, stdout=subprocess.PIPE, cwd=BASE_DIR).communicate()[0]
 
         describe = call(['git', 'describe'])
         branch = call(['git', 'rev-parse', '--abbrev-ref', 'HEAD'])
+        if branch == 'master':
+            return describe, branch
         return describe, branch
 
     GIPSY_VERSION_INDICATOR = get_git_version()
