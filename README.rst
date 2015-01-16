@@ -193,8 +193,9 @@ or:
 
         describe = call(['git', 'describe'])
         branch = call(['git', 'rev-parse', '--abbrev-ref', 'HEAD'])
-        if branch == 'master':
-            return describe, branch
+        sha = call(['git', 'rev-parse', '--short', 'HEAD'])
+        if branch.strip() == 'master':
+            return describe, sha
         return branch, describe
 
     GIPSY_VERSION_INDICATOR = get_git_version()
