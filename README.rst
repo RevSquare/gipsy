@@ -171,7 +171,7 @@ Sometimes version information is be very useful. When knowing current version yo
 
 .. code-block::  python
 
-    GYPSY_VERSION_INDICATOR = (‘v1.0’, ’ fdb25bb85bdd047689d5845bbc15cdac94d3c9de’).
+    GIPSY_VERSION_INDICATOR = (‘v1.0’, ’ fdb25bb85bdd047689d5845bbc15cdac94d3c9de’).
 
 You can setup this value by any method you want, you might want to populate it automatically during deploy or get it from file or git or hg.
 
