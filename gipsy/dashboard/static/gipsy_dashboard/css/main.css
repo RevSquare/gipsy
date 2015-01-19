@@ -189,7 +189,7 @@ body {
   margin-right: -9px;
   width: 18px;
   height: 18px;
-  background: url(../gipsy_dashboard/img/bg_body-01.jpg);
+  background: url(../img/bg_body-01.jpg);
 }
 /* line 175, ../../../assets/stylesheets/main.scss */
 .dashboard-sidebar .nav > li.active:after {
