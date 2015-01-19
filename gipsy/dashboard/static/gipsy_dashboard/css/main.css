@@ -8,7 +8,6 @@ body {
   position: relative;
   min-height: 100%;
   padding-bottom: 90px;
-  background-image: url(../img/bg_body-01.jpg);
 }
 
 /* line 12, ../../../assets/stylesheets/main.scss */
@@ -29,7 +28,6 @@ body {
   display: inline-block;
   width: 78px;
   height: 69px;
-  background: url(../img/ico_revsquarelogo-01.png);
   text-indent: -998em;
 }
 /* line 30, ../../../assets/stylesheets/main.scss */
@@ -191,7 +189,7 @@ body {
   margin-right: -9px;
   width: 18px;
   height: 18px;
-  background: url(../img/bg_body-01.jpg);
+  background: url(../gipsy_dashboard/img/bg_body-01.jpg);
 }
 /* line 175, ../../../assets/stylesheets/main.scss */
 .dashboard-sidebar .nav > li.active:after {
@@ -432,4 +430,42 @@ body {
   .navbar-top .navbar-brand {
     padding: 8px 0 0;
   }
+}
+
+
+/* Fixes for bootstrap.css (At some point should be
+ moved to gipsy as it's just not working good with
+ django 1.7 and new grappelli */
+
+.collapse {
+    display: block;
+}
+
+h2, h3 {
+    font-weight: bold;
+    padding: 0;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.grp-line-height-l, h2, h3 {
+    line-height: 18px;
+}
+
+.grp-font-size-l, h2, h3 {
+    font-size: 13px;
+}
+
+.g-d-12, .l-2cr-fluid.l-d-12 .c-1 {
+    float: left;
+    margin-right: 20px;
+    width: 600px;
+}
+
+button, input, optgroup, select, textarea{
+    margin: 0 0 0 -25px;
+}
+
+.gipsy_toolbar__version-indicator{
+    padding-left: 10px;
 }
