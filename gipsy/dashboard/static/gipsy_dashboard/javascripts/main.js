@@ -8,7 +8,7 @@
             this.liveReload();
             this.moduleToggle();
             this.dropdownArrowToggler();
-            this.drawChart();
+            //this.drawChart();
         },
         drawChart: function () {
             $('.traffic-overview .panel-body').highcharts({
