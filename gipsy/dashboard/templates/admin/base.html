@@ -15,11 +15,12 @@
         {% else %}
             <link href="{% static "grappelli/stylesheets/mueller/grid/output.css" %}" rel="stylesheet" type="text/css" media="screen" />
         {% endif %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}gipsy_toolbar/css/gipsy_toolbar.css">
+        <link rel="stylesheet" href="{% static "gipsy_toolbar/css/gipsy_toolbar.css" %}">
         <!-- Bootstrap core CSS -->
-        <link href="{{ STATIC_URL }}gipsy_dashboard/css/bootstrap.css" rel="stylesheet">
-        <link href="{{ STATIC_URL }}gipsy_dashboard/css/custom.css" rel="stylesheet">
+        <link href="{% static "gipsy_dashboard/css/bootstrap.css" %}" rel="stylesheet">
+        <link href="{% static "gipsy_dashboard/css/custom.css" %}" rel="stylesheet">
         <link href="{% gipsy_theme %}" rel="stylesheet">
+
     {% block stylesheets %}
 
         <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
