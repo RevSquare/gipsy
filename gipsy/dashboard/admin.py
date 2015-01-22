@@ -2,7 +2,6 @@ from functools import update_wrapper
 
 from django.contrib import admin
 from django.contrib.admin.sites import AdminSite
-from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
@@ -32,10 +31,8 @@ class GipsyAdminSite(AdminSite):
 
         urlpatterns = patterns(
             '',
-            url(r'^$',
-                login_required(TemplateView.
-                               as_view(template_name="admin/dashboard.html")),
-                name='index'),
+            url(r'^$', wrap(TemplateView.as_view(
+                template_name="admin/dashboard.html")), name='index'),
             url(r'^all-apps$',
                 wrap(self.index),
                 name='all_apps')

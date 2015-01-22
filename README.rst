@@ -159,10 +159,62 @@ By default the theme is from grappelli. However it doesnt match the toolbar and 
     GIPSY_THEME = STATIC_URL + 'gipsy_dashboard/css/gipsy.css'
 
 
+Version indicator
+=================
+
+
+Sometimes version information is be very useful. When knowing current version you are able to tell in ticket on which version bug appears. Also it will be easy to check if this is regression (bug reapeared on present version, is not reproductible on prod which has different version). 
+
+.. code-block::  python
+
+    GIPSY_VERSION_INDICATOR = ('<version display info>', '<version hover info>')
+
+.. code-block::  python
+
+    GIPSY_VERSION_INDICATOR = (‘v1.0’, ’ fdb25bb85bdd047689d5845bbc15cdac94d3c9de’).
+
+You can setup this value by any method you want, you might want to populate it automatically during deploy or get it from file or git or hg.
+
+For example:
+
+.. code-block::  python
+
+    GIPSY_VERSION_INDICATOR = open('path/to/version.txt').read().rsplit(',', 1)
+
+or:
+
+.. code-block::  python
+
+    def get_git_version():
+        import subprocess
+
+        def call(cmd):
+            return subprocess.Popen(cmd, stdout=subprocess.PIPE, cwd=BASE_DIR).communicate()[0]
+
+        describe = call(['git', 'describe'])
+        branch = call(['git', 'rev-parse', '--abbrev-ref', 'HEAD'])
+        sha = call(['git', 'rev-parse', '--short', 'HEAD'])
+        if branch.strip() == 'master':
+            return describe, sha
+        return branch, describe
+
+    GIPSY_VERSION_INDICATOR = get_git_version()
+
+You can choose indicator position by specifying `GIPSY_VERSION_INDICATOR_LOCATION`. Choices are `'nav'`, `'menu'`. By default its `'nav'`.
+
+Example:
+
+.. code-block::  python
+
+    GIPSY_VERSION_INDICATOR_LOCATION = 'nav'
+
+
+************
+Contribution
+************
+
 
 Please feel free to contribute. Any help and advices are much appreciated.
-
-
 
 
 *****
