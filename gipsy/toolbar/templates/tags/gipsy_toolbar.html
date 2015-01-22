@@ -11,12 +11,7 @@
                 <ul class="gipsy_toolbar__nav">
                     <li class="nav__item{% if not is_admin %} nav__item__active{% endif %}"><a href="/">{% trans 'Visit site' %}</a></li>
                     <li class="nav__item{% if is_admin %} nav__item__active{% endif %}"><a href="{% url 'admin:index' %}">{% trans 'Dashboard' %}</a></li>
-                    {% gipsy_toolbar_link as obj_admin_link %}
-                    {% if obj_admin_link %}
-                        <li class="nav__item"><a href="{{ obj_admin_link }}">{% trans 'Edit' %}</a></li>
-                    {% elif has_absolute_url %}
-                        <li class="nav__item"><a href="{% url 'admin:view_on_site' content_type_id original.pk %}">{% trans "View on site" %}</a></li>
-                    {% endif %}
+                    
                     {% gipsy_version_indicator 'nav' css_classes="nav__item" %}
                 </ul>
                 
@@ -58,6 +53,13 @@
                         </ul>
                     </li>
                 </ul>
+                
+                {% gipsy_toolbar_link as obj_admin_link %}
+                {% if obj_admin_link %}
+                    <a class="gipsy_toolbar__button" href="{{ obj_admin_link }}">{% trans 'Edit' %}</a>
+                {% elif has_absolute_url %}
+                    <a class="gipsy_toolbar__button" href="{% url 'admin:view_on_site' content_type_id original.pk %}">{% trans "View on site" %}</a>
+                {% endif %}
             </div>
         </div>
     </div>

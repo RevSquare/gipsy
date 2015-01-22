@@ -151,6 +151,18 @@
     text-decoration: none;
     color: #262626;
 }
+.gipsy_toolbar a.gipsy_toolbar__button {
+    background-color: #6098d1;
+    border: 1px solid #fff;
+    color: #fff;
+    display: block;
+    float: right;
+    margin-top: 6px;
+    padding: 5px 10px;
+}
+.gipsy_toolbar a.gipsy_toolbar__button:hover {
+    text-decoration: none;
+}
 .gipsy_toolbar__user {
     float: right;
 }
@@ -175,5 +187,6 @@
 }
 .gipsy-user-sub .user__sub-item > a:hover {
     background: #2e3641;
+    text-decoration: none;
 }
         
