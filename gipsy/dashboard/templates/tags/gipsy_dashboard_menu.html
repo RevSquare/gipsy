@@ -11,7 +11,7 @@
         </li>
 
         {% for item in items %}
-        <li class="dropdown">
+        <li class="dropdown{% if item.pk == active.parent.pk %} open active{% endif %}">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 {% if item.icon %}<i class="fa {{ item.icon }}"></i>{% endif %}
                 {{ item.name }}

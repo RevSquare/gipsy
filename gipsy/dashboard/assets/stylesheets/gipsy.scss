@@ -188,6 +188,10 @@ a:focus {
                     height: 10px;
                     background: #6098d1;
                 }
+                
+                .fa.pull-right {
+                    color: #5995cf;
+                }
             }
         }
     }
@@ -195,7 +199,7 @@ a:focus {
         font-size: 17px;
     }
     .fa.pull-right {
-        color: #5995cf;
+        color: #ffffff;
         font-size: 16px;
     }
     &:after {

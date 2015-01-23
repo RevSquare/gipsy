@@ -15,6 +15,11 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
     """
     context['items'] = GipsyDashboardMenu.objects.filter(parent__isnull=True)\
         .order_by('order')
+    context['active'] = None
+    if context['request'].path:
+        active = GipsyDashboardMenu.objects.filter(url=context['request'].path[1:])[:1]
+    if len(active):
+        context['active'] = active[0]
     context['dashboard_url'] = GIPSY_DASHBOARD_URL
     context['vanilla_index_url'] = GIPSY_VANILLA_INDEX_URL
     return context
