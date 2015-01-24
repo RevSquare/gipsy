@@ -1,3 +1,0 @@
-The primary author of gipsy_tools is Guillaume Pousseo 
-
-email: guillaumepousseo@revsquare.com
