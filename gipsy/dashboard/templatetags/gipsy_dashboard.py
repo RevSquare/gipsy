@@ -1,4 +1,5 @@
 from django import template
+from django.db.models import Q
 
 from gipsy.dashboard.models import GipsyDashboardMenu
 from gipsy.dashboard.settings import GIPSY_DASHBOARD_URL,\
@@ -17,7 +18,9 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
         .order_by('order')
     context['active'] = None
     if context['request'].path:
-        active = GipsyDashboardMenu.objects.filter(url=context['request'].path[1:])[:1]
+        request_formated = context['request'].path[1:]
+        active = GipsyDashboardMenu.objects\
+            .filter(Q(url=request_formated) | Q(url=request_formated[:-1]))[:1]
     if len(active):
         context['active'] = active[0]
     context['dashboard_url'] = GIPSY_DASHBOARD_URL
