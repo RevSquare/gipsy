@@ -5,7 +5,6 @@
         $body: null,
         init: function () {
             this.$body = $('body');
-            this.liveReload();
             this.moduleToggle();
             this.dropdownArrowToggler();
             //this.drawChart();
@@ -54,14 +53,6 @@
                 }
 
             });
-            
-            $('.dashboard-sidebar .dropdown-menu li').each(function(){
-                if ($(this).hasClass('active')) {
-                    var dropdown = $(this).closest('.dropdown');
-                    dropdown.find('.dropdown-toggle').trigger('click');
-                    dropdown.addClass('open active');
-                }
-            })
         },
         moduleToggle: function () {
             $('.panel-toggle').on('click', function (e) {
@@ -75,12 +66,10 @@
                     }
                 });
             });
-        },
-        liveReload: function () {
-            if (window.location.hostname === 'localhost') {
-                this.$body.append('<script src="//localhost:9000/livereload.js"></script>');
-            }
-        },
+            $('.dropdown-menu > li > a').on('click', function (e) {
+                e.stopPropagation();
+            });
+        }
     };
     $(document).on('ready', function () {
         window.REVSQUARE.init();
