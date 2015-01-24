@@ -18,7 +18,7 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
         .order_by('order')
     context['active'] = None
     if context['request'].path:
-        request_formated = context['request'].path[1:]
+        request_formated = context['request'].get_full_path()[1:]
         active = GipsyDashboardMenu.objects\
             .filter(Q(url=request_formated) | Q(url=request_formated[:-1]))[:1]
     if len(active):
