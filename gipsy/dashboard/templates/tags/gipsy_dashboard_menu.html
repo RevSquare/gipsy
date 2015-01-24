@@ -21,7 +21,7 @@
             {% if item.children %}
                 <ul class="dropdown-menu" role="menu">
                 {% for child in item.children %}
-                    <li{% if request.path == child.path %} class="active"{% endif %}>
+                    <li{% if active.pk == child.pk %} class="active"{% endif %}>
                         {% if child.url %}<a href="{% if not child.url_has_domain %}//{{ request.get_host }}/{% endif %}{{ child.url }}">{% endif %}
                             {{ child.name }}
                         {% if child.url %}</a>{% endif %}
