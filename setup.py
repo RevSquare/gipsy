@@ -7,7 +7,7 @@ reload(sys).setdefaultencoding('Utf-8')
 
 setup(
     name='django-gipsy',
-    version='0.0.8',
+    version='0.0.9',
     author='Guillaume Pousseo',
     author_email='guillaumepousseo@revsquare.com',
     description='A set of fancy tools for django.',
@@ -30,6 +30,6 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
     install_requires=[
-        'Django>=1.4',
+        'Django>=1.6',
     ],
 )

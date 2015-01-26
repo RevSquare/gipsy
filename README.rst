@@ -2,7 +2,7 @@
 Gipsy
 #####
 
-Set of libraries used for the gipsy project.
+Set of libraries used for the gipsy project. Those librairies are only compatible with django >= 1.6.
 
 *******
 Install

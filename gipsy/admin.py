@@ -11,7 +11,7 @@ class GipsyMenu(admin.ModelAdmin):
     list_display = ['name', 'order']
     ordering = ['order']
 
-    def queryset(self, request):
+    def get_queryset(self, request):
         """Overrides default queryset to only display parent items"""
-        query = super(GipsyMenu, self).queryset(request)
+        query = super(GipsyMenu, self).get_queryset(request)
         return query.filter(parent__isnull=True)
