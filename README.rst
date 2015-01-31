@@ -237,6 +237,7 @@ I recommand to start by using the shell to gain the access and generate the anal
 Then
     
 .. code-block::  shell
+
     from gipsy.dashboard.services.google_analytics_connector import GoogleAnalyticsConnector
     GoogleAnalyticsConnector().start_service().query(start_date='2015-01-01', end_date='2015-01-01', metrics='ga:pageviews').execute()
 
