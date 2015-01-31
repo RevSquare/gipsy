@@ -3,6 +3,13 @@ from gipsy.dashboard.widgets import widgets, widgets_google_analytics
 
 
 class DashboardDefault(Dashboard):
+    """
+    Defaut and exemple class for dashboards using google analytics specific widgets.
+    This class simply uses a render method where widgets are added. The widgets property is a list
+    that can be appended as follow.
+    The google analytics widgets are plug and play but of course feel free to overwrite them.
+    Read the documentation for more information on how to setup google analytics on yourapplication.
+    """
     def render(self):
         # metrics evolution
         self.widgets.append(widgets_google_analytics.WidgetGAPageViewsEvolution())

@@ -8,6 +8,12 @@ from django.conf import settings
 
 
 class GoogleAnalyticsConnector(object):
+    """
+    Connector class for the google API. This is a very implementation using
+    the method described in http://blog.iambob.me/accessing-google-analytics-from-django/
+    and in the official API documentation
+    https://developers.google.com/analytics/solutions/articles/hello-analytics-api
+    """
     CLIENT_SECRETS = settings.GOOGLE_ANALYTICS_CLIENT_SECRETS
     VIEW_ID = settings.GOOGLE_ANALYTICS_VIEW_ID
     TOKEN_FILE_NAME = settings.GOOGLE_ANALYTICS_TOKEN_FILE_NAME

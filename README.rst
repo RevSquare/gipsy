@@ -158,6 +158,18 @@ By default the theme is from grappelli. However it doesnt match the toolbar and 
 
     GIPSY_THEME = STATIC_URL + 'gipsy_dashboard/css/gipsy.css'
 
+Dashboard
+=========
+
+The dashboard system is greatly inspired from the awesome Grappelli library. In order to setup your dashboard, you will need to create a setting class and let your django settings know about it.
+
+For exemple:
+
+.. code-block::  python
+
+    GIPSY_DASHBOARD = 'gipsy.dashboard.presets.default.DashboardDefault'
+
+
 
 Version indicator
 =================

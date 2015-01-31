@@ -3,6 +3,11 @@ from gipsy.dashboard.widgets import widgets
 
 
 class DashboardDefault(Dashboard):
+    """
+    Defaut and static content class for dashboards.
+    This class simply uses a render method where widgets are added. The widgets property is a list
+    that can be appended as follow.
+    """
     def render(self):
         # metrics evolution
         self.widgets.append(widgets.WidgetMetricsEvolution(
