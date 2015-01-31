@@ -161,7 +161,7 @@ By default the theme is from grappelli. However it doesnt match the toolbar and 
 Dashboard
 =========
 
-The dashboard system is greatly inspired from the awesome Grappelli library. In order to setup your dashboard, you will need to create a setting class and let your django settings know about it.
+The dashboard system is greatly inspired from the awesome Grappelli library. In order to setup your dashboard, you will need to create a setting class and let your django settings know about it by setting up the settings.GIPSY_DASHBOARD constant.
 
 For exemple:
 
@@ -169,6 +169,78 @@ For exemple:
 
     GIPSY_DASHBOARD = 'gipsy.dashboard.presets.default.DashboardDefault'
 
+In your class you will just need to create a render method and declare each element of it by appending its widgets property list. You can find exemple of widgets in:
+
+* gipsy.dashboard.widgets.widgets
+* gipsy.dashboard.widgets.widgets_google_analytics
+
+For information you can find exemple of implementation of this class in:
+
+* gipsy.dashboard.presets.defaut
+* gipsy.dashboard.presets.google_analytics
+
+An exemple of implementing this class would be:
+
+.. code-block::  python
+
+    from gipsy.dashboard.dashboard import Dashboard
+    from gipsy.dashboard.widgets import widgets, widgets_google_analytics
+
+
+    class DashboardDefault(Dashboard):
+        def render(self):
+            # metrics evolution
+            self.widgets.append(widgets_google_analytics.WidgetGAPageViewsEvolution())
+
+            # metrics evolution
+            self.widgets.append(widgets_google_analytics.WidgetGASessionsEvolution())
+
+            # metrics single
+            self.widgets.append(widgets.WidgetMetricsSingle(
+                title='currently active users',
+                label='active users',
+                count=2564,
+            ))
+
+            # line chart
+            self.widgets.append(widgets_google_analytics.WidgetGALineChart())
+
+            # metrics list
+            self.widgets.append(widgets.WidgetMetricsList(items=[
+                {'icon': 'fa-file-image-o', 'label': 'posts', 'value': 75},
+                {'icon': 'fa-comment-o', 'label': 'comments', 'value': 192},
+                {'icon': 'fa-files-o', 'label': 'pages', 'value': 12},
+                {'icon': 'fa-flag-o', 'label': 'in moderation', 'value': 4},
+            ]))
+
+            # model list
+            self.widgets.append(widgets.WidgetModelList(items={}))
+
+            # admin logs
+            self.widgets.append(widgets.WidgetAdminLog())
+
+You can very easily add google analytics to your dashboard by using the widgets stored in gipsy.dashboard.widgets.widgets_google_analytics
+Most of the difficulty will be to integrate the API credentials. In order to do so, you will need to follow the steps described in the google API tutorial https://developers.google.com/analytics/solutions/articles/hello-analytics-api#environment. There is also a very nice tutorial here: http://blog.iambob.me/accessing-google-analytics-from-django/
+
+Once you have completed those steps, you will need to add setup the following constants in your settings:
+
+* GOOGLE_ANALYTICS_CLIENT_SECRETS = '/location/of/your/client_secret.json'
+* GOOGLE_ANALYTICS_TOKEN_FILE_NAME = '/location/of/your/analytics.dat'
+* GOOGLE_ANALYTICS_VIEW_ID = 'your_view_id'
+
+I recommand to start by using the shell to gain the access and generate the analytics.dat file.
+
+.. code-block::  shell
+
+    python manage.py shell
+    
+Then
+    
+.. code-block::  shell
+    from gipsy.dashboard.services.google_analytics_connector import GoogleAnalyticsConnector
+    GoogleAnalyticsConnector().start_service().query(start_date='2015-01-01', end_date='2015-01-01', metrics='ga:pageviews').execute()
+
+You should be prompted with a link to go to to grant the access. By going on the link with your browser you will get a key to enter in the shell.
 
 
 Version indicator
