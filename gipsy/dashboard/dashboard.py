@@ -1,5 +1,5 @@
 from django import forms
-from django.conf import settings
+from gipsy.dashboard.settings import GIPSY_DASHBOARD_HAS_ROWS, GIPSY_DASHBOARD_DEFAULT_GRID
 
 
 class Dashboard(object):
