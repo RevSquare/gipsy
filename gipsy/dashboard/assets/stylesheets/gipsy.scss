@@ -227,6 +227,7 @@ a:focus {
     .panel-heading {
         color: #fff;
         border-bottom: 1px solid #fff;
+        text-transform: uppercase;
     }
     .panel-body {
         height: 319px;
@@ -342,6 +343,7 @@ a:focus {
         position: relative;
         padding: 15px;
         font-size: 15px;
+        text-transform: uppercase;
         a {
             position: absolute;
             top: 0px;

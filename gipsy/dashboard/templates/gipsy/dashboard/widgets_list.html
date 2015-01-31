@@ -1,0 +1,5 @@
+{% load gipsy_dashboard %}
+
+{% for widget in widgets %}
+    {% gipsy_dashboard_widget widget forloop.counter %}
+{% endfor %}

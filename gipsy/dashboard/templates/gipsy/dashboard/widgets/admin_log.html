@@ -1,0 +1,32 @@
+{% load i18n log %}
+
+<div class="panel panel-info">
+    <div class="panel-heading">{% trans widget.title %} <a href="#" class="panel-toggle"><i class="fa fa-caret-up pull-right"></i></a></div>
+    <div class="panel-body">
+        <ul class="list list-mostviewed">
+        {% get_admin_log 5 as admin_log %}
+        {% if not admin_log %}
+            <li class="list-item"><p>{% trans 'None available' %}</p></li>
+        {% else %}
+            {% for entry in admin_log %}
+                <li class="list-item">
+                    <p class="item-author">{{ entry.action_time }} | {% trans 'By' %} {{ entry.user }}</p>
+                    <p class="item-title">
+                    {% if entry.is_deletion %}
+                        <span>{{ entry.object_repr }}</span>
+                    {% else %}
+                        <a href="{{ entry.get_admin_url }}">{{ entry.object_repr }}</a>
+                    {% endif %}
+                    </p>
+                    <p class="item-content">
+                        {% filter capfirst %}{% trans entry.content_type.name %}{% endfilter %}
+                        {% if entry.is_addition %}{% trans 'entry added' %}{% endif %}
+                        {% if entry.is_change %}{% trans 'entry updated' %}{% endif %}
+                        {% if entry.is_deletion %}{% trans 'entry deleted' %}{% endif %}
+                    </p>
+                </li>
+            {% endfor %}
+        {% endif %}
+        </ul>
+    </div>
+</div>

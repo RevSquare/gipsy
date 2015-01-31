@@ -1,0 +1,17 @@
+<div class="panel panel-default glance-panel">
+    <div class="panel-heading">
+        {{ widget.title }}
+        {% comment %}
+        <a href="#" class="pull-right">
+            <i class="fa fa-refresh"></i>
+        </a>
+        {% endcomment %}
+    </div>
+    <div class="panel-body">
+        <ul class="list list-glance">
+            {% for item in widget.items %}
+                <li class="list-item"><a href="#"><i class="fa {{ item.icon }}"></i><span><strong>{{ item.value }}</strong> {{ item.label }}</span></a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

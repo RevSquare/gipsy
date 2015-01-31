@@ -1,0 +1,27 @@
+{% load i18n %}
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        {% trans widget.title %}
+        {% comment %}
+        <a href="#" class="pull-right">
+            <i class="fa fa-refresh"></i>
+        </a>
+        {% endcomment %}
+    </div>
+    <div class="panel-body">
+        <h4>
+            <strong>{{ widget.result }}</strong> {% trans widget.label %}
+        </h4>
+        <div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{ widget.percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ widget.percentage }}%;">
+                <span class="sr-only">{{ widget.percentage }}% {% trans 'Complete' %}</span>
+            </div>
+        </div>
+        <p>
+            <i class="fa fa-long-arrow-{% if widget.difference > 0 %}up{% elif widget.difference < 0 %}down{% else %}right{% endif %}"></i> &nbsp;{{ widget.difference }} 
+            {% trans widget.label_bottom %}
+            {% if widget.difference > 0 %} - {% trans 'Looks good!' %} &nbsp;<i class="fa fa-smile-o"></i>{% endif %}
+        </p>
+    </div>
+</div>

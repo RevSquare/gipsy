@@ -8,8 +8,9 @@ GIPSY_ENABLE_ADMINSITE = getattr(settings, "GIPSY_ENABLE_ADMINSITE", True)
 
 
 GIPSY_DASHBOARD_URL = getattr(settings, "GIPSY_DASHBOARD_URL", 'admin:index')
+GIPSY_DASHBOARD_TITLE = getattr(settings, "GIPSY_DASHBOARD_TITLE", 'ADMNINISTRATION')
 GIPSY_VANILLA_INDEX_URL = \
     getattr(settings, "GIPSY_VANILLA_INDEX_URL", 'admin:all_apps')
 GIPSY_THEME = getattr(settings, "GIPSY_THEME",
                       getattr(settings, "STATIC_URL", "")
-                      + 'gipsy_dashboard/css/main.css')
+                      + 'gipsy_dashboard/css/gipsy.css')

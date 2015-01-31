@@ -1,15 +1,15 @@
-{% load i18n %}
-
 <div class="panel panel-default">
     <div class="panel-heading">
-        {{ title }}
+        {{ widget.title }}
+        {% comment %}
         <a href="#" class="pull-right">
             <i class="fa fa-refresh"></i>
         </a>
+        {% endcomment %}
     </div>
     <div class="panel-body">
         <h1>
-            <strong>{{ count }}</strong> {{ label }}
+            <strong>{{ widget.count }}</strong> {{ widget.label }}
         </h1>
     </div>
 </div>
