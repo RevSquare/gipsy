@@ -48,11 +48,11 @@ class Dashboard(object):
         self.widgets = []
         self.rows = [[]]
         self.render()
-        if settings.GIPSY_DASHBOARD_HAS_ROWS:
+        if GIPSY_DASHBOARD_HAS_ROWS:
             total = 0
             for widget in self.widgets:
                 total += widget.grid
-                if total > settings.GIPSY_DASHBOARD_DEFAULT_GRID:
+                if total > GIPSY_DASHBOARD_DEFAULT_GRID:
                     self.rows.append([])
                     total = widget.grid
                 self.rows[-1].append(widget)
