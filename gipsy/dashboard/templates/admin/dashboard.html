@@ -11,13 +11,14 @@
 <div class="gipsy_dashboard">
     {% gipsy_dashboard_cache_time as cache_time %
     {% cache cache_time gipsy_dashboard %}
-    {% if dashboard.has_rows %}
-        {% for row in dashboard.rows %}
-            <div class="row">{% include 'gipsy/dashboard/widgets_list.html' with widgets=row %}</div>
-        {% endfor %}
-    {% else %}
-        {% include 'gipsy/dashboard/widgets_list.html' with widgets=dashboard.widgets %}
-    {% endif %}
+        {% if dashboard.has_rows %}
+            {% for row in dashboard.rows %}
+                <div class="row">{% include 'gipsy/dashboard/widgets_list.html' with widgets=row %}</div>
+            {% endfor %}
+        {% else %}
+            {% include 'gipsy/dashboard/widgets_list.html' with widgets=dashboard.widgets %}
+        {% endif %}
+    {% endcache %}    
 </div>
 {% endif %}
 {% endblock %}
