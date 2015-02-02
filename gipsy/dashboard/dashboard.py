@@ -1,5 +1,4 @@
 from django import forms
-
 from gipsy.dashboard.settings import GIPSY_DASHBOARD_HAS_ROWS, GIPSY_DASHBOARD_DEFAULT_GRID
 
 
@@ -39,7 +38,7 @@ class Dashboard(object):
     def _media(self):
         return forms.Media()
     media = property(_media)
-
+    has_rows = True
     rows = [[]]
     widgets = []
     request = None
@@ -47,9 +46,10 @@ class Dashboard(object):
     def __init__(self, request):
         self.request = request
         self.widgets = []
+        self.has_rows = GIPSY_DASHBOARD_HAS_ROWS
         self.rows = [[]]
         self.render()
-        if GIPSY_DASHBOARD_HAS_ROWS:
+        if self.has_rows:
             total = 0
             for widget in self.widgets:
                 total += widget.grid
