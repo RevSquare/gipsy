@@ -3,7 +3,7 @@ from importlib import import_module
 
 from django.contrib import admin
 from django.contrib.admin.sites import AdminSite
-from gipsy.dashboard import settings
+from django.conf import settings
 from django.conf.urls import patterns, url
 from django.template.response import TemplateResponse
 
