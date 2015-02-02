@@ -10,6 +10,9 @@
             this.drawChart();
         },
         drawChart: function () {
+            if(!$('.traffic-overview .panel-body').length){
+                return;
+            }
             $('.traffic-overview .panel-body').highcharts({
                 title: false,
                 chart: {
