@@ -243,6 +243,8 @@ Then
 
 You should be prompted with a link to go to to grant the access. By going on the link with your browser you will get a key to enter in the shell.
 
+Please note that for performances purpose the default dashboard template is cached to 5 minutes. You can change the cache time through the settings.GIPSY_DASHBOARD_CACHE_TIME constant.
+
 
 Version indicator
 =================

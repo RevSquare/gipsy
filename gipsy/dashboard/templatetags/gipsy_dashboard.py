@@ -3,7 +3,8 @@ from django.db.models import Q
 
 from gipsy.dashboard.models import GipsyDashboardMenu
 from gipsy.dashboard.settings import GIPSY_DASHBOARD_URL,\
-    GIPSY_VANILLA_INDEX_URL, GIPSY_THEME, GIPSY_DASHBOARD_TITLE
+    GIPSY_VANILLA_INDEX_URL, GIPSY_THEME, GIPSY_DASHBOARD_TITLE,\
+    GIPSY_DASHBOARD_CACHE_TIME
 
 
 register = template.Library()
@@ -56,6 +57,38 @@ def gipsy_title():
     Returns the Title for the Admin-Interface.
     """
     return GIPSY_DASHBOARD_TITLE
+
+
+class GipsyDashboardCachTime(template.Node):
+    def __init__(self, varname):
+        self.varname = varname
+
+    def __repr__(self):
+        return "<GipsyDashboardCachTime Node>"
+
+    def render(self, context):
+        context[self.varname] = GIPSY_DASHBOARD_CACHE_TIME
+        return ''
+
+
+@register.tag
+def gipsy_dashboard_cache_time(parser, token):
+    """
+    Retrieves the cache time set in settings
+
+    Usage::
+
+        {% gipsy_dashboard_cache_time as [cache_time] %}
+    """
+    tokens = token.contents.split()
+    if len(tokens) < 2:
+        raise template.TemplateSyntaxError(
+            "'gipsy_dashboard_cache_time' statements require at least one arguments")
+    if tokens[1] != 'as':
+        raise template.TemplateSyntaxError(
+            "Second argument to 'gipsy_dashboard_cache_time' must be 'as'")
+
+    return GipsyDashboardCachTime(varname=tokens[2])
 
 
 def gipsy_dashboard_widget(context, widget, index=None):
