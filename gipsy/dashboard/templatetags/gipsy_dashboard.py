@@ -59,7 +59,7 @@ def gipsy_title():
     return GIPSY_DASHBOARD_TITLE
 
 
-class GipsyDashboardCachTime(template.Node):
+class GipsyDashboardCacheTime(template.Node):
     def __init__(self, varname):
         self.varname = varname
 
@@ -88,7 +88,7 @@ def gipsy_dashboard_cache_time(parser, token):
         raise template.TemplateSyntaxError(
             "Second argument to 'gipsy_dashboard_cache_time' must be 'as'")
 
-    return GipsyDashboardCachTime(varname=tokens[2])
+    return GipsyDashboardCacheTime(varname=tokens[2])
 
 
 def gipsy_dashboard_widget(context, widget, index=None):
