@@ -36,14 +36,10 @@
                     }
                 },
                 tooltip: {
-                    valueSuffix: ' visits'
+                    valueSuffix: ''
                 },
                 legend: false,
-                series: [{
-                    name: 'Traffic',
-                    color: '#fff',
-                    data: TRAFFIC_DATAS
-                }]
+                series: TRAFFIC_DATAS
             });
         },
         dropdownArrowToggler: function () {

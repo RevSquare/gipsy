@@ -63,29 +63,25 @@ class WidgetGALineChart(WidgetLineChart):
 
     def __init__(self, **kwargs):
         labels = []
-        values = []
+        values = {}
+        values['sessions'] = {'label': 'Sessions', 'color': '#abc4e6', 'values': []}
+        values['pageviews'] = {'label': 'Page views', 'color': '#ffffff', 'values': []}
         cache_name = 'gipsy.dashboard.widgets.widgets_google_analytics.WidgetGALineChart'
         cached_objects = cache.get(cache_name)
         if cached_objects is None:
             ga_connector = GoogleAnalyticsConnector()
             today = date.today()
-            start_day = date(today.year, today.month, 1)
-            month_start = today
-            for num in range(0, 6):
-                if num == 0:
-                    month_start = start_day
-                    month_end = today
-                else:
-                    month_end = month_start + timedelta(days=-1)
-                    month_start = date(month_end.year, month_end.month, 1)
-                start = month_start.strftime("%Y-%m-%d")
-                end = month_end.strftime("%Y-%m-%d")
-                labels.append(month_start.strftime("%b"))
+            for num in range(0, 10):
+                day_date = today - timedelta(days=num)
+                day = day_date.strftime("%Y-%m-%d")
+                labels.append(day_date.strftime("%m-%d-%Y"))
                 result = ga_connector.start_service()\
-                    .query(start_date=start, end_date=end, metrics='ga:pageviews').execute()
-                values.append(result['totalsForAllResults']['ga:pageviews'])
-            cached_objects = {'labels': labels[::-1], 'values': values[::-1]}
+                    .query(start_date=day, end_date=day, metrics='ga:pageviews, ga:sessions').execute()
+                values['sessions']['values'].append(result['totalsForAllResults']['ga:sessions'])
+                values['pageviews']['values'].append(result['totalsForAllResults']['ga:pageviews'])
+            values['sessions']['values'] = values['sessions']['values'][::-1]
+            values['pageviews']['values'] = values['pageviews']['values'][::-1]
+            cached_objects = {'labels': labels[::-1], 'values': [values['sessions'], values['pageviews']]}
             cache.set(cache_name, cached_objects, self.cache_time)
         self.labels = cached_objects['labels']
         self.values = cached_objects['values']
-

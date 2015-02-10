@@ -5,19 +5,21 @@
         $body: null,
         init: function () {
             this.$body = $('body');
-            this.liveReload();
             this.moduleToggle();
             this.dropdownArrowToggler();
             this.drawChart();
         },
         drawChart: function () {
+            if(!$('.traffic-overview .panel-body').length){
+                return;
+            }
             $('.traffic-overview .panel-body').highcharts({
                 title: false,
                 chart: {
                     backgroundColor: "#6098d1"
                 },
                 xAxis: {
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+                    categories: TRAFFIC_CATEGORIES,
                     labels: {
                         style: {
                             color: "#abc4e6"
@@ -34,14 +36,10 @@
                     }
                 },
                 tooltip: {
-                    valueSuffix: ' visits'
+                    valueSuffix: ''
                 },
                 legend: false,
-                series: [{
-                    name: 'Traffic',
-                    color: '#fff',
-                    data: [70, 69, 95, 145, 182, 215, 252, 235]
-                }]
+                series: TRAFFIC_DATAS
             });
         },
         dropdownArrowToggler: function () {
@@ -53,9 +51,6 @@
                     $(this).find('.fa-chevron-down').removeClass('fa-chevron-down').addClass('fa-chevron-up');
                 }
 
-            });
-            $(window).on('click', function () {
-                $('.dropdown a i.fa-chevron-up').removeClass('fa-chevron-up').addClass('fa-chevron-down');
             });
         },
         moduleToggle: function () {
@@ -70,12 +65,10 @@
                     }
                 });
             });
-        },
-        liveReload: function () {
-            if (window.location.hostname === 'localhost') {
-                this.$body.append('<script src="//localhost:9000/livereload.js"></script>');
-            }
-        },
+            $('.dropdown-menu > li > a').on('click', function (e) {
+                e.stopPropagation();
+            });
+        }
     };
     $(document).on('ready', function () {
         window.REVSQUARE.init();
