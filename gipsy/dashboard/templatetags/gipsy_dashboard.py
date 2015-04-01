@@ -13,6 +13,11 @@ tag_func = register.inclusion_tag('gipsy/dashboard/widgets/base.html',
                                   takes_context=True)
 
 
+def get_active_url(request_formated):
+    return GipsyDashboardMenu.objects\
+        .filter(Q(url=request_formated) | Q(url=request_formated[:-1]))[:1]
+
+
 @register.inclusion_tag('gipsy/dashboard/menu.html',
                         takes_context=True)
 def gipsy_dashboard_menu(context, *args, **kwargs):
@@ -24,8 +29,16 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
     context['active'] = None
     if context['request'].path:
         request_formated = context['request'].get_full_path()[1:]
-        active = GipsyDashboardMenu.objects\
-            .filter(Q(url=request_formated) | Q(url=request_formated[:-1]))[:1]
+        active = get_active_url(request_formated)
+
+        # if nothing was found try to clean 'add' and 'edit' for generic urls
+        # this is not done before to allow to point directly to those kinds of
+        # urls
+        if not active:
+            request_formated = request_formated.split('/add', 1)
+            request_formated = request_formated[0].split('/edit', 1)
+            active = get_active_url(request_formated[0] + '/')
+
     if len(active):
         context['active'] = active[0]
     context['dashboard_url'] = GIPSY_DASHBOARD_URL
