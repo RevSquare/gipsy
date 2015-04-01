@@ -79,6 +79,7 @@
 }
 .grp-pulldown-container .grp-pulldown-handler,
 .grp-pulldown-container .grp-pulldown-handler:hover,
-.grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler {
+.grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler,
+.grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler:hover {
     background-image: none;
 }
