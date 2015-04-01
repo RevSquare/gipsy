@@ -60,7 +60,8 @@ def gipsy_toolbar_link(context):
 def gipsy_version_indicator(context, location, css_classes=None):
     context['display_version_indicator'] = False
     if VERSION_INDICATOR and VERSION_INDICATOR_LOCATION == location:
-        context['version_label'], context['version_description'] = VERSION_INDICATOR
+        context['version_label'], context['version_description'] = \
+            VERSION_INDICATOR
         context['display_version_indicator'] = True
 
         if css_classes is not None:

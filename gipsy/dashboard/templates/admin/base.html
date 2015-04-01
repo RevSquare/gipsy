@@ -1,4 +1,6 @@
 {% load admin_static %}{% load firstof from future %}{% load i18n grp_tags gipsy_toolbar gipsy_dashboard %}
+
+{% gipsy_is_popup as gipsy_is_popup %}
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" {% if LANGUAGE_BIDI %}dir="rtl"{% endif %}>
 <head>
@@ -80,11 +82,38 @@
 </head>
 <body class="{% if is_popup %}grp-popup {% endif %}{% block bodyclass %}{% endblock %}{% if LANGUAGE_BIDI %} rtl{% endif %}">
     <div class="container">
-        {% if not is_popup %}{% gipsy_toolbar %}{% endif %}
+        {% if not gipsy_is_popup %}{% gipsy_toolbar %}{% endif %}
+        
+        {% block header %}
+            <!-- HEADER -->
+            <header id="grp-header" class="{% block header-class %}{% endblock %}">
+                {% if not is_popup %}
+
+                    {% block context-navigation %}
+                        <!-- CONTEXT NAVIGATION -->
+                        <div id="grp-context-navigation">
+                            <nav id="grp-breadcrumbs" class="{% block breadcrumbs-class %}{% endblock %}">
+                                <header style="display:none"><h1>Breadcrumbs</h1></header>
+                                {% block breadcrumbs %}
+                                    <ul>
+                                        <li><a href="{% url 'admin:index' %}">{% trans 'Home' %}</a></li>
+                                        {% if title %}
+                                            <li> &rsaquo; {{ title }}</li>
+                                        {% endif %}
+                                    </ul>
+                                {% endblock %}
+                            </nav>
+                        </div>
+                    {% endblock %}
+                    
+                {% endif %}
+            </header>
+        {% endblock %}        
+        
         <div id="grp-container" class="">
             <div class="row">
-                {% if not is_popup %}{% gipsy_dashboard_menu %}{% endif %}
-                <div class="col-md-10">
+                {% if not gipsy_is_popup %}{% gipsy_dashboard_menu %}{% endif %}
+                <div{% if not gipsy_is_popup %} class="col-md-10"{% endif %}>
                     <!-- CONTENT -->
                     <article id="grp-content" class="{% block content-class %}{% endblock %}">
                         

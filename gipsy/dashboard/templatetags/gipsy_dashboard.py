@@ -59,6 +59,16 @@ def gipsy_title():
     return GIPSY_DASHBOARD_TITLE
 
 
+@register.assignment_tag(takes_context=True)
+def gipsy_is_popup(context):
+    """
+    Checks if displayed in a popup. Addition to the django default
+    templatetag as some shitty librairiesare not using this logic.
+    """
+    return (context.get('is_popup', False) or
+            context['request'].GET.get('pop', False))
+
+
 class GipsyDashboardCacheTime(template.Node):
     def __init__(self, varname):
         self.varname = varname
