@@ -4,7 +4,7 @@
     width: 100%;
 }
 .container > div > .row {
-    margin-top: 38px;
+    margin-top: 34px;
 }
 .navbar-default {
     background: #2e3641;
@@ -82,4 +82,8 @@
 .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler,
 .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler:hover {
     background-image: none;
+}
+
+#grp-context-navigation {
+    font-size: 10px;
 }
