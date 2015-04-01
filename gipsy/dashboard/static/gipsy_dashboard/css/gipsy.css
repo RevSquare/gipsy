@@ -173,7 +173,7 @@ a:focus {
   line-height: 20px;
 }
 /* line 155, ../../../assets/stylesheets/gipsy.scss */
-.dashboard-sidebar .nav .active a {
+.dashboard-sidebar .nav .active > a {
   color: #6098d1;
 }
 /* line 159, ../../../assets/stylesheets/gipsy.scss */
