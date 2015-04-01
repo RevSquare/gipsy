@@ -1,4 +1,5 @@
 from django import template
+from django.core.urlresolvers import reverse
 from django.db.models import Q
 
 from gipsy.dashboard.models import GipsyDashboardMenu
@@ -57,6 +58,17 @@ def gipsy_title():
     Returns the Title for the Admin-Interface.
     """
     return GIPSY_DASHBOARD_TITLE
+
+
+@register.simple_tag(takes_context=True)
+def url_active(context, viewname):
+    request = context['request']
+    current_path = request.path
+    compare_path = reverse(viewname)
+    if current_path == compare_path:
+        return 'active'
+    else:
+        return ''
 
 
 @register.assignment_tag(takes_context=True)

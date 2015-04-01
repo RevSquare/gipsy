@@ -87,3 +87,7 @@
 #grp-context-navigation {
     font-size: 10px;
 }
+
+table thead th {
+    color: #fff;
+}
