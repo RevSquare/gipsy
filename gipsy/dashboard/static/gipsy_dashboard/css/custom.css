@@ -77,3 +77,6 @@
 .container a {
     color: #5995cf;
 }
+.grp-pulldown-container .grp-pulldown-handler {
+    background-image: none;
+}
