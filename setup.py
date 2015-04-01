@@ -7,7 +7,7 @@ reload(sys).setdefaultencoding('Utf-8')
 
 setup(
     name='django-gipsy',
-    version='1.0.9',
+    version='1.0.10',
     author='Guillaume Pousseo',
     author_email='guillaumepousseo@revsquare.com',
     description='A set of fancy tools for django.',
