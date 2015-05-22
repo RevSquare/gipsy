@@ -140,6 +140,16 @@ a:focus {
     max-width: 100%;
 }
 
+
+.dashboard { 
+    #grp-container {
+        margin-top: 35px;
+    }
+    > .container > div > .row > aside.dashboard-sidebar {
+        margin-top: 0;
+    }
+}
+
 .dashboard-sidebar {
     font-weight: 100;
     .nav {
@@ -495,8 +505,9 @@ a:focus {
 
 #grp-content-title {
     position: absolute;
-    right: 20px;
-    top: 5px;
+    right: 0px;
+    top: -35px;
+    width: 100%;
     z-index: 20;
     
     h1 {
@@ -507,6 +518,30 @@ a:focus {
         font-size: 12px;
         padding: 5px 15px;
     }
+    
+    .hvad-language-tabs {
+        float: left;
+        margin-top: 4px;
+        
+        span {
+            background-color: #6098d1;
+            opacity: 1;
+            font-size: 12px;
+            padding: 6px 15px;
+            
+            a {
+                color: #fff;
+            }
+            &.current {
+                background-color: #fff;
+                color: #6098d1;
+            }
+        }
+    }
+}
+
+#grp-container {
+    margin-top: 60px;
 }
 
 .grp-pagination {
@@ -662,6 +697,11 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
     background-image: none;
     color: #fff;
     opacity: 1;
+}
+
+.container .grp-object-tools {
+    margin: 3px 0 0;
+    top: 0;
 }
 
 fieldset.grp-module .grp-row label {
