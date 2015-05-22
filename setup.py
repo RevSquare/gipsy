@@ -30,7 +30,6 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
     install_requires=[
-        'Django>=1.6',
         'google-api-python-client==1.3.1'
     ],
 )
