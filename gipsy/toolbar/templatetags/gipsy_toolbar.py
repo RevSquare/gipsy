@@ -13,7 +13,15 @@ register = template.Library()
 def is_admin(context):
     """Checks if the current request belongs to admin namespace"""
     request = context["request"]
-    url = resolve(request.path)
+
+    try:
+        url = resolve(request.path)
+    except:
+        # We don't really care to track the type of exception, for
+        # whatever it is, it should throw a 500 on the page
+        # we should just not display the toolbar in this case
+        return False
+
     context['is_admin'] = False
     return url.app_name == 'admin'
 
