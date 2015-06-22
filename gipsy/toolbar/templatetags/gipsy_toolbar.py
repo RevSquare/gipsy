@@ -1,6 +1,6 @@
 from django import template
 from django.conf import settings
-from django.core.urlresolvers import resolve, reverse
+from django.core.urlresolvers import resolve, reverse, NoReverseMatch
 
 from gipsy.toolbar.models import GipsyToolbarMenu
 from gipsy.toolbar.settings import LINK_CONTEXT_NAME, LINK_INCLUDED_MODELS, \
@@ -57,8 +57,11 @@ def gipsy_toolbar_link(context):
     app_ident = u'%s.%s' % (app_label, model_name)
 
     if LINK_INCLUDED_MODELS is None or app_ident in LINK_INCLUDED_MODELS:
-        link = reverse('admin:%s_%s_change' % (
-            app_label.lower(), model_name.lower()), args=(obj.pk,))
+        try:
+            link = reverse('admin:%s_%s_change' % (
+                app_label.lower(), model_name.lower()), args=(obj.pk,))
+        except NoReverseMatch:
+            return None
         return link
     else:
         return None
