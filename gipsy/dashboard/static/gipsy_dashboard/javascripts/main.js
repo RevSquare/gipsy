@@ -1,4 +1,7 @@
 /*globals jQuery, window, document */
+
+var gipsy = {jQuery: jQuery.noConflict(true)};
+
 (function ($, window, document) {
     "use strict";
     window.REVSQUARE = window.REVSQUARE || {
@@ -73,4 +76,4 @@
     $(document).on('ready', function () {
         window.REVSQUARE.init();
     });
-}(jQuery, window, document));
+}(gipsy.jQuery, window, document));
