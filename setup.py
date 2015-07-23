@@ -2,12 +2,20 @@
 from distutils.core import setup
 from setuptools import find_packages
 import sys
-reload(sys).setdefaultencoding('Utf-8')
+
+# python2 and python3 support
+try:
+    reload
+except NameError:
+    # py3k has unicode by default
+    pass
+else:
+    reload(sys).setdefaultencoding('utf-8')
 
 
 setup(
     name='django-gipsy',
-    version='1.1.6',
+    version='1.1.7',
     author='Guillaume Pousseo',
     author_email='guillaumepousseo@revsquare.com',
     description='A set of fancy tools for django.',
