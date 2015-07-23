@@ -149,9 +149,9 @@
         </div>
         {% block footer %}{% endblock %}
     </div>
-    <script src="{{ STATIC_URL }}gipsy_dashboard/js/vendor/jquery.js"></script>
-    <script src="{{ STATIC_URL }}gipsy_dashboard/javascripts/bootstrap.js"></script>
-    <script src="{{ STATIC_URL }}gipsy_dashboard/javascripts/plugins.js"></script>
-    <script src="{{ STATIC_URL }}gipsy_dashboard/javascripts/main.js"></script>
+    <script src="{% static "gipsy_dashboard/js/vendor/jquery.js" %}"></script>
+    <script src="{% static "gipsy_dashboard/javascripts/bootstrap.js" %}"></script>
+    <script src="{% static "gipsy_dashboard/javascripts/plugins.js" %}"></script>
+    <script src="{% static "gipsy_dashboard/javascripts/main.js" %}"></script>
 </body>
 </html>
