@@ -2,7 +2,15 @@
 from distutils.core import setup
 from setuptools import find_packages
 import sys
-reload(sys).setdefaultencoding('Utf-8')
+
+# python2 and python3 support
+try:
+    reload
+except NameError:
+    # py3k has unicode by default
+    pass
+else:
+    reload(sys).setdefaultencoding('utf-8')
 
 
 setup(
