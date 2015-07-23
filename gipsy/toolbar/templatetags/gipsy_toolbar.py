@@ -1,6 +1,6 @@
 from django import template
 from django.conf import settings
-from django.core.urlresolvers import resolve, reverse
+from django.core.urlresolvers import resolve, reverse, NoReverseMatch
 
 from gipsy.toolbar.models import GipsyToolbarMenu
 from gipsy.toolbar.settings import LINK_CONTEXT_NAME, LINK_INCLUDED_MODELS, \
@@ -13,7 +13,15 @@ register = template.Library()
 def is_admin(context):
     """Checks if the current request belongs to admin namespace"""
     request = context["request"]
-    url = resolve(request.path)
+
+    try:
+        url = resolve(request.path)
+    except:
+        # We don't really care to track the type of exception, for
+        # whatever it is, it should throw a 500 on the page
+        # we should just not display the toolbar in this case
+        return False
+
     context['is_admin'] = False
     return url.app_name == 'admin'
 
@@ -49,8 +57,11 @@ def gipsy_toolbar_link(context):
     app_ident = u'%s.%s' % (app_label, model_name)
 
     if LINK_INCLUDED_MODELS is None or app_ident in LINK_INCLUDED_MODELS:
-        link = reverse('admin:%s_%s_change' % (
-            app_label.lower(), model_name.lower()), args=(obj.pk,))
+        try:
+            link = reverse('admin:%s_%s_change' % (
+                app_label.lower(), model_name.lower()), args=(obj.pk,))
+        except NoReverseMatch:
+            return None
         return link
     else:
         return None
@@ -60,7 +71,8 @@ def gipsy_toolbar_link(context):
 def gipsy_version_indicator(context, location, css_classes=None):
     context['display_version_indicator'] = False
     if VERSION_INDICATOR and VERSION_INDICATOR_LOCATION == location:
-        context['version_label'], context['version_description'] = VERSION_INDICATOR
+        context['version_label'], context['version_description'] = \
+            VERSION_INDICATOR
         context['display_version_indicator'] = True
 
         if css_classes is not None:

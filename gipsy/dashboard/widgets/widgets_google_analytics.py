@@ -19,7 +19,7 @@ class WidgetGAEvolution(WidgetMetricsEvolution):
                 .query(start_date=query_date, end_date=query_date, metrics=metrics).execute()
             previous_date = str((datetime.now() - timedelta(days=2)).date())
             previous_result = ga_connector.start_service()\
-                .query(start_date=previous_date, end_date=previous_date, metrics='ga:pageviews').execute()
+                .query(start_date=previous_date, end_date=previous_date, metrics=metrics).execute()
 
             try:
                 result = result['rows'][0][0]
@@ -39,8 +39,8 @@ class WidgetGAEvolution(WidgetMetricsEvolution):
 
 class WidgetGAPageViewsEvolution(WidgetGAEvolution):
     title = 'page views'
-    label = 'page viewed today'
-    label_bottom = 'pages viewed difference since yesterday'
+    label = 'page viewed yesterday'
+    label_bottom = 'pages viewed difference'
 
     def __init__(self, **kwargs):
         super(WidgetGAPageViewsEvolution, self)\
@@ -49,8 +49,8 @@ class WidgetGAPageViewsEvolution(WidgetGAEvolution):
 
 class WidgetGASessionsEvolution(WidgetGAEvolution):
     title = 'daily unique visitors'
-    label = 'unique visitors today'
-    label_bottom = 'unique visitors difference since yesterday'
+    label = 'unique visitors yesterday'
+    label_bottom = 'unique visitors difference'
 
     def __init__(self, **kwargs):
         super(WidgetGASessionsEvolution, self)\

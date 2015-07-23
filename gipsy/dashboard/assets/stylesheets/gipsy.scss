@@ -36,6 +36,10 @@ body {
     }
 }
 
+.container .body-footer {
+    position: relative;
+}
+
 img {
     vertical-align: baseline;
 }
@@ -112,6 +116,11 @@ a:focus {
     }
 }
 
+.navbar-default {
+    background: #2e3641;
+    color: #fff;
+}
+
 .nav-stacked {
     .dropdown-menu {
         position: relative;
@@ -127,14 +136,53 @@ a:focus {
     }
 }
 
+.brand-logo img {
+    max-width: 100%;
+}
+
+.grp-popup {
+    #grp-container {
+        margin-top: 35px;
+    }
+}
+.dashboard { 
+    #grp-container {
+        margin-top: 35px;
+    }
+    > .container > div > .row > aside.dashboard-sidebar {
+        margin-top: 0;
+    }
+}
+
 .dashboard-sidebar {
     font-weight: 100;
     .nav {
+        background: #2e3641;
+        
+        a {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 100;
+            line-height: 20px;
+        }
+        
+        .active > a {
+            color: #6098d1;
+        }
+        
+        .dropdown.active > a:focus,
+        .dashboard-sidebar .nav .dropdown.active > a:hover {
+            color: #6098d1;
+        }
+
         > li {
             clear: both;
             > a {
+                padding: 15px 15px;
+                border-bottom: 1px solid #5E5F68;
                 position: relative;
                 border-bottom: 0;
+
                 &:focus {
                     background: #2e3641;
                 }
@@ -370,9 +418,41 @@ a:focus {
 
 .panel-default > .panel-heading {
     text-transform: uppercase;
+    color: #fff;
+}
+.panel-body {
+    color: #fff;
+
+    h4 {
+        margin-top: 0;
+        font-weight: 300;
+    }
+    
+    h1 {
+        padding-top: 5px;
+        margin-top: 0;
+        margin-bottom: 27px;
+        font-weight: 300;
+        font-size: 30px;
+        
+        strong {
+            margin-right: 10px;
+            margin-top: -10px;
+            float: left;
+            font-size: 80px;
+        }
+    }
 }
 
 .container {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    
+    a {
+        color: #5995cf;
+    }
+
     h1 {
         font-size: 32px;
         margin: 0;
@@ -421,12 +501,17 @@ a:focus {
             color: #2e3641;
         }
     }
+    
+    > div > .row {
+        margin-top: 34px;
+    }
 }
 
 #grp-content-title {
     position: absolute;
-    right: 20px;
-    top: 5px;
+    right: 0px;
+    top: -35px;
+    width: 100%;
     z-index: 20;
     
     h1 {
@@ -437,6 +522,30 @@ a:focus {
         font-size: 12px;
         padding: 5px 15px;
     }
+    
+    .hvad-language-tabs {
+        float: left;
+        margin-top: 4px;
+        
+        span {
+            background-color: #6098d1;
+            opacity: 1;
+            font-size: 12px;
+            padding: 6px 15px;
+            
+            a {
+                color: #fff;
+            }
+            &.current {
+                background-color: #fff;
+                color: #6098d1;
+            }
+        }
+    }
+}
+
+#grp-container {
+    margin-top: 60px;
 }
 
 .grp-pagination {
@@ -459,6 +568,10 @@ a:focus {
     margin-left: 0 !important;
 }
 
+#grp-context-navigation {
+    font-size: 10px;
+}
+
 #grp-filters {
     position: absolute;
     right: 0;
@@ -466,6 +579,10 @@ a:focus {
 
 .grp-fixed-footer select {
     color: #000;
+}
+
+.row {
+    margin: 0;
 }
 
 p.errornote {
@@ -486,6 +603,10 @@ table.grp-sortable thead th.sortable.sorted.ascending:hover,
 .grp-object-tools li a.grp-viewsite-link:hover, .grp-object-tools li a[target="_blank"]:hover {
     background-color: #6098d1;
     background-image: none;
+}
+
+table thead th {
+    color: #fff;
 }
 
 table.grp-sortable thead th.sortable .grp-text a, .ui-tabs .ui-tabs-nav li.ui-tabs-active,
@@ -555,6 +676,18 @@ body.grp-change-list table tr.grp-selected th, body.grp-change-list table tr.grp
     width: 100%;
 }
 
+.col1 {
+    display: block;
+    width: 50%;
+    float: left;
+    height: 100%;
+    vertical-align: top;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    padding: 0 5px 0 0;
+    margin: 0;
+}
+
 table tbody tr.grp-row-even td, 
 table tbody tr.grp-row-even th, 
 table tbody tr.grp-alt td, 
@@ -570,17 +703,37 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
     opacity: 1;
 }
 
+.container .grp-object-tools {
+    margin: 3px 0 0;
+    top: 0;
+}
+
 fieldset.grp-module .grp-row label {
     color: #2e3641;
+}
+
+.grp-row.label {
+    text-align: left;
 }
 
 .g-d-doublepull12, .l-2cr-fluid.l-d-12 .c-1 {
     margin-left: 350px !important;
     position: absolute;
 }
+.l-2cr-fluid.l-d-12 .c-1 {
+    margin-left: 120px !important;
+    width: 500px;
+}
 
 .button-state-grey, button:hover, a.fb_show:hover, a.related-lookup:hover, body.tinyMCE input[name="src"] + div a:hover, body.tinyMCE input[name="href"] + div a:hover, input[type="button"]:hover, a.related-lookup.m2m:hover, .grp-autocomplete-wrapper-m2m a.related-lookup:hover, .grp-autocomplete-wrapper-fk a.related-lookup:hover, button.ui-datepicker-trigger:hover, button.ui-timepicker-trigger:hover, button.ui-datetime-now:hover, .grp-pulldown-container .grp-pulldown-handler, .grp-pulldown-container .grp-pulldown-content, .grp-pulldown-container .grp-pulldown-content:hover, .button-state-blue, button, a.fb_show, a.related-lookup, body.tinyMCE input[name="src"] + div a, body.tinyMCE input[name="href"] + div a, input[type="button"], a.related-lookup.m2m, .grp-autocomplete-wrapper-m2m a.related-lookup, .grp-autocomplete-wrapper-fk a.related-lookup, button.ui-datepicker-trigger, button.ui-timepicker-trigger, button.ui-datetime-now, .grp-pulldown-container .grp-pulldown-handler:hover, .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler, .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler:hover {
     background-color: #fff;
+}
+
+.grp-pulldown-container .grp-pulldown-handler,
+.grp-pulldown-container .grp-pulldown-handler:hover,
+.grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler,
+.grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler:hover {
+    background-image: none;
 }
 
 @media (max-width: 1200px) {

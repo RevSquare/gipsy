@@ -43,46 +43,51 @@ body {
 }
 
 /* line 39, ../../../assets/stylesheets/gipsy.scss */
+.container .body-footer {
+  position: relative;
+}
+
+/* line 43, ../../../assets/stylesheets/gipsy.scss */
 img {
   vertical-align: baseline;
 }
 
-/* line 43, ../../../assets/stylesheets/gipsy.scss */
+/* line 47, ../../../assets/stylesheets/gipsy.scss */
 a:focus {
   outline: none;
 }
 
-/* line 47, ../../../assets/stylesheets/gipsy.scss */
+/* line 51, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top {
   border: 0;
 }
-/* line 49, ../../../assets/stylesheets/gipsy.scss */
+/* line 53, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-brand {
   height: 50px;
   padding: 8px 0 0;
   background: #fff;
 }
-/* line 53, ../../../assets/stylesheets/gipsy.scss */
+/* line 57, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-brand img {
   width: 100%;
 }
-/* line 56, ../../../assets/stylesheets/gipsy.scss */
+/* line 60, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-brand:hover, .navbar-top .navbar-brand:focus {
   background-color: #fff;
 }
-/* line 62, ../../../assets/stylesheets/gipsy.scss */
+/* line 66, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-nav li {
   position: relative;
 }
-/* line 64, ../../../assets/stylesheets/gipsy.scss */
+/* line 68, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-nav li a {
   font-weight: 300;
 }
-/* line 66, ../../../assets/stylesheets/gipsy.scss */
+/* line 70, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-nav li a:hover {
   background-color: #3b4653;
 }
-/* line 71, ../../../assets/stylesheets/gipsy.scss */
+/* line 75, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-nav li.active:after {
   content: '';
   position: absolute;
@@ -95,38 +100,44 @@ a:focus {
   border-width: 9px 6px 0 6px;
   border-color: #6098d1 transparent transparent transparent;
 }
-/* line 84, ../../../assets/stylesheets/gipsy.scss */
+/* line 88, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-nav li.dropdown.open {
   background-color: #3b4653;
 }
-/* line 87, ../../../assets/stylesheets/gipsy.scss */
+/* line 91, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-nav li .dropdown-menu {
   border: 0;
 }
-/* line 90, ../../../assets/stylesheets/gipsy.scss */
+/* line 94, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-nav li .dropdown-menu li a {
   padding: 6px 20px;
 }
-/* line 92, ../../../assets/stylesheets/gipsy.scss */
+/* line 96, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .navbar-nav li .dropdown-menu li a:hover {
   background: #fff;
 }
-/* line 100, ../../../assets/stylesheets/gipsy.scss */
+/* line 104, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .fa {
   color: #5995cf;
   font-size: 16px;
 }
-/* line 105, ../../../assets/stylesheets/gipsy.scss */
+/* line 109, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .profile-dropdown .dropdown-menu {
   right: 0;
   left: auto;
 }
-/* line 108, ../../../assets/stylesheets/gipsy.scss */
+/* line 112, ../../../assets/stylesheets/gipsy.scss */
 .navbar-top .profile-dropdown .dropdown-menu i {
   color: #bdbfbe;
 }
 
-/* line 116, ../../../assets/stylesheets/gipsy.scss */
+/* line 119, ../../../assets/stylesheets/gipsy.scss */
+.navbar-default {
+  background: #2e3641;
+  color: #fff;
+}
+
+/* line 125, ../../../assets/stylesheets/gipsy.scss */
 .nav-stacked .dropdown-menu {
   position: relative;
   min-width: 100%;
@@ -136,33 +147,74 @@ a:focus {
   box-shadow: none;
   border: 0;
 }
-/* line 125, ../../../assets/stylesheets/gipsy.scss */
+/* line 134, ../../../assets/stylesheets/gipsy.scss */
 .nav-stacked li + li {
   margin: 0;
 }
 
-/* line 130, ../../../assets/stylesheets/gipsy.scss */
+/* line 139, ../../../assets/stylesheets/gipsy.scss */
+.brand-logo img {
+  max-width: 100%;
+}
+
+/* line 144, ../../../assets/stylesheets/gipsy.scss */
+.grp-popup #grp-container {
+  margin-top: 35px;
+}
+
+/* line 149, ../../../assets/stylesheets/gipsy.scss */
+.dashboard #grp-container {
+  margin-top: 35px;
+}
+/* line 152, ../../../assets/stylesheets/gipsy.scss */
+.dashboard > .container > div > .row > aside.dashboard-sidebar {
+  margin-top: 0;
+}
+
+/* line 157, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar {
   font-weight: 100;
 }
-/* line 133, ../../../assets/stylesheets/gipsy.scss */
+/* line 159, ../../../assets/stylesheets/gipsy.scss */
+.dashboard-sidebar .nav {
+  background: #2e3641;
+}
+/* line 162, ../../../assets/stylesheets/gipsy.scss */
+.dashboard-sidebar .nav a {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 100;
+  line-height: 20px;
+}
+/* line 169, ../../../assets/stylesheets/gipsy.scss */
+.dashboard-sidebar .nav .active > a {
+  color: #6098d1;
+}
+/* line 173, ../../../assets/stylesheets/gipsy.scss */
+.dashboard-sidebar .nav .dropdown.active > a:focus,
+.dashboard-sidebar .nav .dashboard-sidebar .nav .dropdown.active > a:hover {
+  color: #6098d1;
+}
+/* line 178, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li {
   clear: both;
 }
-/* line 135, ../../../assets/stylesheets/gipsy.scss */
+/* line 180, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li > a {
+  padding: 15px 15px;
+  border-bottom: 1px solid #5E5F68;
   position: relative;
   border-bottom: 0;
 }
-/* line 138, ../../../assets/stylesheets/gipsy.scss */
+/* line 186, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li > a:focus {
   background: #2e3641;
 }
-/* line 141, ../../../assets/stylesheets/gipsy.scss */
+/* line 189, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li > a:hover {
   background: #3b4653;
 }
-/* line 144, ../../../assets/stylesheets/gipsy.scss */
+/* line 192, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li > a:after {
   content: '';
   position: absolute;
@@ -172,23 +224,23 @@ a:focus {
   height: 1px;
   background: rgba(242, 242, 242, 0.3);
 }
-/* line 155, ../../../assets/stylesheets/gipsy.scss */
+/* line 203, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li.open > a {
   background: #2e3641;
 }
-/* line 157, ../../../assets/stylesheets/gipsy.scss */
+/* line 205, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li.open > a:after {
   display: none;
 }
-/* line 160, ../../../assets/stylesheets/gipsy.scss */
+/* line 208, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li.open > a:hover {
   background: #3b4653;
 }
-/* line 165, ../../../assets/stylesheets/gipsy.scss */
+/* line 213, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li.active {
   position: relative;
 }
-/* line 167, ../../../assets/stylesheets/gipsy.scss */
+/* line 215, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li.active:after, .dashboard-sidebar .nav > li.active:before {
   content: '';
   position: absolute;
@@ -197,7 +249,7 @@ a:focus {
   z-index: 100;
   border-radius: 50%;
 }
-/* line 176, ../../../assets/stylesheets/gipsy.scss */
+/* line 224, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li.active:before {
   margin-top: -9px;
   margin-right: -9px;
@@ -205,7 +257,7 @@ a:focus {
   height: 18px;
   background: url(../img/bg_body-01.jpg);
 }
-/* line 183, ../../../assets/stylesheets/gipsy.scss */
+/* line 231, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li.active:after {
   z-index: 110;
   margin-top: -5px;
@@ -214,129 +266,129 @@ a:focus {
   height: 10px;
   background: #6098d1;
 }
-/* line 192, ../../../assets/stylesheets/gipsy.scss */
+/* line 240, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .nav > li.active .fa.pull-right {
   color: #5995cf;
 }
-/* line 198, ../../../assets/stylesheets/gipsy.scss */
+/* line 246, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .fa {
   font-size: 17px;
 }
-/* line 201, ../../../assets/stylesheets/gipsy.scss */
+/* line 249, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar .fa.pull-right {
   color: #ffffff;
   font-size: 16px;
 }
-/* line 205, ../../../assets/stylesheets/gipsy.scss */
+/* line 253, ../../../assets/stylesheets/gipsy.scss */
 .dashboard-sidebar:after {
   content: '';
   background: #2e3641;
 }
 
-/* line 212, ../../../assets/stylesheets/gipsy.scss */
+/* line 260, ../../../assets/stylesheets/gipsy.scss */
 .gipsy_dashboard h1 {
   line-height: 1.1;
 }
-/* line 216, ../../../assets/stylesheets/gipsy.scss */
+/* line 264, ../../../assets/stylesheets/gipsy.scss */
 .gipsy_dashboard div, .gipsy_dashboard h2, .gipsy_dashboard h3, .gipsy_dashboard h4 {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 1.42857;
 }
 
-/* line 223, ../../../assets/stylesheets/gipsy.scss */
+/* line 271, ../../../assets/stylesheets/gipsy.scss */
 .traffic-overview {
   width: 100%;
   height: 360px;
   background: #6098d1;
 }
-/* line 227, ../../../assets/stylesheets/gipsy.scss */
+/* line 275, ../../../assets/stylesheets/gipsy.scss */
 .traffic-overview .panel-heading {
   color: #fff;
   border-bottom: 1px solid #fff;
   text-transform: uppercase;
 }
-/* line 232, ../../../assets/stylesheets/gipsy.scss */
+/* line 280, ../../../assets/stylesheets/gipsy.scss */
 .traffic-overview .panel-body {
   height: 319px;
 }
 
-/* line 237, ../../../assets/stylesheets/gipsy.scss */
+/* line 285, ../../../assets/stylesheets/gipsy.scss */
 .glance-panel {
   height: 360px;
 }
 
-/* line 243, ../../../assets/stylesheets/gipsy.scss */
+/* line 291, ../../../assets/stylesheets/gipsy.scss */
 .list-glance {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 248, ../../../assets/stylesheets/gipsy.scss */
+/* line 296, ../../../assets/stylesheets/gipsy.scss */
 .list-glance li a {
   display: block;
   padding-bottom: 20px;
 }
-/* line 252, ../../../assets/stylesheets/gipsy.scss */
+/* line 300, ../../../assets/stylesheets/gipsy.scss */
 .list-glance li i {
   font-size: 26px;
   margin-right: 20px;
   color: #fff;
 }
-/* line 257, ../../../assets/stylesheets/gipsy.scss */
+/* line 305, ../../../assets/stylesheets/gipsy.scss */
 .list-glance li span {
   font-size: 25px;
   font-weight: 100;
   color: #6098d1;
 }
-/* line 261, ../../../assets/stylesheets/gipsy.scss */
+/* line 309, ../../../assets/stylesheets/gipsy.scss */
 .list-glance li span strong {
   font-weight: 900;
 }
-/* line 267, ../../../assets/stylesheets/gipsy.scss */
+/* line 315, ../../../assets/stylesheets/gipsy.scss */
 .list-glance li + li a {
   padding-top: 20px;
   border-top: 1px dashed rgba(242, 242, 242, 0.3);
 }
 
-/* line 275, ../../../assets/stylesheets/gipsy.scss */
+/* line 323, ../../../assets/stylesheets/gipsy.scss */
 .reports .panel-body {
   padding: 0 10px;
 }
-/* line 281, ../../../assets/stylesheets/gipsy.scss */
+/* line 329, ../../../assets/stylesheets/gipsy.scss */
 .reports .list-glance li a {
   padding: 10px 0;
 }
-/* line 284, ../../../assets/stylesheets/gipsy.scss */
+/* line 332, ../../../assets/stylesheets/gipsy.scss */
 .reports .list-glance li a span {
   font-size: 15px;
   font-weight: 600;
 }
 
-/* line 293, ../../../assets/stylesheets/gipsy.scss */
+/* line 341, ../../../assets/stylesheets/gipsy.scss */
 .report_logs {
   background-color: #fff;
   padding: 10px;
   border: 1px solid #2e3641;
 }
-/* line 298, ../../../assets/stylesheets/gipsy.scss */
+/* line 346, ../../../assets/stylesheets/gipsy.scss */
 .report_logs select {
   font-size: 12px;
 }
 
-/* line 303, ../../../assets/stylesheets/gipsy.scss */
+/* line 351, ../../../assets/stylesheets/gipsy.scss */
 .list-lastupdate,
 .list-mostviewed {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 308, ../../../assets/stylesheets/gipsy.scss */
+/* line 356, ../../../assets/stylesheets/gipsy.scss */
 .list-lastupdate .list-item,
 .list-mostviewed .list-item {
   padding-bottom: 18px;
 }
-/* line 311, ../../../assets/stylesheets/gipsy.scss */
+/* line 359, ../../../assets/stylesheets/gipsy.scss */
 .list-lastupdate .item-author,
 .list-mostviewed .item-author {
   margin-bottom: 2px;
@@ -344,7 +396,7 @@ a:focus {
   font-weight: 300;
   color: #9eb2c0;
 }
-/* line 317, ../../../assets/stylesheets/gipsy.scss */
+/* line 365, ../../../assets/stylesheets/gipsy.scss */
 .list-lastupdate .item-title,
 .list-mostviewed .item-title {
   margin-bottom: 4px;
@@ -352,37 +404,37 @@ a:focus {
   font-weight: 300;
   color: #5a95d0;
 }
-/* line 323, ../../../assets/stylesheets/gipsy.scss */
+/* line 371, ../../../assets/stylesheets/gipsy.scss */
 .list-lastupdate .item-content,
 .list-mostviewed .item-content {
   margin: 0;
   font-size: 15px;
   color: #4d4b4d;
 }
-/* line 328, ../../../assets/stylesheets/gipsy.scss */
+/* line 376, ../../../assets/stylesheets/gipsy.scss */
 .list-lastupdate .list-item + .list-item,
 .list-mostviewed .list-item + .list-item {
   padding-top: 18px;
   border-top: 1px dashed #9eb2c0;
 }
 
-/* line 335, ../../../assets/stylesheets/gipsy.scss */
+/* line 383, ../../../assets/stylesheets/gipsy.scss */
 .panel-default i {
   font-size: 20px;
 }
 
-/* line 340, ../../../assets/stylesheets/gipsy.scss */
+/* line 388, ../../../assets/stylesheets/gipsy.scss */
 .panel-info {
   background: #fff;
 }
-/* line 342, ../../../assets/stylesheets/gipsy.scss */
+/* line 390, ../../../assets/stylesheets/gipsy.scss */
 .panel-info .panel-heading {
   position: relative;
   padding: 15px;
   font-size: 15px;
   text-transform: uppercase;
 }
-/* line 347, ../../../assets/stylesheets/gipsy.scss */
+/* line 395, ../../../assets/stylesheets/gipsy.scss */
 .panel-info .panel-heading a {
   position: absolute;
   top: 0px;
@@ -393,7 +445,7 @@ a:focus {
   background: #fff;
   overflow: hidden;
 }
-/* line 356, ../../../assets/stylesheets/gipsy.scss */
+/* line 404, ../../../assets/stylesheets/gipsy.scss */
 .panel-info .panel-heading a i {
   position: relative;
   top: 16px;
@@ -401,40 +453,76 @@ a:focus {
   font-size: 20px;
   color: #6098d1;
 }
-/* line 365, ../../../assets/stylesheets/gipsy.scss */
+/* line 413, ../../../assets/stylesheets/gipsy.scss */
 .panel-info .panel-body {
   padding-top: 25px;
   color: #4d4b4d;
 }
 
-/* line 371, ../../../assets/stylesheets/gipsy.scss */
+/* line 419, ../../../assets/stylesheets/gipsy.scss */
 .panel-default > .panel-heading {
   text-transform: uppercase;
+  color: #fff;
 }
 
-/* line 376, ../../../assets/stylesheets/gipsy.scss */
+/* line 423, ../../../assets/stylesheets/gipsy.scss */
+.panel-body {
+  color: #fff;
+}
+/* line 426, ../../../assets/stylesheets/gipsy.scss */
+.panel-body h4 {
+  margin-top: 0;
+  font-weight: 300;
+}
+/* line 431, ../../../assets/stylesheets/gipsy.scss */
+.panel-body h1 {
+  padding-top: 5px;
+  margin-top: 0;
+  margin-bottom: 27px;
+  font-weight: 300;
+  font-size: 30px;
+}
+/* line 438, ../../../assets/stylesheets/gipsy.scss */
+.panel-body h1 strong {
+  margin-right: 10px;
+  margin-top: -10px;
+  float: left;
+  font-size: 80px;
+}
+
+/* line 447, ../../../assets/stylesheets/gipsy.scss */
+.container {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+/* line 452, ../../../assets/stylesheets/gipsy.scss */
+.container a {
+  color: #5995cf;
+}
+/* line 456, ../../../assets/stylesheets/gipsy.scss */
 .container h1 {
   font-size: 32px;
   margin: 0;
   padding: 0;
 }
-/* line 382, ../../../assets/stylesheets/gipsy.scss */
+/* line 462, ../../../assets/stylesheets/gipsy.scss */
 .container .grp-object-tools {
   top: 0;
   margin-bottom: 20px;
 }
-/* line 386, ../../../assets/stylesheets/gipsy.scss */
+/* line 466, ../../../assets/stylesheets/gipsy.scss */
 .container #grp-content {
   top: 0;
   padding-left: 0;
   padding-right: 0;
 }
-/* line 391, ../../../assets/stylesheets/gipsy.scss */
+/* line 471, ../../../assets/stylesheets/gipsy.scss */
 .container .grp-module, .container .grp-group, .container .selector .selector-available, .container .selector .selector-chosen {
   font-size: 12px;
   background-color: #fff;
 }
-/* line 395, ../../../assets/stylesheets/gipsy.scss */
+/* line 475, ../../../assets/stylesheets/gipsy.scss */
 .container .grp-module h2, .container .grp-module h3, .container .grp-group h2, .container .grp-group h3, .container .selector .selector-available h2, .container .selector .selector-available h3, .container .selector .selector-chosen h2, .container .selector .selector-chosen h3 {
   margin: 0;
   font-weight: bold;
@@ -444,80 +532,121 @@ a:focus {
   background-color: #6098d1;
   color: #fff;
 }
-/* line 404, ../../../assets/stylesheets/gipsy.scss */
+/* line 484, ../../../assets/stylesheets/gipsy.scss */
 .container .grp-module h2 a, .container .grp-module h3 a, .container .grp-group h2 a, .container .grp-group h3 a, .container .selector .selector-available h2 a, .container .selector .selector-available h3 a, .container .selector .selector-chosen h2 a, .container .selector .selector-chosen h3 a {
   color: #fff;
 }
-/* line 410, ../../../assets/stylesheets/gipsy.scss */
+/* line 490, ../../../assets/stylesheets/gipsy.scss */
 .container .grp-group {
   background: none repeat scroll 0 0 #fff;
   border: 1px solid #2e3641;
 }
-/* line 415, ../../../assets/stylesheets/gipsy.scss */
+/* line 495, ../../../assets/stylesheets/gipsy.scss */
 .container #tree {
   margin: 0;
 }
-/* line 420, ../../../assets/stylesheets/gipsy.scss */
+/* line 500, ../../../assets/stylesheets/gipsy.scss */
 .container .panel-body select {
   color: #2e3641;
 }
+/* line 505, ../../../assets/stylesheets/gipsy.scss */
+.container > div > .row {
+  margin-top: 34px;
+}
 
-/* line 426, ../../../assets/stylesheets/gipsy.scss */
+/* line 510, ../../../assets/stylesheets/gipsy.scss */
 #grp-content-title {
   position: absolute;
-  right: 20px;
-  top: 5px;
+  right: 0px;
+  top: -35px;
+  width: 100%;
   z-index: 20;
 }
-/* line 432, ../../../assets/stylesheets/gipsy.scss */
+/* line 517, ../../../assets/stylesheets/gipsy.scss */
 #grp-content-title h1 {
   display: none;
 }
-/* line 436, ../../../assets/stylesheets/gipsy.scss */
+/* line 521, ../../../assets/stylesheets/gipsy.scss */
 #grp-content-title li a {
   font-size: 12px;
   padding: 5px 15px;
 }
+/* line 526, ../../../assets/stylesheets/gipsy.scss */
+#grp-content-title .hvad-language-tabs {
+  float: left;
+  margin-top: 4px;
+}
+/* line 530, ../../../assets/stylesheets/gipsy.scss */
+#grp-content-title .hvad-language-tabs span {
+  background-color: #6098d1;
+  opacity: 1;
+  font-size: 12px;
+  padding: 6px 15px;
+}
+/* line 536, ../../../assets/stylesheets/gipsy.scss */
+#grp-content-title .hvad-language-tabs span a {
+  color: #fff;
+}
+/* line 539, ../../../assets/stylesheets/gipsy.scss */
+#grp-content-title .hvad-language-tabs span.current {
+  background-color: #fff;
+  color: #6098d1;
+}
 
-/* line 443, ../../../assets/stylesheets/gipsy.scss */
+/* line 547, ../../../assets/stylesheets/gipsy.scss */
+#grp-container {
+  margin-top: 60px;
+}
+
+/* line 552, ../../../assets/stylesheets/gipsy.scss */
 .grp-pagination ul {
   height: 28px;
 }
-/* line 446, ../../../assets/stylesheets/gipsy.scss */
+/* line 555, ../../../assets/stylesheets/gipsy.scss */
 .grp-pagination ul li a {
   background-color: #fff;
   color: #6098d1;
 }
 
-/* line 452, ../../../assets/stylesheets/gipsy.scss */
+/* line 561, ../../../assets/stylesheets/gipsy.scss */
 .l-2cr-fluid.l-d-6 {
   position: relative;
 }
 
-/* line 456, ../../../assets/stylesheets/gipsy.scss */
+/* line 565, ../../../assets/stylesheets/gipsy.scss */
 .grp-search-button, .l-2cr-fluid.l-d-6 .c-1 {
   left: 210px;
   position: absolute;
   margin-left: 0 !important;
 }
 
-/* line 462, ../../../assets/stylesheets/gipsy.scss */
+/* line 571, ../../../assets/stylesheets/gipsy.scss */
+#grp-context-navigation {
+  font-size: 10px;
+}
+
+/* line 575, ../../../assets/stylesheets/gipsy.scss */
 #grp-filters {
   position: absolute;
   right: 0;
 }
 
-/* line 467, ../../../assets/stylesheets/gipsy.scss */
+/* line 580, ../../../assets/stylesheets/gipsy.scss */
 .grp-fixed-footer select {
   color: #000;
 }
 
-/* line 471, ../../../assets/stylesheets/gipsy.scss */
+/* line 584, ../../../assets/stylesheets/gipsy.scss */
+.row {
+  margin: 0;
+}
+
+/* line 588, ../../../assets/stylesheets/gipsy.scss */
 p.errornote {
   margin: 31px 0 0;
 }
 
-/* line 475, ../../../assets/stylesheets/gipsy.scss */
+/* line 592, ../../../assets/stylesheets/gipsy.scss */
 table thead th, table.grp-sortable thead th.sortable:hover,
 table.grp-sortable thead th.sortable.sorted.descending,
 table.grp-sortable thead th.sortable.sorted.descending:hover,
@@ -534,25 +663,30 @@ table.grp-sortable thead th.sortable.sorted.ascending:hover,
   background-image: none;
 }
 
-/* line 491, ../../../assets/stylesheets/gipsy.scss */
+/* line 608, ../../../assets/stylesheets/gipsy.scss */
+table thead th {
+  color: #fff;
+}
+
+/* line 612, ../../../assets/stylesheets/gipsy.scss */
 table.grp-sortable thead th.sortable .grp-text a, .ui-tabs .ui-tabs-nav li.ui-tabs-active,
 .ui-state-default, .ui-widget-content .ui-state-default a, .ui-widget-header .ui-state-default a,
 .grp-fixed-footer input[type="submit"]:hover {
   color: #fff;
 }
 
-/* line 497, ../../../assets/stylesheets/gipsy.scss */
+/* line 618, ../../../assets/stylesheets/gipsy.scss */
 body.grp-change-list table tr.grp-selected th, body.grp-change-list table tr.grp-selected td {
   background-color: #e9f0f6;
 }
 
-/* line 501, ../../../assets/stylesheets/gipsy.scss */
+/* line 622, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs {
   background-color: transparent;
   border: none;
   margin-top: 0;
 }
-/* line 506, ../../../assets/stylesheets/gipsy.scss */
+/* line 627, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-nav {
   background-image: none;
   background-color: transparent;
@@ -562,52 +696,65 @@ body.grp-change-list table tr.grp-selected th, body.grp-change-list table tr.grp
   position: absolute;
   z-index: 10;
 }
-/* line 515, ../../../assets/stylesheets/gipsy.scss */
+/* line 636, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-nav li a {
   padding: 12px 15px;
   font-size: 12px;
   line-height: 12px;
 }
-/* line 522, ../../../assets/stylesheets/gipsy.scss */
+/* line 643, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel {
   padding: 0;
   margin-top: 37px;
 }
-/* line 527, ../../../assets/stylesheets/gipsy.scss */
+/* line 648, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 532, ../../../assets/stylesheets/gipsy.scss */
+/* line 653, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs li.ui-tabs-active a {
   background-color: #fff;
   background-image: none;
   color: #6098d1;
 }
-/* line 538, ../../../assets/stylesheets/gipsy.scss */
+/* line 659, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .grp-module h2 {
   background-color: white;
   color: #5995cf;
 }
-/* line 543, ../../../assets/stylesheets/gipsy.scss */
+/* line 664, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .selector .selector-available h2, .ui-tabs .selector .selector-chosen h2 {
   display: block;
 }
 
-/* line 548, ../../../assets/stylesheets/gipsy.scss */
+/* line 669, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 553, ../../../assets/stylesheets/gipsy.scss */
+/* line 674, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel .col1 .vXMLLargeTextField,
 .ui-tabs .ui-tabs-panel .col1 .vLargeTextField {
   width: 100%;
 }
 
-/* line 558, ../../../assets/stylesheets/gipsy.scss */
+/* line 679, ../../../assets/stylesheets/gipsy.scss */
+.col1 {
+  display: block;
+  width: 50%;
+  float: left;
+  height: 100%;
+  vertical-align: top;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  padding: 0 5px 0 0;
+  margin: 0;
+}
+
+/* line 691, ../../../assets/stylesheets/gipsy.scss */
 table tbody tr.grp-row-even td,
 table tbody tr.grp-row-even th,
 table tbody tr.grp-alt td,
@@ -616,7 +763,7 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
   background-color: #fff;
 }
 
-/* line 566, ../../../assets/stylesheets/gipsy.scss */
+/* line 699, ../../../assets/stylesheets/gipsy.scss */
 .grp-object-tools li a, .grp-pagination ul li span {
   background-color: #6098d1;
   background-image: none;
@@ -624,57 +771,82 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
   opacity: 1;
 }
 
-/* line 573, ../../../assets/stylesheets/gipsy.scss */
+/* line 706, ../../../assets/stylesheets/gipsy.scss */
+.container .grp-object-tools {
+  margin: 3px 0 0;
+  top: 0;
+}
+
+/* line 711, ../../../assets/stylesheets/gipsy.scss */
 fieldset.grp-module .grp-row label {
   color: #2e3641;
 }
 
-/* line 577, ../../../assets/stylesheets/gipsy.scss */
+/* line 715, ../../../assets/stylesheets/gipsy.scss */
+.grp-row.label {
+  text-align: left;
+}
+
+/* line 719, ../../../assets/stylesheets/gipsy.scss */
 .g-d-doublepull12, .l-2cr-fluid.l-d-12 .c-1 {
   margin-left: 350px !important;
   position: absolute;
 }
 
-/* line 582, ../../../assets/stylesheets/gipsy.scss */
+/* line 723, ../../../assets/stylesheets/gipsy.scss */
+.l-2cr-fluid.l-d-12 .c-1 {
+  margin-left: 120px !important;
+  width: 500px;
+}
+
+/* line 728, ../../../assets/stylesheets/gipsy.scss */
 .button-state-grey, button:hover, a.fb_show:hover, a.related-lookup:hover, body.tinyMCE input[name="src"] + div a:hover, body.tinyMCE input[name="href"] + div a:hover, input[type="button"]:hover, a.related-lookup.m2m:hover, .grp-autocomplete-wrapper-m2m a.related-lookup:hover, .grp-autocomplete-wrapper-fk a.related-lookup:hover, button.ui-datepicker-trigger:hover, button.ui-timepicker-trigger:hover, button.ui-datetime-now:hover, .grp-pulldown-container .grp-pulldown-handler, .grp-pulldown-container .grp-pulldown-content, .grp-pulldown-container .grp-pulldown-content:hover, .button-state-blue, button, a.fb_show, a.related-lookup, body.tinyMCE input[name="src"] + div a, body.tinyMCE input[name="href"] + div a, input[type="button"], a.related-lookup.m2m, .grp-autocomplete-wrapper-m2m a.related-lookup, .grp-autocomplete-wrapper-fk a.related-lookup, button.ui-datepicker-trigger, button.ui-timepicker-trigger, button.ui-datetime-now, .grp-pulldown-container .grp-pulldown-handler:hover, .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler, .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler:hover {
   background-color: #fff;
 }
 
+/* line 732, ../../../assets/stylesheets/gipsy.scss */
+.grp-pulldown-container .grp-pulldown-handler,
+.grp-pulldown-container .grp-pulldown-handler:hover,
+.grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler,
+.grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler:hover {
+  background-image: none;
+}
+
 @media (max-width: 1200px) {
-  /* line 587, ../../../assets/stylesheets/gipsy.scss */
+  /* line 740, ../../../assets/stylesheets/gipsy.scss */
   .dashboard-sidebar {
     font-size: 90%;
   }
 
-  /* line 590, ../../../assets/stylesheets/gipsy.scss */
+  /* line 743, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .navbar-brand {
     padding: 12px 0 0;
   }
 }
 @media (max-width: 992px) {
-  /* line 596, ../../../assets/stylesheets/gipsy.scss */
+  /* line 749, ../../../assets/stylesheets/gipsy.scss */
   .navbar-nav {
     font-size: 78%;
   }
 }
 @media (min-width: 769px) {
-  /* line 603, ../../../assets/stylesheets/gipsy.scss */
+  /* line 756, ../../../assets/stylesheets/gipsy.scss */
   .profile-dropdown .navbar-nav {
     float: right;
   }
 }
 @media (max-width: 768px) {
-  /* line 610, ../../../assets/stylesheets/gipsy.scss */
+  /* line 763, ../../../assets/stylesheets/gipsy.scss */
   .navbar-nav {
     margin: 0;
   }
 
-  /* line 613, ../../../assets/stylesheets/gipsy.scss */
+  /* line 766, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .row .col-xs-12:first-child {
     background: #fff;
   }
 
-  /* line 616, ../../../assets/stylesheets/gipsy.scss */
+  /* line 769, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .navbar-brand {
     padding: 8px 0 0;
   }
