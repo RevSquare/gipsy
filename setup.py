@@ -15,7 +15,7 @@ else:
 
 setup(
     name='django-gipsy',
-    version='1.1.7',
+    version='1.1.8',
     author='Guillaume Pousseo',
     author_email='guillaumepousseo@revsquare.com',
     description='A set of fancy tools for django.',
