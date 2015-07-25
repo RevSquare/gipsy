@@ -702,46 +702,51 @@ body.grp-change-list table tr.grp-selected th, body.grp-change-list table tr.grp
   font-size: 12px;
   line-height: 12px;
 }
-/* line 643, ../../../assets/stylesheets/gipsy.scss */
+/* line 641, ../../../assets/stylesheets/gipsy.scss */
+.ui-tabs .ui-tabs-nav li a.errortab {
+  background-color: #bf3030;
+  color: #fff;
+}
+/* line 648, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel {
   padding: 0;
   margin-top: 37px;
 }
-/* line 648, ../../../assets/stylesheets/gipsy.scss */
+/* line 653, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 653, ../../../assets/stylesheets/gipsy.scss */
+/* line 658, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs li.ui-tabs-active a {
   background-color: #fff;
   background-image: none;
   color: #6098d1;
 }
-/* line 659, ../../../assets/stylesheets/gipsy.scss */
+/* line 664, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .grp-module h2 {
   background-color: white;
   color: #5995cf;
 }
-/* line 664, ../../../assets/stylesheets/gipsy.scss */
+/* line 669, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .selector .selector-available h2, .ui-tabs .selector .selector-chosen h2 {
   display: block;
 }
 
-/* line 669, ../../../assets/stylesheets/gipsy.scss */
+/* line 674, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 674, ../../../assets/stylesheets/gipsy.scss */
+/* line 679, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel .col1 .vXMLLargeTextField,
 .ui-tabs .ui-tabs-panel .col1 .vLargeTextField {
   width: 100%;
 }
 
-/* line 679, ../../../assets/stylesheets/gipsy.scss */
+/* line 684, ../../../assets/stylesheets/gipsy.scss */
 .col1 {
   display: block;
   width: 50%;
@@ -754,7 +759,7 @@ body.grp-change-list table tr.grp-selected th, body.grp-change-list table tr.grp
   margin: 0;
 }
 
-/* line 691, ../../../assets/stylesheets/gipsy.scss */
+/* line 696, ../../../assets/stylesheets/gipsy.scss */
 table tbody tr.grp-row-even td,
 table tbody tr.grp-row-even th,
 table tbody tr.grp-alt td,
@@ -763,7 +768,7 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
   background-color: #fff;
 }
 
-/* line 699, ../../../assets/stylesheets/gipsy.scss */
+/* line 704, ../../../assets/stylesheets/gipsy.scss */
 .grp-object-tools li a, .grp-pagination ul li span {
   background-color: #6098d1;
   background-image: none;
@@ -771,40 +776,40 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
   opacity: 1;
 }
 
-/* line 706, ../../../assets/stylesheets/gipsy.scss */
+/* line 711, ../../../assets/stylesheets/gipsy.scss */
 .container .grp-object-tools {
   margin: 3px 0 0;
   top: 0;
 }
 
-/* line 711, ../../../assets/stylesheets/gipsy.scss */
+/* line 716, ../../../assets/stylesheets/gipsy.scss */
 fieldset.grp-module .grp-row label {
   color: #2e3641;
 }
 
-/* line 715, ../../../assets/stylesheets/gipsy.scss */
+/* line 720, ../../../assets/stylesheets/gipsy.scss */
 .grp-row.label {
   text-align: left;
 }
 
-/* line 719, ../../../assets/stylesheets/gipsy.scss */
+/* line 724, ../../../assets/stylesheets/gipsy.scss */
 .g-d-doublepull12, .l-2cr-fluid.l-d-12 .c-1 {
   margin-left: 350px !important;
   position: absolute;
 }
 
-/* line 723, ../../../assets/stylesheets/gipsy.scss */
+/* line 728, ../../../assets/stylesheets/gipsy.scss */
 .l-2cr-fluid.l-d-12 .c-1 {
   margin-left: 120px !important;
   width: 500px;
 }
 
-/* line 728, ../../../assets/stylesheets/gipsy.scss */
+/* line 733, ../../../assets/stylesheets/gipsy.scss */
 .button-state-grey, button:hover, a.fb_show:hover, a.related-lookup:hover, body.tinyMCE input[name="src"] + div a:hover, body.tinyMCE input[name="href"] + div a:hover, input[type="button"]:hover, a.related-lookup.m2m:hover, .grp-autocomplete-wrapper-m2m a.related-lookup:hover, .grp-autocomplete-wrapper-fk a.related-lookup:hover, button.ui-datepicker-trigger:hover, button.ui-timepicker-trigger:hover, button.ui-datetime-now:hover, .grp-pulldown-container .grp-pulldown-handler, .grp-pulldown-container .grp-pulldown-content, .grp-pulldown-container .grp-pulldown-content:hover, .button-state-blue, button, a.fb_show, a.related-lookup, body.tinyMCE input[name="src"] + div a, body.tinyMCE input[name="href"] + div a, input[type="button"], a.related-lookup.m2m, .grp-autocomplete-wrapper-m2m a.related-lookup, .grp-autocomplete-wrapper-fk a.related-lookup, button.ui-datepicker-trigger, button.ui-timepicker-trigger, button.ui-datetime-now, .grp-pulldown-container .grp-pulldown-handler:hover, .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler, .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler:hover {
   background-color: #fff;
 }
 
-/* line 732, ../../../assets/stylesheets/gipsy.scss */
+/* line 737, ../../../assets/stylesheets/gipsy.scss */
 .grp-pulldown-container .grp-pulldown-handler,
 .grp-pulldown-container .grp-pulldown-handler:hover,
 .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler,
@@ -813,40 +818,40 @@ fieldset.grp-module .grp-row label {
 }
 
 @media (max-width: 1200px) {
-  /* line 740, ../../../assets/stylesheets/gipsy.scss */
+  /* line 745, ../../../assets/stylesheets/gipsy.scss */
   .dashboard-sidebar {
     font-size: 90%;
   }
 
-  /* line 743, ../../../assets/stylesheets/gipsy.scss */
+  /* line 748, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .navbar-brand {
     padding: 12px 0 0;
   }
 }
 @media (max-width: 992px) {
-  /* line 749, ../../../assets/stylesheets/gipsy.scss */
+  /* line 754, ../../../assets/stylesheets/gipsy.scss */
   .navbar-nav {
     font-size: 78%;
   }
 }
 @media (min-width: 769px) {
-  /* line 756, ../../../assets/stylesheets/gipsy.scss */
+  /* line 761, ../../../assets/stylesheets/gipsy.scss */
   .profile-dropdown .navbar-nav {
     float: right;
   }
 }
 @media (max-width: 768px) {
-  /* line 763, ../../../assets/stylesheets/gipsy.scss */
+  /* line 768, ../../../assets/stylesheets/gipsy.scss */
   .navbar-nav {
     margin: 0;
   }
 
-  /* line 766, ../../../assets/stylesheets/gipsy.scss */
+  /* line 771, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .row .col-xs-12:first-child {
     background: #fff;
   }
 
-  /* line 769, ../../../assets/stylesheets/gipsy.scss */
+  /* line 774, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .navbar-brand {
     padding: 8px 0 0;
   }

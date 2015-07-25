@@ -637,6 +637,11 @@ body.grp-change-list table tr.grp-selected th, body.grp-change-list table tr.grp
             padding: 12px 15px;
             font-size: 12px;
             line-height: 12px;
+            
+            &.errortab {
+                background-color: #bf3030;
+                color: #fff;
+            }
         }
     }
     
