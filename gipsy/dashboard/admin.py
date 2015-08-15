@@ -54,6 +54,7 @@ class GipsyAdminSite(AdminSite):
         Displays the dashboard on the main page and triggers widget
         from the settings.GIPSY_DASHBOARD constant.
         """
+        request.current_app = self.name
         context = dict(
             dashboard=self.init_dashboard_class()(request),
         )
