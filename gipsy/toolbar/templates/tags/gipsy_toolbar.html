@@ -69,16 +69,22 @@
 <script type="text/javascript">
 var GipsyToolbar = {
     initiated: false,
-    
+
     init: function() {
         if (this.initiated === true) {
             return false;
         }
+        this.addBodyClass("gipsy-toolbar-enabled");
         this.createLink("{% static "gipsy_toolbar/css/gipsy_toolbar.css" %}");
         this.createLink("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
         this.initiated = true;
     },
-    
+
+    addBodyClass: function(className){
+        var body = document.getElementsByTagName("body")[0];
+        body.className = body.className + " " + className;
+    },
+
     createLink: function(url){
         var stylesheet = document.createElement("link");
         stylesheet.setAttribute("rel", "stylesheet");
