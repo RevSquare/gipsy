@@ -37,11 +37,9 @@ class GoogleAnalyticsConnector(object):
         self.SCOPE = 'https://www.googleapis.com/auth/analytics.readonly'
 
     def _credential_type(self):
-        try:
-            settings.GOOGLE_ANALYTICS_CREDENTIAL_TYPE
-        except NameError:
-            return "oauth2_client_id"
-        return settings.GOOGLE_ANALYTICS_CREDENTIAL_TYPE
+        if hasattr(settings, 'GOOGLE_ANALYTICS_CREDENTIAL_TYPE'):
+            return settings.GOOGLE_ANALYTICS_CREDENTIAL_TYPE
+        return "oauth2_client_id"
 
     def _authenticate(self):
         credentials = None
