@@ -1,4 +1,4 @@
-{% load i18n gipsy_toolbar %}
+{% load i18n gipsy_toolbar static %}
 
 {% if user.is_active and user.is_staff %}
 <div class="gipsy_toolbar-container" style="display: none;">
@@ -39,6 +39,14 @@
                 
                 <ul class="gipsy_toolbar__user">
                     {% gipsy_version_indicator 'user' css_classes="user__item" %}
+
+                    {% gipsy_toolbar_link as obj_admin_link %}
+                    {% if obj_admin_link %}
+                        <li class="user__item"> <a href="{{ obj_admin_link }}">{% trans 'Edit' %}</a> </li>
+                    {% elif has_absolute_url %}
+                        <li class="user__item"> <a href="{% url 'admin:view_on_site' content_type_id original.pk %}">{% trans "View on site" %}</a> </li>
+                    {% endif %}
+
                     <li class="user__item">
                         <a href="#">{% firstof user.get_short_name user.get_username %} <i class="fa fa-chevron-down"></i></a>
                         
@@ -53,12 +61,6 @@
                     </li>
                 </ul>
                 
-                {% gipsy_toolbar_link as obj_admin_link %}
-                {% if obj_admin_link %}
-                    <a class="gipsy_toolbar__button" href="{{ obj_admin_link }}">{% trans 'Edit' %}</a>
-                {% elif has_absolute_url %}
-                    <a class="gipsy_toolbar__button" href="{% url 'admin:view_on_site' content_type_id original.pk %}">{% trans "View on site" %}</a>
-                {% endif %}
             </div>
         </div>
     </div>
@@ -67,16 +69,22 @@
 <script type="text/javascript">
 var GipsyToolbar = {
     initiated: false,
-    
+
     init: function() {
         if (this.initiated === true) {
             return false;
         }
-        this.createLink("{{ STATIC_URL }}gipsy_toolbar/css/gipsy_toolbar.css");
+        this.addBodyClass("gipsy-toolbar-enabled");
+        this.createLink("{% static "gipsy_toolbar/css/gipsy_toolbar.css" %}");
         this.createLink("//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css");
         this.initiated = true;
     },
-    
+
+    addBodyClass: function(className){
+        var body = document.getElementsByTagName("body")[0];
+        body.className = body.className + " " + className;
+    },
+
     createLink: function(url){
         var stylesheet = document.createElement("link");
         stylesheet.setAttribute("rel", "stylesheet");
