@@ -1,0 +1,4 @@
+# No particular version to test anything
+
+Django
+django-gipsy

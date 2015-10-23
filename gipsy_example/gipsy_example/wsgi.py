@@ -1,5 +1,5 @@
 """
-WSGI config for gipsy_exemple project.
+WSGI config for gipsy_example project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gipsy_exemple.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "gipsy_example.settings")
 
 application = get_wsgi_application()

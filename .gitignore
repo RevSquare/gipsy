@@ -9,3 +9,4 @@ build/*
 dist/*
 *.egg-info
 */.sass-cache
+db.sqlite3
