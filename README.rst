@@ -42,7 +42,7 @@ Simply add the app in your installed apps list in settings.py
         ...
     )
 
-Then install your model with 
+Then install your model with
 
 .. code-block::  shell
 
@@ -53,8 +53,8 @@ In case you are using South, you can alternatively do:
 .. code-block::  shell
 
     python manage.py migrate gipsy.toolbar
-    
-    
+
+
 Setup your menu items in the admin.
 
 And finaly, install the toolbar in your templates with a template tag:
@@ -62,10 +62,10 @@ And finaly, install the toolbar in your templates with a template tag:
 .. code-block::  html
 
     {% load gipsy_toolbar %}
-    
+
     {% gipsy_toolbar %}
 
-For the admin part, you will need to overwrite templates with the same code as above: {templates}/admin/base.html 
+For the admin part, you will need to overwrite templates with the same code as above: {templates}/admin/base.html
 
 If you are using a cache engine such as Varnish, you can use a bundled middleware in order to set a cookie that you can use to deactivate cache to display the toolkbar for staff admins. Happy to hear abotu a cleaner solution.
 
@@ -101,7 +101,7 @@ IMPORTANT! You need to install it BEFORE any other admin library such as grappel
         'django.contrib.admin',
     )
 
-Then install your model with 
+Then install your model with
 
 .. code-block::  shell
 
@@ -112,7 +112,7 @@ In case you are using South, you can alternatively do:
 .. code-block::  shell
 
     python manage.py migrate gipsy.dashboard
-    
+
 
 Menu items
 ==========
@@ -142,7 +142,7 @@ Additionnaly you can define in the settings the url pattern you want to use for 
 Widgets
 =======
 
-The philosophy behind the widget is flexibility. Gipsy Dashboard integrate a set of pre-written template tags. You can include those template tags by overwriting the gipsy.dashboard.templates.dashboard.html file. 
+The philosophy behind the widget is flexibility. Gipsy Dashboard integrate a set of pre-written template tags. You can include those template tags by overwriting the gipsy.dashboard.templates.dashboard.html file.
 
 Then feel free to add you own widgets by copying the html of each templatetags. Or you can use existing templatetags and fill them with appropriate objects.
 
@@ -224,18 +224,32 @@ Most of the difficulty will be to integrate the API credentials. In order to do 
 
 Once you have completed those steps, you will need to add setup the following constants in your settings:
 
-* GOOGLE_ANALYTICS_CLIENT_SECRETS = '/location/of/your/client_secret.json'
-* GOOGLE_ANALYTICS_TOKEN_FILE_NAME = '/location/of/your/analytics.dat'
-* GOOGLE_ANALYTICS_VIEW_ID = 'your_view_id'
+.. code-block::  python
+
+    GOOGLE_ANALYTICS_CREDENTIAL_TYPE = "oauth2_client_id"  # default value if it's not defined (it is optional to define)
+    GOOGLE_ANALYTICS_TOKEN_FILE_NAME = "path/to/your/analytics.dat"
+    GOOGLE_ANALYTICS_CLIENT_SECRETS = "path/to/your/client_secret.json"
+    GOOGLE_ANALYTICS_VIEW_ID = "your_view_id"
+
+or
+
+.. code-block::  python
+
+    GOOGLE_ANALYTICS_CREDENTIAL_TYPE = "service_account"
+    GOOGLE_ANALYTICS_PRIVATE_KEY_FILE_NAME = "path/to/privatekey.p12/or/privatekey.pem"
+    GOOGLE_ANALYTICS_CLIENT_EMAIL = "your-email-address@developer.gserviceaccount.com"
+    GOOGLE_ANALYTICS_VIEW_ID = "your_view_id"
+
+If you will choose "service_account" credential type, don't forget to add your client email "your-email-address@developer.gserviceaccount.com" to Google Analytics. See more here: http://stackoverflow.com/questions/12837748/analytics-google-api-error-403-user-does-not-have-any-google-analytics-account
 
 I recommand to start by using the shell to gain the access and generate the analytics.dat file.
 
 .. code-block::  shell
 
     python manage.py shell
-    
+
 Then
-    
+
 .. code-block::  shell
 
     from gipsy.dashboard.services.google_analytics_connector import GoogleAnalyticsConnector
@@ -250,7 +264,7 @@ Version indicator
 =================
 
 
-Sometimes version information is be very useful. When knowing current version you are able to tell in ticket on which version bug appears. Also it will be easy to check if this is regression (bug reapeared on present version, is not reproductible on prod which has different version). 
+Sometimes version information is be very useful. When knowing current version you are able to tell in ticket on which version bug appears. Also it will be easy to check if this is regression (bug reapeared on present version, is not reproductible on prod which has different version).
 
 .. code-block::  python
 
