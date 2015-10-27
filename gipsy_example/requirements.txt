@@ -1,4 +1,5 @@
 # No particular version to test anything
 
 Django
-django-gipsy
+# django-gipsy
+-e git+https://github.com/RevSquare/gipsy#egg=develop
