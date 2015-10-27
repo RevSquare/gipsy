@@ -10,3 +10,5 @@ dist/*
 *.egg-info
 */.sass-cache
 db.sqlite3
+*.sublime-project
+*.sublime-workspace
