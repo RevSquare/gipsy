@@ -1,7 +1,3 @@
 include AUTHORS.txt
 include LICENSE.txt
 include README.rst
-recursive-include gipsy/toolbar/static *
-recursive-include gipsy/toolbar/templates *
-recursive-include gipsy/dashboard/static *
-recursive-include gipsy/dashboard/templates *

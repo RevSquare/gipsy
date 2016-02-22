@@ -2,6 +2,8 @@ from datetime import date, datetime, timedelta
 
 from django.core.cache import cache
 
+from oauth2client.client import AccessTokenRefreshError
+
 from .widgets import WidgetMetricsEvolution, WidgetLineChart
 from gipsy.dashboard.services.google_analytics_connector import GoogleAnalyticsConnector
 
@@ -15,11 +17,15 @@ class WidgetGAEvolution(WidgetMetricsEvolution):
         if cached_objects is None:
             ga_connector = GoogleAnalyticsConnector()
             query_date = str((datetime.now() - timedelta(days=1)).date())
-            result = ga_connector.start_service()\
-                .query(start_date=query_date, end_date=query_date, metrics=metrics).execute()
-            previous_date = str((datetime.now() - timedelta(days=2)).date())
-            previous_result = ga_connector.start_service()\
-                .query(start_date=previous_date, end_date=previous_date, metrics=metrics).execute()
+            try:
+                result = ga_connector.start_service()\
+                    .query(start_date=query_date, end_date=query_date, metrics=metrics).execute()
+                previous_date = str((datetime.now() - timedelta(days=2)).date())
+                previous_result = ga_connector.start_service()\
+                    .query(start_date=previous_date, end_date=previous_date, metrics=metrics).execute()
+            except AccessTokenRefreshError:
+                result = {}
+                previous_result = {}
 
             try:
                 result = result['rows'][0][0]
@@ -75,8 +81,12 @@ class WidgetGALineChart(WidgetLineChart):
                 day_date = today - timedelta(days=num)
                 day = day_date.strftime("%Y-%m-%d")
                 labels.append(day_date.strftime("%m-%d-%Y"))
-                result = ga_connector.start_service()\
-                    .query(start_date=day, end_date=day, metrics='ga:pageviews, ga:sessions').execute()
+                try:
+                    result = ga_connector.start_service()\
+                        .query(start_date=day, end_date=day, metrics='ga:pageviews, ga:sessions').execute()
+                except AccessTokenRefreshError:
+                    result = {'totalsForAllResults': {'ga:sessions': 0, 'a:pageviews': 0}}
+
                 values['sessions']['values'].append(result['totalsForAllResults']['ga:sessions'])
                 values['pageviews']['values'].append(result['totalsForAllResults']['ga:pageviews'])
             values['sessions']['values'] = values['sessions']['values'][::-1]

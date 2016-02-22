@@ -104,3 +104,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+GOOGLE_ANALYTICS_CREDENTIAL_TYPE = "service_account"
+GOOGLE_ANALYTICS_PRIVATE_KEY_FILE_NAME = os.path.join(BASE_DIR, 'secret.pem')
+GOOGLE_ANALYTICS_CLIENT_EMAIL = '353151302781-4ri37g14t1dm3qrbh1ff4rjpupig2tsv@developer.gserviceaccount.com'
+GOOGLE_ANALYTICS_VIEW_ID = '96929910'
+GIPSY_DASHBOARD = 'gipsy_example.dashboard.DashboardDefault'
