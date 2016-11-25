@@ -2,7 +2,12 @@
 Gipsy
 #####
 
-Set of libraries used for the gipsy project. Those librairies are only compatible with django >= 1.6.
+Set of libraries used for the gipsy project.
+
+Compatibility:
+
+* gipsy 2.0 supports Django >= 1.10
+* gipsy 1.4 supports Django 1.6 to 1.8
 
 *******
 Install
@@ -42,17 +47,28 @@ Simply add the app in your installed apps list in settings.py
         ...
     )
 
+Make sure you have 'django.core.context_processors.request' added to your TEMPLATES context_processors.
+
+.. code-block::  python
+
+    TEMPLATES = [
+        {
+            ...
+            'OPTIONS': {
+                'context_processors': [
+                    ...
+                    'django.template.context_processors.request',
+                    ...
+                ],
+            },
+        },
+    ]
+
 Then install your model with
 
 .. code-block::  shell
 
-    python manage.py syncdb
-
-In case you are using South, you can alternatively do:
-
-.. code-block::  shell
-
-    python manage.py migrate gipsy.toolbar
+    python manage.py migrate
 
 
 Setup your menu items in the admin.
@@ -105,13 +121,7 @@ Then install your model with
 
 .. code-block::  shell
 
-    python manage.py syncdb
-
-In case you are using South, you can alternatively do:
-
-.. code-block::  shell
-
-    python manage.py migrate gipsy.dashboard
+    python manage.py migrate
 
 
 Menu items
@@ -163,7 +173,7 @@ Dashboard
 
 The dashboard system is greatly inspired from the awesome Grappelli library. In order to setup your dashboard, you will need to create a setting class and let your django settings know about it by setting up the settings.GIPSY_DASHBOARD constant.
 
-For exemple:
+For example:
 
 .. code-block::  python
 

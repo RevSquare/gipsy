@@ -35,8 +35,13 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
         # this is not done before to allow to point directly to those kinds of
         # urls
         if not active:
-            request_formated = request_formated.split('/add', 1)
-            request_formated = request_formated[0].split('/edit', 1)
+            if 'add' in request_formated:
+                request_formated = request_formated.split('/add', 1)
+            if 'change' in request_formated:
+                request_formated = request_formated.split('/change', 1)[0].rsplit('/', 1)
+            if 'history' in request_formated:
+                request_formated = request_formated.split('/history', 1)[0].rsplit('/', 1)
+
             active = get_active_url(request_formated[0] + '/')
 
     if len(active):

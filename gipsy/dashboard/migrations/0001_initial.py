@@ -1,40 +1,34 @@
 # -*- coding: utf-8 -*-
-from south.utils import datetime_utils as datetime
-from south.db import db
-from south.v2 import SchemaMigration
-from django.db import models
+from __future__ import unicode_literals
+
+from django.db import migrations, models
+import django.db.models.deletion
 
 
-class Migration(SchemaMigration):
+class Migration(migrations.Migration):
 
-    def forwards(self, orm):
-        # Adding model 'GipsyDashboardMenu'
-        db.create_table(u'dashboard_gipsydashboardmenu', (
-            (u'id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('parent', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['dashboard.GipsyDashboardMenu'], null=True, blank=True)),
-            ('name', self.gf('django.db.models.fields.CharField')(max_length=255)),
-            ('url', self.gf('django.db.models.fields.CharField')(max_length=255, null=True, blank=True)),
-            ('order', self.gf('django.db.models.fields.PositiveSmallIntegerField')()),
-            ('icon', self.gf('django.db.models.fields.CharField')(max_length=20)),
-        ))
-        db.send_create_signal(u'dashboard', ['GipsyDashboardMenu'])
+    initial = True
 
+    dependencies = [
+    ]
 
-    def backwards(self, orm):
-        # Deleting model 'GipsyDashboardMenu'
-        db.delete_table(u'dashboard_gipsydashboardmenu')
-
-
-    models = {
-        u'dashboard.gipsydashboardmenu': {
-            'Meta': {'ordering': "['order']", 'object_name': 'GipsyDashboardMenu'},
-            'icon': ('django.db.models.fields.CharField', [], {'max_length': '20'}),
-            u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'name': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
-            'order': ('django.db.models.fields.PositiveSmallIntegerField', [], {}),
-            'parent': ('django.db.models.fields.related.ForeignKey', [], {'to': u"orm['dashboard.GipsyDashboardMenu']", 'null': 'True', 'blank': 'True'}),
-            'url': ('django.db.models.fields.CharField', [], {'max_length': '255', 'null': 'True', 'blank': 'True'})
-        }
-    }
-
-    complete_apps = ['dashboard']
+    operations = [
+        migrations.CreateModel(
+            name='GipsyDashboardMenu',
+            fields=[
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+                ('name', models.CharField(max_length=255, verbose_name='Name')),
+                ('url', models.CharField(blank=True, max_length=255, null=True, verbose_name='Url')),
+                ('order', models.PositiveSmallIntegerField(verbose_name='Order')),
+                ('icon', models.CharField(help_text='Font awesome class \
+                                                     http://fortawesome.github.io/Font-Awesome/icons/ ie: fa-circle',
+                 max_length=20,           verbose_name='icon')),
+                ('parent', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.CASCADE,
+                                             to='dashboard.GipsyDashboardMenu')),
+            ],
+            options={
+                'abstract': False,
+                'ordering': ['order'],
+            },
+        ),
+    ]

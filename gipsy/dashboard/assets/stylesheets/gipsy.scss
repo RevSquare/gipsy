@@ -127,7 +127,7 @@ a:focus {
         min-width: 100%;
         margin: 0;
         padding: 0;
-        background-color: #3b4653;
+        background-color: #ddd;
         box-shadow: none;
         border: 0;
     }
@@ -156,38 +156,38 @@ a:focus {
 
 .dashboard-sidebar {
     font-weight: 100;
+    margin-top: 38px;
+    
     .nav {
-        background: #2e3641;
+        background: #eee;
+        border: 1px solid #ccc;
+        border-radius: 3px;
         
         a {
-            color: #fff;
-            font-size: 14px;
-            font-weight: 100;
+            color: #2e3641;
+            font-size: 12px;
+            font-weight: bold;
             line-height: 20px;
         }
         
-        .active > a {
-            color: #6098d1;
+        > li:first-child {
+            border-top: 0;
         }
         
-        .dropdown.active > a:focus,
-        .dashboard-sidebar .nav .dropdown.active > a:hover {
-            color: #6098d1;
-        }
-
         > li {
+            border-top: 1px solid #ccc;
             clear: both;
+            
             > a {
-                padding: 15px 15px;
-                border-bottom: 1px solid #5E5F68;
+                padding: 10px 15px;
                 position: relative;
                 border-bottom: 0;
 
                 &:focus {
-                    background: #2e3641;
+                    background: #ccc;
                 }
                 &:hover {
-                    background: #3b4653;
+                    background: #ddd;
                 }
                 &:after {
                     content: '';
@@ -201,17 +201,20 @@ a:focus {
             }
             &.open {
                 > a {
-                    background: #2e3641;
+                    background: #ccc;
                     &:after {
                         display: none;
-                    }
-                    &:hover {
-                        background: #3b4653;
                     }
                 }
             }
             &.active {
                 position: relative;
+                
+                > a {
+                    background-color: #ccc;
+                    color: #2e3641;
+                }
+                
                 &:after,
                 &:before {
                     content: '';
@@ -234,20 +237,33 @@ a:focus {
                     margin-right: -5px;
                     width: 10px;
                     height: 10px;
-                    background: #6098d1;
+                    background: #ccc;
                 }
                 
                 .fa.pull-right {
-                    color: #5995cf;
+                    color: #ddd;
                 }
+                
+                .active {
+                    a {
+                        background-color: #ddd;
+                        color: #fff;
+                        padding-left: 30px;
+                    }
+                }
+            }
+            
+            
+            li a {
+                padding-left: 30px;
             }
         }
     }
     .fa {
-        font-size: 17px;
+        font-size: 12px;
     }
     .fa.pull-right {
-        color: #ffffff;
+        color: #ccc;
         font-size: 16px;
     }
     &:after {
@@ -448,20 +464,18 @@ a:focus {
     padding: 0;
     margin: 0;
     width: 100%;
-    
-    a {
-        color: #5995cf;
-    }
 
     h1 {
-        font-size: 32px;
+        font-size: 16px;
+        font-weight: bold;
         margin: 0;
-        padding: 0;
+        padding: 10px 0;
     }
 
     .grp-object-tools {
         top: 0;
-        margin-bottom: 20px;
+        position: absolute;
+        right: 0;
     }
     #grp-content {
         top: 0;
@@ -470,26 +484,13 @@ a:focus {
     }
     .grp-module, .grp-group, .selector .selector-available, .selector .selector-chosen {
         font-size: 12px;
-        background-color: #fff;
 
         h2, h3 {
             margin: 0;
             font-weight: bold;
             text-shadow: none;
             font-size: 12px;
-            background-image: none;
-            background-color: #6098d1;
-            color: #fff;
-            
-            a {
-                color: #fff;
-            }
         }
-    }
-
-    .grp-group {
-        background: none repeat scroll 0 0 #fff;
-        border: 1px solid #2e3641;
     }
 
     #tree {
@@ -507,56 +508,7 @@ a:focus {
     }
 }
 
-#grp-content-title {
-    position: absolute;
-    right: 0px;
-    top: -35px;
-    width: 100%;
-    z-index: 20;
-    
-    h1 {
-        display: none;
-    }
-    
-    li a {
-        font-size: 12px;
-        padding: 5px 15px;
-    }
-    
-    .hvad-language-tabs {
-        float: left;
-        margin-top: 4px;
-        
-        span {
-            background-color: #6098d1;
-            opacity: 1;
-            font-size: 12px;
-            padding: 6px 15px;
-            
-            a {
-                color: #fff;
-            }
-            &.current {
-                background-color: #fff;
-                color: #6098d1;
-            }
-        }
-    }
-}
 
-#grp-container {
-    margin-top: 60px;
-}
-
-.grp-pagination {
-    ul {
-        height: 28px;
-    }
-    ul li a {
-        background-color: #fff;
-        color: #6098d1;
-    }
-}
 
 .l-2cr-fluid.l-d-6 {
     position: relative;
@@ -587,36 +539,6 @@ a:focus {
 
 p.tabbed-errornote {
     margin: 40px 0 0;
-}
-
-table thead th, table.grp-sortable thead th.sortable:hover,
-table.grp-sortable thead th.sortable.sorted.descending,
-table.grp-sortable thead th.sortable.sorted.descending:hover,
-table.grp-sortable thead th.sortable.sorted.ascending,
-table.grp-sortable thead th.sortable.sorted.ascending:hover,
-.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default,
-.grp-collapse.grp-closed > h2.grp-collapse-handler,
-.grp-collapse.grp-closed > h2.grp-collapse-handler:hover,
-.grp-fixed-footer input[type="submit"],
-.grp-fixed-footer input[type="submit"]:hover,
-.grp-object-tools li a.grp-viewsite-link, .grp-object-tools li a[target="_blank"],
-.grp-object-tools li a.grp-viewsite-link:hover, .grp-object-tools li a[target="_blank"]:hover {
-    background-color: #6098d1;
-    background-image: none;
-}
-
-table thead th {
-    color: #fff;
-}
-
-table.grp-sortable thead th.sortable .grp-text a, .ui-tabs .ui-tabs-nav li.ui-tabs-active,
-.ui-state-default, .ui-widget-content .ui-state-default a, .ui-widget-header .ui-state-default a,
-.grp-fixed-footer input[type="submit"]:hover {
-    color: #fff;
-}
-
-body.grp-change-list table tr.grp-selected th, body.grp-change-list table tr.grp-selected td {
-    background-color: #e9f0f6;
 }
 
 .ui-tabs {
@@ -701,11 +623,12 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
     background-color: #fff;
 }
 
-.grp-object-tools li a, .grp-pagination ul li span {
-    background-color: #6098d1;
-    background-image: none;
-    color: #fff;
-    opacity: 1;
+.grp-object-tools li, .grp-pagination ul li {
+    margin-bottom: 15px;
+
+    a, span {
+        font-size: 12px;
+    }
 }
 
 .container .grp-object-tools {
@@ -728,10 +651,6 @@ fieldset.grp-module .grp-row label {
 .l-2cr-fluid.l-d-12 .c-1 {
     margin-left: 120px !important;
     width: 500px;
-}
-
-.button-state-grey, button:hover, a.fb_show:hover, a.related-lookup:hover, body.tinyMCE input[name="src"] + div a:hover, body.tinyMCE input[name="href"] + div a:hover, input[type="button"]:hover, a.related-lookup.m2m:hover, .grp-autocomplete-wrapper-m2m a.related-lookup:hover, .grp-autocomplete-wrapper-fk a.related-lookup:hover, button.ui-datepicker-trigger:hover, button.ui-timepicker-trigger:hover, button.ui-datetime-now:hover, .grp-pulldown-container .grp-pulldown-handler, .grp-pulldown-container .grp-pulldown-content, .grp-pulldown-container .grp-pulldown-content:hover, .button-state-blue, button, a.fb_show, a.related-lookup, body.tinyMCE input[name="src"] + div a, body.tinyMCE input[name="href"] + div a, input[type="button"], a.related-lookup.m2m, .grp-autocomplete-wrapper-m2m a.related-lookup, .grp-autocomplete-wrapper-fk a.related-lookup, button.ui-datepicker-trigger, button.ui-timepicker-trigger, button.ui-datetime-now, .grp-pulldown-container .grp-pulldown-handler:hover, .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler, .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler:hover {
-    background-color: #fff;
 }
 
 .grp-pulldown-container .grp-pulldown-handler,
