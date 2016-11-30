@@ -83,7 +83,7 @@ a:focus {
                     border-style: solid;
                     border-width: 9px 6px 0 6px;
                     border-color: #6098d1 transparent transparent transparent;
-                }
+                } 
             }
             &.dropdown.open {
                 background-color: #3b4653;
@@ -182,10 +182,7 @@ a:focus {
                 padding: 10px 15px;
                 position: relative;
                 border-bottom: 0;
-
-                &:focus {
-                    background: #ccc;
-                }
+                
                 &:hover {
                     background: #ddd;
                 }
@@ -202,6 +199,12 @@ a:focus {
             &.open {
                 > a {
                     background: #ccc;
+                    background-image: linear-gradient(#bbb, #ddd);
+                
+                    .fa.pull-right {
+                        color: #eee;
+                    }  
+                    
                     &:after {
                         display: none;
                     }
@@ -213,6 +216,15 @@ a:focus {
                 > a {
                     background-color: #ccc;
                     color: #2e3641;
+                    background-image: linear-gradient(#bbb, #ddd); 
+                }
+                
+                .fa.pull-right {
+                    display: none;
+                }
+                
+                > .dropdown-menu {
+                    display: block;
                 }
                 
                 &:after,
@@ -241,7 +253,7 @@ a:focus {
                 }
                 
                 .fa.pull-right {
-                    color: #ddd;
+                    color: #eee;
                 }
                 
                 .active {
