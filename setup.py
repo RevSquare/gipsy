@@ -15,7 +15,7 @@ else:
 
 setup(
     name='django-gipsy',
-    version='2.1',
+    version='2.2',
     author='Guillaume Pousseo',
     author_email='guillaumepousseo@revsquare.com',
     description='A set of fancy tools for django.',
@@ -38,7 +38,6 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
     install_requires=[
-        'google-api-python-client==1.3.1',
-        'django-grappelli>=2.7'
+        'google-api-python-client==1.5.5'
     ],
 )

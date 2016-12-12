@@ -1,7 +1,8 @@
 import httplib2
 from apiclient.discovery import build
-from oauth2client.client import flow_from_clientsecrets, SignedJwtAssertionCredentials
+from oauth2client.client import flow_from_clientsecrets
 from oauth2client.file import Storage
+from oauth2client.service_account import ServiceAccountCredentials
 from oauth2client.tools import run_flow
 
 from django.conf import settings
@@ -47,7 +48,7 @@ class GoogleAnalyticsConnector(object):
             primary_key_file = settings.GOOGLE_ANALYTICS_PRIVATE_KEY_FILE_NAME
             with open(primary_key_file, 'rb') as f:
                 private_key = f.read()
-            credentials = SignedJwtAssertionCredentials(
+            credentials = ServiceAccountCredentials.from_p12_keyfil(
                 settings.GOOGLE_ANALYTICS_CLIENT_EMAIL, private_key, self.SCOPE)
         else:
             storage = Storage(settings.GOOGLE_ANALYTICS_TOKEN_FILE_NAME)

@@ -1,11 +1,12 @@
 from django import template
+from django.contrib import admin
 from django.core.urlresolvers import reverse
 from django.db.models import Q
 
 from gipsy.dashboard.models import GipsyDashboardMenu
 from gipsy.dashboard.settings import GIPSY_DASHBOARD_URL,\
     GIPSY_VANILLA_INDEX_URL, GIPSY_THEME, GIPSY_DASHBOARD_TITLE,\
-    GIPSY_DASHBOARD_CACHE_TIME
+    GIPSY_DASHBOARD_CACHE_TIME   
 
 
 register = template.Library()
@@ -24,8 +25,52 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
     """
     This tags manages the display of the admin menu.
     """
-    context['items'] = GipsyDashboardMenu.objects.filter(parent__isnull=True)\
+    items = []
+    items_list = []
+    items_parents = []
+    parent_items_list = GipsyDashboardMenu.objects.filter(parent__isnull=True)\
         .order_by('order')
+        
+    # Only display menu items to user with the right permission
+    for parent_item in parent_items_list:
+        for child in parent_item.children:
+            items_list.append(child)
+    app_list = admin.site.get_app_list(context['request'])
+    apps = {}
+    for a in app_list:
+        apps[a['app_url']] = a['models'][0]['perms']
+    apps_keys = apps.keys()
+    admin_prefix = reverse('admin:index').replace('/', '')
+    for item in items_list:
+        if item.url is None:
+            continue
+        url = item.url
+        if url[0] != '/':
+            url = '/' + item.url
+        url_args = url.split('/')
+        if admin_prefix == url_args[1]:
+            for apps_key in apps_keys:
+                if apps_key in url:
+                    permission = False
+                    for perm in apps[apps_key]:
+                        if perm in url:
+                            permission = apps[apps_key][perm]
+                            break
+                        if apps[apps_key][perm] == True:
+                            permission = True
+                    if permission:
+                        items.append(item)
+        else:
+            items.append(item)
+
+        if item in items and item.parent and not item.parent in items_parents:
+            items_parents.append(item.parent)
+
+    context['items_children'] = items
+    context['items_parents'] = items_parents
+    context['items'] = parent_items_list
+    
+    # Set the active item
     context['active'] = None
     if context['request'].path:
         request_formated = context['request'].get_full_path()[1:]
