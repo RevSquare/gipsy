@@ -626,7 +626,7 @@ p.tabbed-errornote {
 /* line 582, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel {
   padding: 0;
-  margin-top: 37px;
+  margin-top: 26px;
 }
 /* line 587, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
@@ -648,21 +648,25 @@ p.tabbed-errornote {
 .ui-tabs .selector .selector-available h2, .ui-tabs .selector .selector-chosen h2 {
   display: block;
 }
+/* line 607, ../../../assets/stylesheets/gipsy.scss */
+.ui-tabs ul.ui-widget-header {
+  background-image: none;
+}
 
-/* line 608, ../../../assets/stylesheets/gipsy.scss */
+/* line 612, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 613, ../../../assets/stylesheets/gipsy.scss */
+/* line 617, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel .col1 .vXMLLargeTextField,
 .ui-tabs .ui-tabs-panel .col1 .vLargeTextField {
   width: 100%;
 }
 
-/* line 618, ../../../assets/stylesheets/gipsy.scss */
+/* line 622, ../../../assets/stylesheets/gipsy.scss */
 .col1 {
   display: block;
   width: 50%;
@@ -675,7 +679,7 @@ p.tabbed-errornote {
   margin: 0;
 }
 
-/* line 630, ../../../assets/stylesheets/gipsy.scss */
+/* line 634, ../../../assets/stylesheets/gipsy.scss */
 table tbody tr.grp-row-even td,
 table tbody tr.grp-row-even th,
 table tbody tr.grp-alt td,
@@ -684,12 +688,8 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
   background-color: #fff;
 }
 
-/* line 638, ../../../assets/stylesheets/gipsy.scss */
-.grp-object-tools li, .grp-pagination ul li {
-  margin-bottom: 15px;
-}
-/* line 641, ../../../assets/stylesheets/gipsy.scss */
-.grp-object-tools li a, .grp-object-tools li span, .grp-pagination ul li a, .grp-pagination ul li span {
+/* line 642, ../../../assets/stylesheets/gipsy.scss */
+.grp-object-tools li a span, .grp-pagination ul li a span {
   font-size: 12px;
 }
 

@@ -581,7 +581,7 @@ p.tabbed-errornote {
     
     .ui-tabs-panel {
         padding: 0;
-        margin-top: 37px;
+        margin-top: 26px;
     }
     
     .ui-tabs-nav li.ui-tabs-active {
@@ -602,6 +602,10 @@ p.tabbed-errornote {
     
     .selector .selector-available h2, .selector .selector-chosen h2 {
         display: block;
+    }
+    
+    ul.ui-widget-header {
+        background-image: none;
     }
 }
 
@@ -635,12 +639,8 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
     background-color: #fff;
 }
 
-.grp-object-tools li, .grp-pagination ul li {
-    margin-bottom: 15px;
-
-    a, span {
-        font-size: 12px;
-    }
+.grp-object-tools li a span, .grp-pagination ul li a span {
+    font-size: 12px;
 }
 
 .container .grp-object-tools {
