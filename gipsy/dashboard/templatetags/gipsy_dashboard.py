@@ -35,10 +35,22 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
     for parent_item in parent_items_list:
         for child in parent_item.children:
             items_list.append(child)
-    app_list = admin.site.get_app_list(context['request'])
+
     apps = {}
-    for a in app_list:
-        apps[a['app_url']] = a['models'][0]['perms']
+
+    try:
+        # django >= 1.9
+        app_list = admin.site.get_app_list(context['request'])
+        for a in app_list:
+            apps[a['app_url']] = a['models'][0]['perms']
+    except AttributeError:
+        # django < 1.9
+        app_list = []
+        for model, model_admin in admin.site._registry.items():
+            app_label = model._meta.app_label
+            module_perms = model_admin.get_model_perms(context['request'])
+            app_url = reverse('admin:app_list', kwargs={'app_label': app_label}, current_app=admin.site.name)
+            apps[app_url] = module_perms
     apps_keys = apps.keys()
     admin_prefix = reverse('admin:index').replace('/', '')
     for item in items_list:

@@ -12,6 +12,10 @@ register = template.Library()
 
 def is_admin(context):
     """Checks if the current request belongs to admin namespace"""
+    if not 'request' in context:
+        context['is_admin'] = False
+        return False
+    
     request = context["request"]
 
     try:
