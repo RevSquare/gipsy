@@ -61,6 +61,7 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
             url = '/' + item.url
         url_args = url.split('/')
         if admin_prefix == url_args[1]:
+            permission = True
             for apps_key in apps_keys:
                 if apps_key in url:
                     permission = False
@@ -70,8 +71,8 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
                             break
                         if apps[apps_key][perm] == True:
                             permission = True
-                    if permission:
-                        items.append(item)
+            if permission:
+                items.append(item)
         else:
             items.append(item)
 
