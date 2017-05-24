@@ -86,21 +86,23 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
     # Set the active item
     context['active'] = None
     if context['request'].path:
+        active = []
         request_formated = context['request'].get_full_path()[1:]
-        active = get_active_url(request_formated)
+        if request_formated:
+            active = get_active_url(request_formated)
 
-        # if nothing was found try to clean 'add' and 'edit' for generic urls
-        # this is not done before to allow to point directly to those kinds of
-        # urls
-        if not active:
-            if 'add' in request_formated:
-                request_formated = request_formated.split('/add', 1)
-            if 'change' in request_formated:
-                request_formated = request_formated.split('/change', 1)[0].rsplit('/', 1)
-            if 'history' in request_formated:
-                request_formated = request_formated.split('/history', 1)[0].rsplit('/', 1)
+            # if nothing was found try to clean 'add' and 'edit' for generic urls
+            # this is not done before to allow to point directly to those kinds of
+            # urls
+            if not active:
+                if 'add' in request_formated:
+                    request_formated = request_formated.split('/add', 1)
+                if 'change' in request_formated:
+                    request_formated = request_formated.split('/change', 1)[0].rsplit('/', 1)
+                if 'history' in request_formated:
+                    request_formated = request_formated.split('/history', 1)[0].rsplit('/', 1)
 
-            active = get_active_url(request_formated[0] + '/')
+                active = get_active_url(request_formated[0] + '/')
 
     if len(active):
         context['active'] = active[0]

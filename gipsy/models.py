@@ -16,8 +16,11 @@ class GipsyMenu(models.Model):
         ordering = ['order']
         abstract = True
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
+
+    def __unicode__(self):
+        return self.__str__()
 
     @property
     def url_has_domain(self):
