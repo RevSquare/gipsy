@@ -30,79 +30,50 @@ def gipsy_dashboard_menu(context, *args, **kwargs):
     items_parents = []
     parent_items_list = GipsyDashboardMenu.objects.filter(parent__isnull=True)\
         .order_by('order')
-        
+    
+    user = context['request'].user
+    
     # Only display menu items to user with the right permission
     for parent_item in parent_items_list:
         for child in parent_item.children:
             items_list.append(child)
 
-    apps = {}
-
-    try:
-        # django >= 1.9
-        app_list = admin.site.get_app_list(context['request'])
-        for a in app_list:
-            apps[a['app_url']] = a['models'][0]['perms']
-    except AttributeError:
-        # django < 1.9
-        app_list = []
-        for model, model_admin in admin.site._registry.items():
-            app_label = model._meta.app_label
-            module_perms = model_admin.get_model_perms(context['request'])
-            app_url = reverse('admin:app_list', kwargs={'app_label': app_label}, current_app=admin.site.name)
-            apps[app_url] = module_perms
-    apps_keys = apps.keys()
-    admin_prefix = reverse('admin:index').replace('/', '')
     for item in items_list:
         if item.url is None:
             continue
-        url = item.url
-        if url[0] != '/':
-            url = '/' + item.url
-        url_args = url.split('/')
-        if admin_prefix == url_args[1]:
-            permission = True
-            for apps_key in apps_keys:
-                if apps_key in url:
-                    permission = False
-                    for perm in apps[apps_key]:
-                        if perm in url:
-                            permission = apps[apps_key][perm]
-                            break
-                        if apps[apps_key][perm] == True:
-                            permission = True
-            if permission:
-                items.append(item)
-        else:
-            items.append(item)
+        if item.content_type \
+            and not user.has_perm('%s.add_%s' % (item.content_type.app_label, item.content_type.model)) \
+            and not user.has_perm('%s.change_%s' % (item.content_type.app_label, item.content_type.model)) \
+            and not user.has_perm('%s.delete_%s' % (item.content_type.app_label, item.content_type.model)):
+            continue
+
+        items.append(item)
 
         if item in items and item.parent and not item.parent in items_parents:
             items_parents.append(item.parent)
-
     context['items_children'] = items
     context['items_parents'] = items_parents
     context['items'] = parent_items_list
     
     # Set the active item
     context['active'] = None
+    active = []
     if context['request'].path:
-        active = []
         request_formated = context['request'].get_full_path()[1:]
-        if request_formated:
-            active = get_active_url(request_formated)
+        active = get_active_url(request_formated)
 
-            # if nothing was found try to clean 'add' and 'edit' for generic urls
-            # this is not done before to allow to point directly to those kinds of
-            # urls
-            if not active:
-                if 'add' in request_formated:
-                    request_formated = request_formated.split('/add', 1)
-                if 'change' in request_formated:
-                    request_formated = request_formated.split('/change', 1)[0].rsplit('/', 1)
-                if 'history' in request_formated:
-                    request_formated = request_formated.split('/history', 1)[0].rsplit('/', 1)
+        # if nothing was found try to clean 'add' and 'edit' for generic urls
+        # this is not done before to allow to point directly to those kinds of
+        # urls
+        if not active:
+            if 'add' in request_formated:
+                request_formated = request_formated.split('/add', 1)
+            if 'change' in request_formated:
+                request_formated = request_formated.split('/change', 1)[0].rsplit('/', 1)
+            if 'history' in request_formated:
+                request_formated = request_formated.split('/history', 1)[0].rsplit('/', 1)
 
-                active = get_active_url(request_formated[0] + '/')
+            active = get_active_url(request_formated[0] + '/')
 
     if len(active):
         context['active'] = active[0]
