@@ -21,7 +21,7 @@ class GipsyDashboardMenuAdmin(GipsyMenu):
         """
         super(GipsyDashboardMenuAdmin, self).save_formset(request, form, formset, change)
         for item in formset:
-            if not 'id' in item.cleaned_data:
+            if not 'id' in item.cleaned_data or not item.cleaned_data['id']:
                 continue
             instance = item.cleaned_data['id']
             if instance.url == item.cleaned_data['url']:
