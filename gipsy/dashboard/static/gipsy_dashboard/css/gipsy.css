@@ -593,16 +593,17 @@ a:focus {
 
 /* line 552, ../../../assets/stylesheets/gipsy.scss */
 p.tabbed-errornote {
-  margin: 40px 0 0;
+  float: none;
+  margin: 0;
 }
 
-/* line 556, ../../../assets/stylesheets/gipsy.scss */
+/* line 557, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs {
   background-color: transparent;
   border: none;
   margin-top: 0;
 }
-/* line 561, ../../../assets/stylesheets/gipsy.scss */
+/* line 562, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-nav {
   background-image: none;
   background-color: transparent;
@@ -612,61 +613,61 @@ p.tabbed-errornote {
   position: absolute;
   z-index: 10;
 }
-/* line 570, ../../../assets/stylesheets/gipsy.scss */
+/* line 571, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-nav li a {
   padding: 12px 15px;
   font-size: 12px;
   line-height: 12px;
 }
-/* line 575, ../../../assets/stylesheets/gipsy.scss */
+/* line 576, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-nav li a.errortab {
   background-color: #bf3030;
   color: #fff;
 }
-/* line 582, ../../../assets/stylesheets/gipsy.scss */
+/* line 583, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel {
   padding: 0;
   margin-top: 26px;
 }
-/* line 587, ../../../assets/stylesheets/gipsy.scss */
+/* line 588, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-nav li.ui-tabs-active {
   margin-bottom: 0;
   padding-bottom: 0;
 }
-/* line 592, ../../../assets/stylesheets/gipsy.scss */
+/* line 593, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs li.ui-tabs-active a {
   background-color: #fff;
   background-image: none;
   color: #6098d1;
 }
-/* line 598, ../../../assets/stylesheets/gipsy.scss */
+/* line 599, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .grp-module h2 {
   background-color: white;
   color: #5995cf;
 }
-/* line 603, ../../../assets/stylesheets/gipsy.scss */
+/* line 604, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .selector .selector-available h2, .ui-tabs .selector .selector-chosen h2 {
   display: block;
 }
-/* line 607, ../../../assets/stylesheets/gipsy.scss */
+/* line 608, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs ul.ui-widget-header {
   background-image: none;
 }
 
-/* line 612, ../../../assets/stylesheets/gipsy.scss */
+/* line 613, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel:after {
   content: "";
   display: block;
   clear: both;
 }
 
-/* line 617, ../../../assets/stylesheets/gipsy.scss */
+/* line 618, ../../../assets/stylesheets/gipsy.scss */
 .ui-tabs .ui-tabs-panel .col1 .vXMLLargeTextField,
 .ui-tabs .ui-tabs-panel .col1 .vLargeTextField {
   width: 100%;
 }
 
-/* line 622, ../../../assets/stylesheets/gipsy.scss */
+/* line 623, ../../../assets/stylesheets/gipsy.scss */
 .col1 {
   display: block;
   width: 50%;
@@ -679,7 +680,7 @@ p.tabbed-errornote {
   margin: 0;
 }
 
-/* line 634, ../../../assets/stylesheets/gipsy.scss */
+/* line 635, ../../../assets/stylesheets/gipsy.scss */
 table tbody tr.grp-row-even td,
 table tbody tr.grp-row-even th,
 table tbody tr.grp-alt td,
@@ -688,40 +689,40 @@ body.grp-delete-confirmation ul.grp-nested-list > li {
   background-color: #fff;
 }
 
-/* line 642, ../../../assets/stylesheets/gipsy.scss */
+/* line 643, ../../../assets/stylesheets/gipsy.scss */
 .grp-object-tools li a span, .grp-pagination ul li a span {
   font-size: 12px;
 }
 
-/* line 646, ../../../assets/stylesheets/gipsy.scss */
+/* line 647, ../../../assets/stylesheets/gipsy.scss */
 .container .grp-object-tools {
   margin: 3px 0 0;
   top: 0;
 }
 
-/* line 651, ../../../assets/stylesheets/gipsy.scss */
+/* line 652, ../../../assets/stylesheets/gipsy.scss */
 fieldset.grp-module .grp-row label {
   color: #2e3641;
 }
 
-/* line 655, ../../../assets/stylesheets/gipsy.scss */
+/* line 656, ../../../assets/stylesheets/gipsy.scss */
 .grp-row.label {
   text-align: left;
 }
 
-/* line 659, ../../../assets/stylesheets/gipsy.scss */
+/* line 660, ../../../assets/stylesheets/gipsy.scss */
 .g-d-doublepull12, .l-2cr-fluid.l-d-12 .c-1 {
   margin-left: 350px !important;
   position: absolute;
 }
 
-/* line 663, ../../../assets/stylesheets/gipsy.scss */
+/* line 664, ../../../assets/stylesheets/gipsy.scss */
 .l-2cr-fluid.l-d-12 .c-1 {
   margin-left: 120px !important;
   width: 500px;
 }
 
-/* line 668, ../../../assets/stylesheets/gipsy.scss */
+/* line 669, ../../../assets/stylesheets/gipsy.scss */
 .grp-pulldown-container .grp-pulldown-handler,
 .grp-pulldown-container .grp-pulldown-handler:hover,
 .grp-pulldown-container.grp-pulldown-state-open .grp-pulldown-handler,
@@ -730,40 +731,40 @@ fieldset.grp-module .grp-row label {
 }
 
 @media (max-width: 1200px) {
-  /* line 676, ../../../assets/stylesheets/gipsy.scss */
+  /* line 677, ../../../assets/stylesheets/gipsy.scss */
   .dashboard-sidebar {
     font-size: 90%;
   }
 
-  /* line 679, ../../../assets/stylesheets/gipsy.scss */
+  /* line 680, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .navbar-brand {
     padding: 12px 0 0;
   }
 }
 @media (max-width: 992px) {
-  /* line 685, ../../../assets/stylesheets/gipsy.scss */
+  /* line 686, ../../../assets/stylesheets/gipsy.scss */
   .navbar-nav {
     font-size: 78%;
   }
 }
 @media (min-width: 769px) {
-  /* line 692, ../../../assets/stylesheets/gipsy.scss */
+  /* line 693, ../../../assets/stylesheets/gipsy.scss */
   .profile-dropdown .navbar-nav {
     float: right;
   }
 }
 @media (max-width: 768px) {
-  /* line 699, ../../../assets/stylesheets/gipsy.scss */
+  /* line 700, ../../../assets/stylesheets/gipsy.scss */
   .navbar-nav {
     margin: 0;
   }
 
-  /* line 702, ../../../assets/stylesheets/gipsy.scss */
+  /* line 703, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .row .col-xs-12:first-child {
     background: #fff;
   }
 
-  /* line 705, ../../../assets/stylesheets/gipsy.scss */
+  /* line 706, ../../../assets/stylesheets/gipsy.scss */
   .navbar-top .navbar-brand {
     padding: 8px 0 0;
   }
