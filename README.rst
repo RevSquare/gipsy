@@ -83,7 +83,7 @@ And finaly, install the toolbar in your templates with a template tag:
 
 For the admin part, you will need to overwrite templates with the same code as above: {templates}/admin/base.html
 
-If you are using a cache engine such as Varnish, you can use a bundled middleware in order to set a cookie that you can use to deactivate cache to display the toolkbar for staff admins. Happy to hear abotu a cleaner solution.
+If you are using a cache engine such as Varnish, you can use a bundled middleware in order to set a cookie that you can use to deactivate cache to display the toolkbar for staff admins. Happy to hear about a cleaner solution.
 
 .. code-block::  python
 
